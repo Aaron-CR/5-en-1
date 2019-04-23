@@ -1,3 +1,28 @@
 <resources>
+    <!-- Nombre de la Aplicación [CHAR LIMIT=20] -->
     <string name="app_name">5 en 1</string>
+
+    <!-- Nombre de la opción JugarActivity [CHAR LIMIT=20] -->
+    <string name="category_jugar">Jugar</string>
+
+    <!-- Nombre de la opción EstadisticasActivity [CHAR LIMIT=20] -->
+    <string name="category_estadisticas">Estadísticas</string>
+
+    <!-- Nombre de la opción AjustesActivity [CHAR LIMIT=20] -->
+    <string name="category_ajustes">Ajustes</string>
+
+    <!-- Nombre de la categoria Juego 1 [CHAR LIMIT=20] -->
+    <string name="category_juego1">Juego 1</string>
+
+    <!-- Nombre de la categoria Juego 2 [CHAR LIMIT=20] -->
+    <string name="category_juego2">Juego 2</string>
+
+    <!-- Nombre de la categoria Juego 3 [CHAR LIMIT=20] -->
+    <string name="category_juego3">Juego 3</string>
+
+    <!-- Nombre de la categoria Juego 4 [CHAR LIMIT=20] -->
+    <string name="category_juego4">Juego 4</string>
+
+    <!-- Nombre de la categoria Juego 5 [CHAR LIMIT=20] -->
+    <string name="category_juego5">Juego 5</string>
 </resources>

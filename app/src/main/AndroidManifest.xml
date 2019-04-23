@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AjustesActivity"
+            android:label="@string/category_ajustes" />
+        <activity
+            android:name=".EstadisticasActivity"
+            android:label="@string/category_estadisticas" />
+        <activity
+            android:name=".JugarActivity"
+            android:label="@string/category_jugar" />
+        <activity
+            android:name=".Juego1.MenuJuego1Activity"
+            android:label="@string/category_juego1" />
+        <activity
+            android:name=".Juego2.MenuJuego2Activity"
+            android:label="@string/category_juego2" />
+        <activity
+            android:name=".Juego3.MenuJuego3Activity"
+            android:label="@string/category_juego3" />
+        <activity
+            android:name=".Juego4.MenuJuego4Activity"
+            android:label="@string/category_juego4" />
+        <activity
+            android:name=".Juego5.MenuJuego5Activity"
+            android:label="@string/category_juego5" />
     </application>
 
 </manifest>
