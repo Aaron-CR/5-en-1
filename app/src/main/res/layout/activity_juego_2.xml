@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Juego2.Juego2Activity">
+
+    <TextView
+        android:id="@+id/countLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text="Q1"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/preguntaLabel"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:text="Pregunta"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+
+
+    <Button
+        android:id="@+id/respuestaBtn1"
+        android:text="Respuesta 1"
+        style="@style/Boton"
+        android:textColor="@android:color/black"
+        android:onClick="chequearRespuesta"/>
+
+    <Button
+        android:id="@+id/respuestaBtn2"
+        android:text="Respuesta 2"
+        style="@style/Boton"
+        android:textColor="@android:color/black"
+        android:onClick="chequearRespuesta"/>
+
+    <Button
+        android:id="@+id/respuestaBtn3"
+        android:text="Respuesta 3"
+        style="@style/Boton"
+        android:textColor="@android:color/black"
+        android:onClick="chequearRespuesta"/>
+
+    <Button
+        android:id="@+id/respuestaBtn4"
+        android:text="Respuesta 4"
+        style="@style/Boton"
+        android:textColor="@android:color/black"
+        android:onClick="chequearRespuesta"/>
+
+
+</LinearLayout>
