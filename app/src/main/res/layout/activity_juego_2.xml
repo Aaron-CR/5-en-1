@@ -18,47 +18,55 @@
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:overScrollMode="ifContentScrolls"/>
+
 
     <TextView
         android:id="@+id/preguntaLabel"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="132dp"
         android:layout_marginTop="50dp"
         android:text="Pregunta"
         android:textAlignment="center"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"/>
-
-
-
-    <Button
-        android:id="@+id/respuestaBtn1"
-        android:text="Respuesta 1"
-        style="@style/Boton"
         android:textColor="@android:color/black"
-        android:onClick="chequearRespuesta"/>
+        android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/respuestaBtn2"
-        android:text="Respuesta 2"
-        style="@style/Boton"
-        android:textColor="@android:color/black"
-        android:onClick="chequearRespuesta"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/respuestaBtn3"
-        android:text="Respuesta 3"
-        style="@style/Boton"
-        android:textColor="@android:color/black"
-        android:onClick="chequearRespuesta"/>
+        <Button
+            android:id="@+id/respuestaBtn1"
+            style="@style/Boton"
+            android:onClick="chequearRespuesta"
+            android:text="Respuesta 1"
+            android:textColor="@android:color/black" />
 
-    <Button
-        android:id="@+id/respuestaBtn4"
-        android:text="Respuesta 4"
-        style="@style/Boton"
-        android:textColor="@android:color/black"
-        android:onClick="chequearRespuesta"/>
+        <Button
+            android:id="@+id/respuestaBtn2"
+            style="@style/Boton"
+            android:onClick="chequearRespuesta"
+            android:text="Respuesta 2"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/respuestaBtn3"
+            style="@style/Boton"
+            android:onClick="chequearRespuesta"
+            android:text="Respuesta 3"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/respuestaBtn4"
+            style="@style/Boton"
+            android:onClick="chequearRespuesta"
+            android:text="Respuesta 4"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

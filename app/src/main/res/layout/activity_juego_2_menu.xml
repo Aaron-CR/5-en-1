@@ -4,6 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Juego2.MenuJuego2Activity">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button_cat1juego2"
+            style="@style/Boton"
+            android:text="Categoria"
+            android:textColor="@android:color/black" />
+        <Button
+            android:id="@+id/button_cat21juego2"
+            style="@style/Boton"
+            android:text="Categoria"
+            android:textColor="@android:color/black" />
+        <Button
+            android:id="@+id/button_cat3juego2"
+            style="@style/Boton"
+            android:text="Categoria"
+            android:textColor="@android:color/black" />
+        <Button
+            android:id="@+id/button_cat4juego2"
+            style="@style/Boton"
+            android:text="Categoria"
+            android:textColor="@android:color/black" />
+        <Button
+            android:id="@+id/button_cat5juego2"
+            style="@style/Boton"
+            android:text="Categoria"
+            android:textColor="@android:color/black" />
+
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
