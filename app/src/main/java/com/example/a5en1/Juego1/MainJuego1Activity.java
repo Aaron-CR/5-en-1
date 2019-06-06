@@ -1,5 +1,6 @@
 package com.example.a5en1.Juego1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,20 +43,35 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         categoria = getIntent().getIntExtra("CATEGORIA", 0);
 
         if (categoria == 1) {
+            vidas = 4;
+            CATEGORIA.add("Facil");
+            CATEGORIA.add("Facil");
+            CATEGORIA.add("Facil");
+            CATEGORIA.add("Facil");
             CATEGORIA.add("Facil");
         } else if (categoria == 2) {
+            vidas = 3;
+            CATEGORIA.add("Medio");
+            CATEGORIA.add("Medio");
+            CATEGORIA.add("Medio");
             CATEGORIA.add("Medio");
             CATEGORIA.add("Medio");
         } else if (categoria == 3) {
+            vidas = 2;
+            CATEGORIA.add("Dificil");
+            CATEGORIA.add("Dificil");
+            CATEGORIA.add("Dificil");
             CATEGORIA.add("Dificil");
             CATEGORIA.add("Dificil");
         } else if (categoria == 4) {
+            vidas = 5;
             CATEGORIA.add("ALEMANIA");
             CATEGORIA.add("ARGENTINA");
             CATEGORIA.add("AUSTRALIA");
             CATEGORIA.add("BÉLGICA");
             CATEGORIA.add("BOLIVIA");
         } else if (categoria == 5) {
+            vidas = 5;
             CATEGORIA.add("RATA");
             CATEGORIA.add("ABEJORRO");
             CATEGORIA.add("ARDILLA");
@@ -133,6 +149,9 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             nuevaPalabra();
             contador++;
         }
+        if (contador == cantidadPalabras) {
+            abrirReultados();
+        }
     }
 
 
@@ -152,6 +171,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             puntaje -= 200;
             vidas--;
             if (vidas == 0) {
+                abrirReultados();
             }
             textViewPuntaje.setText("P " + puntaje);
             textViewVidas.setText("V " + vidas);
@@ -164,6 +184,17 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         String palabraMezclada = mezclarPalabra(palabraParaEncontrar);
         palabraParaValidar.setText(palabraMezclada);
         palabraDigitadaParaValidar.setText("");
+    }
+
+    private void abrirReultados() {
+        // Crea un Intent para abrir {@link ResultadosJuego1Activity}
+        Intent resultadosIntent = new Intent(MainJuego1Activity.this, ResultadosJuego1Activity.class);
+        resultadosIntent.putExtra("CONTADOR_RESPUESTA_CORRECTA", contadorAciertos);
+        resultadosIntent.putExtra("CANTIDAD_PALABRAS", cantidadPalabras);
+        resultadosIntent.putExtra("PUNTAJE_TOTAL", puntaje);
+        resultadosIntent.putExtra("CATEGORIA", categoria);
+        // Inicia la Activity
+        startActivity(resultadosIntent);
     }
 
     public static final Random RANDOM = new Random();
