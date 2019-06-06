@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,9 +19,12 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
 
     private static ArrayList<String> CATEGORIA = new ArrayList<>();
     private String palabraParaEncontrar;
+    private View child;
+    private RelativeLayout background;
+    private LinearLayout teclado;
     private TextView palabraParaValidar;
     private EditText palabraDigitadaParaValidar;
-    private Button arriesgar, pasarPalabra;
+    private Button arriesgar, saltarPalabra;
     private int categoria;
 
     @Override
@@ -52,11 +57,23 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("AVISPA");
         }
 
+        // Encuentra el RelativeLayout del fondo.
+        background = findViewById(R.id.relative_background);
+
+        // Instancia el archivo tecladoxml para poder añadirlo al ViewGroup.
+        child = getLayoutInflater().inflate(R.layout.activity_juego_1_teclado, null);
+
+        // Añade el teclado al fondo.
+        background.addView(child);
+
+        // Encuentra el Layout del teclado.
+        teclado = child.findViewById(R.id.teclado);
+
         // Encuentra el View que muestra la palabra para validar.
-        palabraParaValidar = (TextView) findViewById(R.id.palabra_para_validar);
+        palabraParaValidar = findViewById(R.id.text_palabra_para_validar);
 
         // Encuentra el View que muestra la palabra ingresada por el usuario.
-        palabraDigitadaParaValidar = (EditText) findViewById(R.id.palabra_digitada);
+        palabraDigitadaParaValidar = child.findViewById(R.id.edit_palabra_digitada_para_validar);
 
         // Encuentra el Botón que se utiliza para arriesgar una palabra.
         arriesgar = (Button) findViewById(R.id.arriesgar);
@@ -65,14 +82,34 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         arriesgar.setOnClickListener(this);
 
         // Encuentra el Botón que se utiliza para pasar la palabra si no se sabe.
-        pasarPalabra = (Button) findViewById(R.id.pasar_palabra);
+        saltarPalabra = (Button) findViewById(R.id.saltar_palabra);
 
         // Establece un click listener en ese Botón.
-        pasarPalabra.setOnClickListener(this);
+        saltarPalabra.setOnClickListener(this);
 
         // Ejecuta el método para generar una nueva palabra.
         nuevaPalabra();
 
+    }
+
+    // (Teclado)
+    public void onTapped(View view) {
+        Button button = (Button) view;
+        if (button.getText().equals("del")) {
+            if (palabraDigitadaParaValidar.getText().length() > 0)
+                palabraDigitadaParaValidar.setText(palabraDigitadaParaValidar.getText().toString().substring(0, palabraDigitadaParaValidar.getText().length() - 1));
+            palabraDigitadaParaValidar.setSelection(palabraDigitadaParaValidar.getText().length());
+        } else
+            palabraDigitadaParaValidar.setText(palabraDigitadaParaValidar.getText() + "" + button.getText().toString().toUpperCase());
+        palabraDigitadaParaValidar.setSelection(palabraDigitadaParaValidar.getText().length());
+    }
+
+    public void onClick(View view) {
+        if (view == arriesgar) {
+            verificar();
+        } else if (view == saltarPalabra) {
+            nuevaPalabra();
+        }
     }
 
     private void nuevaPalabra() {
@@ -111,13 +148,6 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         return palabra;
     }
 
-    public void onClick(View view) {
-        if (view == arriesgar) {
-            verificar();
-        } else if (view == pasarPalabra) {
-            nuevaPalabra();
-        }
-    }
 
     private void verificar() {
         String p = palabraDigitadaParaValidar.getText().toString().toUpperCase().trim();

@@ -22,4 +22,18 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <!-- Estilo para los botones del teclado -->
+    <style name="ButtonKeyboardStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:onClick">onTapped</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">3dp</item>
+        <item name="android:layout_marginEnd">3dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+    </style>
+
 </resources>

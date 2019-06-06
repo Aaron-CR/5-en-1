@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layoutEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layoutBotones"
+        android:layout_marginBottom="16dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/edit_palabra_digitada_para_validar"
+            android:layout_width="275dp"
+            android:layout_height="60dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_palabra_para_validar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layoutEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32sp"
+        android:text="Palabra"
+        android:textAllCaps="true"
+        android:textSize="38sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/layoutBotones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/teclado"
+        android:layout_marginBottom="8dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/saltar_palabra"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Saltar" />
+
+        <Button
+            android:id="@+id/arriesgar"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:text="Arriesgar" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/teclado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/teclado_fila_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="q" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="w" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="e" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="r" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="t" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="y" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="u" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="i" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="o" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="p" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/teclado_fila_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="a" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="s" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="d" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="f" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="g" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="h" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="j" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="k" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="l" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="ñ" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/teclado_fila_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text=" "
+                android:visibility="invisible" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="z" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="x" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="c" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="v" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="b" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="n" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text="m" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:layout_weight="0.65"
+                android:text="del" />
+
+            <Button
+                style="@style/ButtonKeyboardStyle"
+                android:text=" "
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
