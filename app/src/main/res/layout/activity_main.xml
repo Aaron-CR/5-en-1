@@ -22,19 +22,19 @@
         <Button
             android:id="@+id/button_jugar"
             style="@style/Boton"
-            android:text="@string/category_jugar"
+            android:text="@string/opcion_jugar"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/button_estadisticas"
             style="@style/Boton"
-            android:text="@string/category_estadisticas"
+            android:text="@string/opcion_estadisticas"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/button_ajustes"
             style="@style/Boton"
-            android:text="@string/category_ajustes"
+            android:text="@string/opcion_ajustes"
             android:textColor="@android:color/black" />
 
     </LinearLayout>

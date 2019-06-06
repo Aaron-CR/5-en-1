@@ -2,17 +2,32 @@
     <!-- Nombre de la Aplicación [CHAR LIMIT=20] -->
     <string name="app_name">5 en 1</string>
 
-    <!-- Nombre de la opción JugarActivity [CHAR LIMIT=20] -->
-    <string name="category_jugar">Jugar</string>
+    <!-- Nombre de la opción Jugar [CHAR LIMIT=20] -->
+    <string name="opcion_jugar">Jugar</string>
 
-    <!-- Nombre de la opción EstadisticasActivity [CHAR LIMIT=20] -->
-    <string name="category_estadisticas">Estadísticas</string>
+    <!-- Nombre de la opción Estadisticas [CHAR LIMIT=20] -->
+    <string name="opcion_estadisticas">Estadísticas</string>
 
-    <!-- Nombre de la opción AjustesActivity [CHAR LIMIT=20] -->
-    <string name="category_ajustes">Ajustes</string>
+    <!-- Nombre de la opción Ajustes [CHAR LIMIT=20] -->
+    <string name="opcion_ajustes">Ajustes</string>
 
     <!-- Nombre de la categoria Juego 1 [CHAR LIMIT=20] -->
     <string name="category_juego1">Juego 1</string>
+
+    <!-- Nombre de la categoria Facil del Juego 1 [CHAR LIMIT=20] -->
+    <string name="category_facil_juego1">Fácil</string>
+
+    <!-- Nombre de la categoria Normal del Juego 1 [CHAR LIMIT=20] -->
+    <string name="category_medio_juego1">Medio</string>
+
+    <!-- Nombre de la categoria Difícil del Juego 1 [CHAR LIMIT=20] -->
+    <string name="category_dificil_juego1">Difícil</string>
+
+    <!-- Nombre de la categoria Países del Juego 1 [CHAR LIMIT=20] -->
+    <string name="category_paises_juego1">Países</string>
+
+    <!-- Nombre de la categoria Animales del Juego 1 [CHAR LIMIT=20] -->
+    <string name="category_animales_juego1">Animales</string>
 
     <!-- Nombre de la categoria Juego 2 [CHAR LIMIT=20] -->
     <string name="category_juego2">Juego 2</string>

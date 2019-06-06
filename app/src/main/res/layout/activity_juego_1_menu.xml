@@ -1,54 +1,46 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="top"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp" >
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".Juego1.MenuJuego1Activity">
 
-    <TextView
-        android:id="@+id/palabra_para_validar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:text="Palabra"
-        android:textAllCaps="true"
-        android:textColor="@android:color/black"
-        android:textSize="26sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/palabra_digitada"
-        android:hint="¿Que palabra es?"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/palabra_para_validar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:inputType="textCapCharacters"
+    <Button
+        android:id="@+id/facil"
+        style="@style/Boton"
+        android:onClick="empezarCategoria"
+        android:text="@string/category_facil_juego1"
         android:textColor="@android:color/black" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/palabra_digitada"
-        android:layout_marginTop="30dp"
-        android:gravity="center">
+    <Button
+        android:id="@+id/medio"
+        style="@style/Boton"
+        android:onClick="empezarCategoria"
+        android:text="@string/category_medio_juego1"
+        android:textColor="@android:color/black" />
 
-        <Button
-            android:id="@+id/pasar_palabra"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="Pasar Palabra" />
+    <Button
+        android:id="@+id/dificil"
+        style="@style/Boton"
+        android:onClick="empezarCategoria"
+        android:text="@string/category_dificil_juego1"
+        android:textColor="@android:color/black" />
 
-        <Button
-            android:id="@+id/arriesgar"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:text="Arriesgar" />
-    </LinearLayout>
-</RelativeLayout>
+    <Button
+        android:id="@+id/paises"
+        style="@style/Boton"
+        android:onClick="empezarCategoria"
+        android:text="@string/category_paises_juego1"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/animales"
+        style="@style/Boton"
+        android:onClick="empezarCategoria"
+        android:text="@string/category_animales_juego1"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>
