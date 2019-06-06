@@ -17,21 +17,27 @@ import java.util.Random;
 
 public class MainJuego1Activity extends AppCompatActivity implements View.OnClickListener {
 
-    private static ArrayList<String> CATEGORIA = new ArrayList<>();
+    private ArrayList<String> CATEGORIA = new ArrayList<>();
     private String palabraParaEncontrar;
     private View child;
     private RelativeLayout background;
     private LinearLayout teclado;
     private TextView palabraParaValidar;
+    private TextView textViewPuntaje;
+    private TextView textViewVidas;
     private EditText palabraDigitadaParaValidar;
-    private Button arriesgar, saltarPalabra;
+    private Button arriesgar, pasarPalabra;
+    private int cantidadPalabras;
+    private int contador = 0;
+    private int contadorAciertos = 0;
+    private int puntaje = 0;
     private int categoria;
+    private short vidas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Establecer el contenido de la actividad para utilize el archivo activity_juego_1_menu.xml.
-        setContentView(R.layout.activity_juego_1_menu);
+        setContentView(R.layout.activity_juego_1_main);
 
         categoria = getIntent().getIntExtra("CATEGORIA", 0);
 
@@ -57,6 +63,8 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("AVISPA");
         }
 
+        cantidadPalabras = CATEGORIA.size();
+
         // Encuentra el RelativeLayout del fondo.
         background = findViewById(R.id.relative_background);
 
@@ -69,23 +77,33 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         // Encuentra el Layout del teclado.
         teclado = child.findViewById(R.id.teclado);
 
-        // Encuentra el View que muestra la palabra para validar.
-        palabraParaValidar = findViewById(R.id.text_palabra_para_validar);
-
-        // Encuentra el View que muestra la palabra ingresada por el usuario.
+        // Encuentra el EditView que muestra la palabra ingresada por el usuario.
         palabraDigitadaParaValidar = child.findViewById(R.id.edit_palabra_digitada_para_validar);
 
-        // Encuentra el Botón que se utiliza para arriesgar una palabra.
-        arriesgar = (Button) findViewById(R.id.arriesgar);
+        // Encuentra el TextView que muestra la palabra para validar.
+        palabraParaValidar = findViewById(R.id.text_palabra_para_validar);
 
-        /** Establece un click listener en ese Botón. */
+        // Encuentra el TextView que muestra el puntaje.
+        textViewPuntaje = findViewById(R.id.puntaje);
+
+        // Encuentra el TextView que muestra las vidas restantes.
+        textViewVidas = findViewById(R.id.vidas);
+
+        // Encuentra el Botón que se utiliza para arriesgar una palabra.
+        arriesgar = findViewById(R.id.arriesgar);
+
+        // Establece un click listener en ese Botón.
         arriesgar.setOnClickListener(this);
 
         // Encuentra el Botón que se utiliza para pasar la palabra si no se sabe.
-        saltarPalabra = (Button) findViewById(R.id.saltar_palabra);
+        pasarPalabra = findViewById(R.id.saltar_palabra);
 
         // Establece un click listener en ese Botón.
-        saltarPalabra.setOnClickListener(this);
+        pasarPalabra.setOnClickListener(this);
+
+        textViewVidas.setText("V " + vidas);
+
+        textViewPuntaje.setText("P " + puntaje);
 
         // Ejecuta el método para generar una nueva palabra.
         nuevaPalabra();
@@ -104,10 +122,39 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         palabraDigitadaParaValidar.setSelection(palabraDigitadaParaValidar.getText().length());
     }
 
+    @Override
     public void onClick(View view) {
         if (view == arriesgar) {
             verificar();
-        } else if (view == saltarPalabra) {
+            contador++;
+        } else if (view == pasarPalabra) {
+            puntaje -= 100;
+            textViewPuntaje.setText("P " + puntaje);
+            nuevaPalabra();
+            contador++;
+        }
+    }
+
+
+    private void verificar() {
+        String p = palabraDigitadaParaValidar.getText().toString().toUpperCase().trim();
+        if (palabraParaEncontrar.equals(p)) {
+            Toast.makeText(this, "Correcto! Adivinaste la palabra: " + palabraParaEncontrar, Toast.LENGTH_SHORT).show();
+            puntaje += 300;
+            contadorAciertos++;
+            textViewPuntaje.setText("P " + puntaje);
+            nuevaPalabra();
+        } else {
+            if (categoria == 3) {
+                Toast.makeText(this, "Incorrecto! Palabra equivocada", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(this, "Incorrecto! la palabra era " + palabraParaEncontrar, Toast.LENGTH_SHORT).show();
+            puntaje -= 200;
+            vidas--;
+            if (vidas == 0) {
+            }
+            textViewPuntaje.setText("P " + puntaje);
+            textViewVidas.setText("V " + vidas);
             nuevaPalabra();
         }
     }
@@ -141,24 +188,8 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
                 a[i] = a[j];
                 a[j] = tmp;
             }
-
             return new String(a);
         }
-
         return palabra;
     }
-
-
-    private void verificar() {
-        String p = palabraDigitadaParaValidar.getText().toString().toUpperCase().trim();
-
-        if (palabraParaEncontrar.equals(p)) {
-            Toast.makeText(this, "Felicitaciones ! Adivinaste la palabra " + palabraParaEncontrar, Toast.LENGTH_SHORT).show();
-            nuevaPalabra();
-        } else {
-            Toast.makeText(this, "Palabra equivocada!", Toast.LENGTH_SHORT).show();
-            nuevaPalabra();
-        }
-    }
-
 }
