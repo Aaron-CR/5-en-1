@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Juego1.MainJuego1Activity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +25,9 @@
         <activity
             android:name=".JugarActivity"
             android:label="@string/opcion_jugar" />
+        <activity
+            android:name=".Juego1.MainJuego1Activity"
+            android:label="Main Juego 1" />
         <activity
             android:name=".Juego1.MenuJuego1Activity"
             android:label="@string/category_juego1" />

@@ -10,20 +10,48 @@ import android.widget.Toast;
 
 import com.example.a5en1.R;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainJuego1Activity extends AppCompatActivity implements View.OnClickListener {
 
+    private static ArrayList<String> CATEGORIA = new ArrayList<>();
+    private String palabraParaEncontrar;
     private TextView palabraParaValidar;
     private EditText palabraDigitadaParaValidar;
     private Button arriesgar, pasarPalabra;
-    private String palabraParaEncontrar;
+    private int categoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Establecer el contenido de la actividad para utilize el archivo activity_juego_1_menu.xml.
         setContentView(R.layout.activity_juego_1_menu);
+
+        categoria = getIntent().getIntExtra("CATEGORIA", 0);
+
+        if (categoria == 1) {
+            CATEGORIA.add("Facil");
+        } else if (categoria == 2) {
+            CATEGORIA.add("Medio");
+            CATEGORIA.add("Medio");
+        } else if (categoria == 3) {
+            CATEGORIA.add("Dificil");
+            CATEGORIA.add("Dificil");
+        } else if (categoria == 4) {
+            CATEGORIA.add("ALEMANIA");
+            CATEGORIA.add("ARGENTINA");
+            CATEGORIA.add("AUSTRALIA");
+            CATEGORIA.add("BÉLGICA");
+            CATEGORIA.add("BOLIVIA");
+        } else if (categoria == 5) {
+            CATEGORIA.add("RATA");
+            CATEGORIA.add("ABEJORRO");
+            CATEGORIA.add("ARDILLA");
+            CATEGORIA.add("ASNO");
+            CATEGORIA.add("AVISPA");
+        }
+
         // Encuentra el View que muestra la palabra para validar.
         palabraParaValidar = (TextView) findViewById(R.id.palabra_para_validar);
 
@@ -47,16 +75,23 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
 
     }
 
+    private void nuevaPalabra() {
+        palabraParaEncontrar = palabraAleatoria(CATEGORIA);
+        String palabraMezclada = mezclarPalabra(palabraParaEncontrar);
+        palabraParaValidar.setText(palabraMezclada);
+        palabraDigitadaParaValidar.setText("");
+    }
+
     public static final Random RANDOM = new Random();
 
-    public static final String[] PALABRAS = {"FRANCIA", "ESPAÑA", "ESTADOSUNIDOS", "CHINA", "ITALIA",
-            "REINOUNIDO", "ALEMANIA", "UCRANIA", "TURQUÍA", "MÉXICO", "MALASIA", "AUSTRIA", "RUSIA",
-            "CANADÁ", "HONGKONG", "GRECIA", "POLONIA", "TAILANDIA", "MACAO", "PORTUGAL",
-            "ARABIASAUDITA", "PAÍSESBAJOS", "EGIPTO", "CROACIA", "SUDÁFRICA", "HUNGRÍA", "SUIZA",
-            "JAPÓN", "SINGAPUR"};
+    public static String palabraAleatoria(ArrayList<String> CATEGORIA) {
+        int r = RANDOM.nextInt(CATEGORIA.size());
 
-    public static String palabraAleatorea() {
-        return PALABRAS[RANDOM.nextInt(PALABRAS.length)];
+        String p = String.valueOf(CATEGORIA.get(r));
+        if (CATEGORIA.size() != 1) {
+            CATEGORIA.remove(r);
+        }
+        return p;
     }
 
     public static String mezclarPalabra(String palabra) {
@@ -94,13 +129,6 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             Toast.makeText(this, "Palabra equivocada!", Toast.LENGTH_SHORT).show();
             nuevaPalabra();
         }
-    }
-
-    private void nuevaPalabra() {
-        palabraParaEncontrar = palabraAleatorea();
-        String palabraMezclada = mezclarPalabra(palabraParaEncontrar);
-        palabraParaValidar.setText(palabraMezclada);
-        palabraDigitadaParaValidar.setText("");
     }
 
 }
