@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class Juego2Activity extends AppCompatActivity {
 
-    private static final int QUIZ_COUNT = 5;
+    private static final int QUIZ_COUNT = 10;
     private TextView countLabel;
     private TextView preguntaLabel;
     private Button respuestaBtn1;
