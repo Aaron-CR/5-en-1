@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Juego2.ResultadosJuego2Activity">
+
+    <TextView
+        android:id="@+id/resultJuego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultados de la categoria"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textPuntaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Puntaje"
+        android:textSize="30sp" />
+
+    <TextView
+    android:id="@+id/tiempoTotalUtilizado"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:layout_marginBottom="0dp"
+    android:text="Tiempo total: 0"
+    android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tiempoPromPorPregunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="40dp"
+        android:text="Tiempo promedio por pregunta: 0"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnJugarDenuevo"
+        android:layout_width="210dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="6dp"
+        android:text="Jugar otra vez" />
+
+    <Button
+        android:id="@+id/btnVolverCategorias"
+        android:layout_width="210dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="6dp"
+        android:text="Volver a categorias" />
+    <Button
+        android:id="@+id/btnVolverMainMenu"
+        android:layout_width="210dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="6dp"
+        android:text="Volver a menú principal" />
+
+
+</LinearLayout>
