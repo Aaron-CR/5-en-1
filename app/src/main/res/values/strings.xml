@@ -38,6 +38,103 @@
     <!-- Nombre de la categoria Juego 4 [CHAR LIMIT=20] -->
     <string name="category_juego4">Juego 4</string>
 
+    <string name="title">ELIGE TU PROPIA</string>
+    <string name="titlea">AVENTURA MEDIOCRE</string>
+    <string name="title_1">Bienvenida al juego en el que podés tomar\ndecisiones poco interesantes y disfrutar\nde tu vida de persona promedio.</string>
+    <string name="title_2">Mantente con vida teniendo cuidado\nde que los contadores no lleguen a cero.</string>
+    <string name="boton_empezar">Empezar</string>
+
+    <string name="act_1">¡Buenos días! Estás lista para empezar\ntu día, pero no hay nada para desayunar:</string>
+    <string name="act_1a">Ir a comprar facturas.</string>
+    <string name="act_1b">Comer tortitas viejas y rancias.</string>
+    <string name="act_1c">Ni ganas de levantarme, mejor\nme quedo en la cama un rato más.</string>
+    <string name="boton_siguiente">Siguiente</string>
+
+    <string name="act_2">Empezás el camino a la facu, al dar\nvuelta en una esquina ves algo brillante\nen una acequia que llama tu atención:</string>
+    <string name="act_2a">Me vuelvo y reviso qué hay.</string>
+    <string name="act_2b">Sigo mi camino, no quiero\nllegar tarde otra vez.</string>
+
+    <string name="act_3_1">Para poder llegar al objeto brillante tenés\nque meter ambos pies en la acequia\nhúmeda, llena de basura y ratas:</string>
+    <string name="act_3_1a">¡Me meto de una!</string>
+    <string name="act_3_1b">Ya fue, me voy. Si a la vuelta\nsigue estando me fijo.</string>
+
+    <string name="act_3_2">Llegás a la facultad justo a tiempo para\nentender el tema nuevo así que vas a\npoder salir a comer algo en el recreo.</string>
+    <string name="boton_vamos">¡Vamo nomá!</string>
+
+    <string name="act_4_1_1">El objeto brillante era un reloj bien cheto.</string>
+
+    <string name="act_5_1_1">Llegás a la facultad re tarde, el profe\nya empezó a explicar el tema y no\nentendés nada:</string>
+    <string name="act_5_1_1a">Y bueeeno, a distraerse con el celu.</string>
+    <string name="act_5_1_1b">Mejor me pongo las pilas.</string>
+
+    <string name="act_4_1_2">Llegás a la facultad un poco tarde,\nel profe ya empezó a explicar el tema\ny no entendés nada:</string>
+    <string name="act_4_1_2a">Y bueeeno, a distraerse con el celu.</string>
+    <string name="act_4_1_2b">Mejor me pongo las pilas.</string>
+
+    <string name="act_6">Salís luego de una larga mañana, parece\nhaber sido otro día normal y pensás qué\ncalle tomar para volver a tu casa:</string>
+    <string name="act_6a">Doblo a la derecha.</string>
+    <string name="act_6b">Doblo a la izquierda.</string>
+    <string name="act_6c">Sigo recto.</string>
+
+    <string name="act_7_1">Decidís doblar a la derecha y luego de\ncaminar unas cuadras un auto pasa\nel semáforo en rojo, ocasionando\nun terrible accidente:</string>
+    <string name="act_7_1a">Me acerco a ver si hay gente herida.</string>
+    <string name="act_7_1b">Llamo a la policía de lejitos.</string>
+    <string name="act_7_1c">Yo no vi nada, mejor me apuro a llegar\na mi casa así tengo tiempo de jugar\nal Skyrim.</string>
+
+    <string name="act_8_1_1">Ves una chica inconsciente en uno de\nlos vehículos, el conductor del otro\nauto parece bien y con intención de\nirse antes de que llegue la policía:</string>
+    <string name="act_8_1_1a">Asisto a la chica.</string>
+    <string name="act_8_1_1b">Retengo al otro conductor.</string>
+
+    <string name="act_9_1_1_1">Lográs despertar a la chica y le preguntás\nsi se encuentra bien o si está herida,\nte responde que no puede moverse.\nEl otro conductor ya se fue.</string>
+    <string name="act_9_1_1_1a">Espero a que llegue la ambulancia\ny la acompaño al hospital.</string>
+    <string name="act_9_1_1_1b">Espero a la policía para ser testigo\ndel accidente y que la acompañe\nun familiar al hospital.</string>
+
+    <string name="act_10_1_1_1_1">La chica, sorprendida por tu buena\nvoluntad, te da las gracias y ofrece\npagarte por tus cuidados:</string>
+    <string name="act_10_1_1_1_1a">Con esta macrisis unos\npesitos no vienen mal...</string>
+    <string name="act_10_1_1_1_1b">La ayudé de onda, no está\nbien cobrar por eso.</string>
+
+    <string name="act_11_1_1_1_1_1">Luego de asegurarte que la chica\nse encuentra mejor, te despedís\ny retomás tu rumbo a casa.</string>
+    <string name="boton_casa">Ir a casa</string>
+
+    <string name="act_11_1_1_1_1_2">Ella te dice:\n-Bueno, al menos pasame tu wpp y\ndespués arreglamos con unas birras.</string>
+    <string name="boton_genial">Dale, genial</string>
+
+    <string name="act_10_1_1_1_2">Llega la policía y después de tomar tus\ndatos, preguntan si recordás la patente:</string>
+    <string name="act_10_1_1_1_2a">Era algo con HIV 666...</string>
+    <string name="act_10_1_1_1_2b">...¿DFG 678?</string>
+    <string name="act_10_1_1_1_2c">Ni idea.</string>
+
+    <string name="act_11_1_1_1_2_1">Flasheaste...\nNo era esa pero al menos lo intentaste.</string>
+    <string name="boton_intente">La intención es lo que cuenta</string>
+
+    <string name="act_11_1_1_1_2_2">¡Qué buena memoria!\nLo encontraron rápidamente.</string>
+    <string name="boton_genia">Soy una genia</string>
+
+    <string name="act_11_1_1_1_2_3">Ni un poquito de esfuerzo...\nPero está bien, no es tu culpa ser Dory.</string>
+    <string name="boton_dory">Tengo falta de memoria\nde corto plazo</string>
+
+    <string name="act_12_1_1_1_2">Luego de enterarte que la chica llegó\nal hospital y se encuentra mejor,\nseguís tu rumbo a casa.</string>
+
+    <string name="act_9_1_1_2">Otro testigo del accidente atiende\na la chica. Al verte, el conductor no\ntiene más remedio que quedarse.\nTe das cuenta de que está alcoholizado.</string>
+    <string name="act_9_1_1_2a">-Fua... ¿noche difícil?</string>
+    <string name="act_9_1_1_2b">-Sos un irresponsable flaco,\npodrías haber matado a alguien.</string>
+    <string name="act_9_1_1_2c">-Bueno... ¿quién tiene hambre?\n-y comés unas gomitas.</string>
+
+    <string name="act_10_1_1_2">Luego de que llega la policía y\nte enterás de que la chica llegó\nal hospital y se encuentra bien,\nseguís tu rumbo a casa.</string>
+
+    <string name="act_8_1_2">Uno de los conductores se escapa, llega\nla policía y después de tomar tus datos\nte preguntan si recordás la patente:</string>
+    <string name="act_8_1_2a">Era algo con HIV 666...</string>
+    <string name="act_8_1_2b">...¿DFG 678?</string>
+    <string name="act_8_1_2c">Ni idea.</string>
+
+    <string name="act_9_1_2_1">Flasheaste...\nNo era esa pero al menos lo intentaste.</string>
+
+    <string name="act_9_1_2_2">Qué buena memoria!\nLo encontraron rápidamente.</string>
+
+    <string name="act_9_1_2_3">Ni un poquito de esfuerzo...\nPero está bien, no es tu culpa ser Dory.</string>
+
+    <string name="act_10_1_2">Luego te enterás de que una chica resultó\ngravemente herida en ese accidente y\nse encuentra en terapia intensiva.</string>
+
     <!-- Nombre de la categoria Juego 5 [CHAR LIMIT=20] -->
     <string name="category_juego5">Juego 5</string>
 </resources>

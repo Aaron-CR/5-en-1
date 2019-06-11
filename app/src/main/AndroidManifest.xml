@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +47,36 @@
         <activity
             android:name=".Juego4.MenuJuego4Activity"
             android:label="@string/category_juego4" />
+        <activity android:name=".Juego4.Juego4Activity12_1_1_1_2"></activity>
+        <activity android:name=".Juego4.Juego4Activity13" />
+        <activity android:name=".Juego4.Juego4Activity11_1_1_1_2_3" />
+        <activity android:name=".Juego4.Juego4Activity11_1_1_1_2_2" />
+        <activity android:name=".Juego4.Juego4Activity11_1_1_1_2_1" />
+        <activity android:name=".Juego4.Juego4Activity11_1_1_1_1_2" />
+        <activity android:name=".Juego4.Juego4Activity11_1_1_1_1_1" />
+        <activity android:name=".Juego4.Juego4Activity10_1_2" />
+        <activity android:name=".Juego4.Juego4Activity10_1_1_2" />
+        <activity android:name=".Juego4.Juego4Activity10_1_1_1_2" />
+        <activity android:name=".Juego4.Juego4Activity10_1_1_1_1" />
+        <activity android:name=".Juego4.Juego4Activity9_1_2_3" />
+        <activity android:name=".Juego4.Juego4Activity9_1_2_2" />
+        <activity android:name=".Juego4.Juego4Activity9_1_2_1" />
+        <activity android:name=".Juego4.Juego4Activity8_1_1" />
+        <activity android:name=".Juego4.Juego4Activity9_1_1_2" />
+        <activity android:name=".Juego4.Juego4Activity9_1_1_1" />
+        <activity android:name=".Juego4.Juego4Activity8_1_3" />
+        <activity android:name=".Juego4.Juego4Activity8_1_2" />
+        <activity android:name=".Juego4.Juego4Activity7_3" />
+        <activity android:name=".Juego4.Juego4Activity7_2" />
+        <activity android:name=".Juego4.Juego4Activity7_1" />
+        <activity android:name=".Juego4.Juego4Activity5_1_1" />
+        <activity android:name=".Juego4.Juego4Activity6" />
+        <activity android:name=".Juego4.Juego4Activity4_1_2" />
+        <activity android:name=".Juego4.Juego4Activity4_1_1" />
+        <activity android:name=".Juego4.Juego4Activity3_2" />
+        <activity android:name=".Juego4.Juego4Activity3_1" />
+        <activity android:name=".Juego4.Juego4Activity2" />
+        <activity android:name=".Juego4.Juego4Activity1" />
         <activity
             android:name=".Juego5.MenuJuego5Activity"
             android:label="@string/category_juego5" />
