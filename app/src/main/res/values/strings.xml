@@ -14,6 +14,8 @@
     <!-- Nombre de la categoria Juego 1 [CHAR LIMIT=20] -->
     <string name="category_juego1">Juego 1</string>
 
+    <!--INICIO STRINGS JUEGO 1-->
+
     <!-- Nombre de la categoria Facil del Juego 1 [CHAR LIMIT=20] -->
     <string name="category_facil_juego1">Fácil</string>
 
@@ -29,14 +31,32 @@
     <!-- Nombre de la categoria Animales del Juego 1 [CHAR LIMIT=20] -->
     <string name="category_animales_juego1">Animales</string>
 
+
+    <!-- FIN STRINGS JUEGO1-->
+
+
+    <!-- INICIO STRINGS JUEGO 2-->
+
     <!-- Nombre de la categoria Juego 2 [CHAR LIMIT=20] -->
     <string name="category_juego2">Juego 2</string>
+    <string name="J2Score">Score</string>
+    <string name="J2NumPreg">Q1</string>
+    <string name="J2Time">Time</string>
+    <string name="J2Pregunta">Pregunta</string>
+    <string name="J2Respuesta1">Respuesta 1</string>
+    <string name="J2Respuesta2">Respuesta 2</string>
+    <string name="J2Respuesta3">Respuesta 3</string>
+    <string name="J2Respuesta4">Respuesta 4</string>
+
+    <!-- FIN STRINGS JUEGO 2 -->
 
     <!-- Nombre de la categoria Juego 3 [CHAR LIMIT=20] -->
     <string name="category_juego3">Juego 3</string>
 
     <!-- Nombre de la categoria Juego 4 [CHAR LIMIT=20] -->
     <string name="category_juego4">Juego 4</string>
+
+    <!-- INICIO STRINGS JUEGO 4 -->
 
     <string name="title">ELIGE TU PROPIA</string>
     <string name="titlea">AVENTURA MEDIOCRE</string>
@@ -134,6 +154,8 @@
     <string name="act_9_1_2_3">Ni un poquito de esfuerzo...\nPero está bien, no es tu culpa ser Dory.</string>
 
     <string name="act_10_1_2">Luego te enterás de que una chica resultó\ngravemente herida en ese accidente y\nse encuentra en terapia intensiva.</string>
+
+    <!-- FIN STRINGS JUEGO 4 -->
 
     <!-- Nombre de la categoria Juego 5 [CHAR LIMIT=20] -->
     <string name="category_juego5">Juego 5</string>
