@@ -1,46 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".Juego1.MenuJuego1Activity">
 
-    <Button
-        android:id="@+id/facil"
-        style="@style/Boton"
-        android:onClick="empezarCategoria"
-        android:text="@string/category_facil_juego1"
-        android:textColor="@android:color/black" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/medio"
-        style="@style/Boton"
-        android:onClick="empezarCategoria"
-        android:text="@string/category_medio_juego1"
-        android:textColor="@android:color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="18dp"
+            android:background="#00A5BB" />
 
-    <Button
-        android:id="@+id/dificil"
-        style="@style/Boton"
-        android:onClick="empezarCategoria"
-        android:text="@string/category_dificil_juego1"
-        android:textColor="@android:color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="105dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/paises"
-        style="@style/Boton"
-        android:onClick="empezarCategoria"
-        android:text="@string/category_paises_juego1"
-        android:textColor="@android:color/black" />
 
-    <Button
-        android:id="@+id/animales"
-        style="@style/Boton"
-        android:onClick="empezarCategoria"
-        android:text="@string/category_animales_juego1"
-        android:textColor="@android:color/black" />
+            <Button
+                android:id="@+id/facil"
+                style="@style/BotonCategoria"
+                android:layout_marginBottom="25dp"
+                android:drawableEnd="@drawable/ic_play"
+                android:onClick="empezarCategoria"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_facil_juego1" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/medio"
+                style="@style/BotonCategoria"
+                android:layout_marginBottom="25dp"
+                android:drawableEnd="@drawable/ic_play"
+                android:onClick="empezarCategoria"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_medio_juego1" />
+
+            <Button
+                android:id="@+id/dificil"
+                style="@style/BotonCategoria"
+                android:layout_marginBottom="25dp"
+                android:drawableEnd="@drawable/ic_play"
+                android:onClick="empezarCategoria"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_dificil_juego1" />
+
+            <Button
+                android:id="@+id/paises"
+                style="@style/BotonCategoria"
+                android:layout_marginBottom="25dp"
+                android:drawableEnd="@drawable/ic_play"
+                android:onClick="empezarCategoria"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_paises_juego1" />
+
+            <Button
+                android:id="@+id/animales"
+                style="@style/BotonCategoria"
+                android:drawableEnd="@drawable/ic_play"
+                android:onClick="empezarCategoria"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_animales_juego1" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

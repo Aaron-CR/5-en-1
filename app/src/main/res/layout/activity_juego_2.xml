@@ -109,28 +109,28 @@
 
         <Button
             android:id="@+id/respuestaBtn1"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:onClick="chequearRespuesta"
             android:text="@string/J2Respuesta1"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/respuestaBtn2"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:onClick="chequearRespuesta"
             android:text="@string/J2Respuesta2"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/respuestaBtn3"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:onClick="chequearRespuesta"
             android:text="@string/J2Respuesta3"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/respuestaBtn4"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:onClick="chequearRespuesta"
             android:text="@string/J2Respuesta4"
             android:textColor="@android:color/black" />

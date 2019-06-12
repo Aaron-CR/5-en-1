@@ -23,6 +23,8 @@ import java.util.Random;
 
 public class MainJuego1Activity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final Random RANDOM = new Random();
+    private static final int REC_CODE_SPEECH_INPUT = 1000;
     private ArrayList<String> CATEGORIA = new ArrayList<>();
     private String palabraParaEncontrar;
     private String categoriaString;
@@ -36,13 +38,39 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     private EditText palabraDigitadaParaValidar;
     private Button arriesgar, pasarPalabra;
     private ImageButton mBotonHablar;
-    private static final int REC_CODE_SPEECH_INPUT = 1000;
     private int cantidadPalabras;
     private int contador = 0;
     private int contadorAciertos = 0;
     private int puntaje = 0;
     private int categoria;
     private short vidas;
+
+    // (Entrada de voz)
+
+    public static String palabraAleatoria(ArrayList<String> CATEGORIA) {
+        int r = RANDOM.nextInt(CATEGORIA.size());
+
+        String p = String.valueOf(CATEGORIA.get(r));
+        if (CATEGORIA.size() != 1) {
+            CATEGORIA.remove(r);
+        }
+        return p;
+    }
+
+    public static String mezclarPalabra(String palabra) {
+        if (palabra != null && !"".equals(palabra)) {
+            char a[] = palabra.toCharArray();
+
+            for (int i = 0; i < a.length; i++) {
+                int j = RANDOM.nextInt(a.length);
+                char tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+            }
+            return new String(a);
+        }
+        return palabra;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,27 +82,27 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         if (categoria == 1) {
             vidas = 4;
             categoriaString = getString(R.string.category_facil_juego1);
-            CATEGORIA.add("Facil");
-            CATEGORIA.add("Facil");
-            CATEGORIA.add("Facil");
-            CATEGORIA.add("Facil");
-            CATEGORIA.add("Facil");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
         } else if (categoria == 2) {
             vidas = 3;
             categoriaString = getString(R.string.category_medio_juego1);
-            CATEGORIA.add("Medio");
-            CATEGORIA.add("Medio");
-            CATEGORIA.add("Medio");
-            CATEGORIA.add("Medio");
-            CATEGORIA.add("Medio");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
         } else if (categoria == 3) {
             vidas = 2;
             categoriaString = getString(R.string.category_dificil_juego1);
-            CATEGORIA.add("Dificil");
-            CATEGORIA.add("Dificil");
-            CATEGORIA.add("Dificil");
-            CATEGORIA.add("Dificil");
-            CATEGORIA.add("Dificil");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
         } else if (categoria == 4) {
             vidas = 5;
             categoriaString = getString(R.string.category_paises_juego1);
@@ -134,11 +162,11 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         // Establece un click listener en ese Botón.
         pasarPalabra.setOnClickListener(this);
 
-        textViewVidas.setText("V " + vidas);
+        textViewVidas.setText("" + vidas);
 
         textViewCategoria.setText(categoriaString);
 
-        textViewPuntaje.setText("P " + puntaje);
+        textViewPuntaje.setText("" + puntaje);
 
         mBotonHablar = findViewById(R.id.botonHablar);
 
@@ -153,8 +181,6 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         nuevaPalabra();
 
     }
-
-    // (Entrada de voz)
 
     private void iniciarEntradaVoz() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -202,7 +228,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             contador++;
         } else if (view == pasarPalabra) {
             puntaje -= 100;
-            textViewPuntaje.setText("P " + puntaje);
+            textViewPuntaje.setText("" + puntaje);
             nuevaPalabra();
             contador++;
         }
@@ -211,14 +237,13 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         }
     }
 
-
     private void verificar() {
         String p = palabraDigitadaParaValidar.getText().toString().toUpperCase().trim();
         if (palabraParaEncontrar.equals(p)) {
             Toast.makeText(this, "Correcto! Adivinaste la palabra: " + palabraParaEncontrar, Toast.LENGTH_SHORT).show();
             puntaje += 300;
             contadorAciertos++;
-            textViewPuntaje.setText("P " + puntaje);
+            textViewPuntaje.setText("" + puntaje);
             nuevaPalabra();
         } else {
             if (categoria == 3) {
@@ -230,8 +255,8 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             if (vidas == 0) {
                 abrirReultados();
             }
-            textViewPuntaje.setText("P " + puntaje);
-            textViewVidas.setText("V " + vidas);
+            textViewPuntaje.setText("" + puntaje);
+            textViewVidas.setText("" + vidas);
             nuevaPalabra();
         }
     }
@@ -252,32 +277,5 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         resultadosIntent.putExtra("CATEGORIA", categoria);
         // Inicia la Activity
         startActivity(resultadosIntent);
-    }
-
-    public static final Random RANDOM = new Random();
-
-    public static String palabraAleatoria(ArrayList<String> CATEGORIA) {
-        int r = RANDOM.nextInt(CATEGORIA.size());
-
-        String p = String.valueOf(CATEGORIA.get(r));
-        if (CATEGORIA.size() != 1) {
-            CATEGORIA.remove(r);
-        }
-        return p;
-    }
-
-    public static String mezclarPalabra(String palabra) {
-        if (palabra != null && !"".equals(palabra)) {
-            char a[] = palabra.toCharArray();
-
-            for (int i = 0; i < a.length; i++) {
-                int j = RANDOM.nextInt(a.length);
-                char tmp = a[i];
-                a[i] = a[j];
-                a[j] = tmp;
-            }
-            return new String(a);
-        }
-        return palabra;
     }
 }
