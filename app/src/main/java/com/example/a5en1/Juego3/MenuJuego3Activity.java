@@ -32,7 +32,6 @@ public class MenuJuego3Activity extends AppCompatActivity {
         // Establecer el contenido de la actividad para utilize el archivo activity_juego_3_menu.xml.
         setContentView(R.layout.activity_juego_3_menu);
 
-
         iv_11 = (ImageView) findViewById(R.id.iv_11);
         iv_12 = (ImageView) findViewById(R.id.iv_12);
         iv_13 = (ImageView) findViewById(R.id.iv_13);
