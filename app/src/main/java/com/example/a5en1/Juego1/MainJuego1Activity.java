@@ -1,11 +1,15 @@
 package com.example.a5en1.Juego1;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.speech.RecognizerIntent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,20 +18,25 @@ import android.widget.Toast;
 import com.example.a5en1.R;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 
 public class MainJuego1Activity extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList<String> CATEGORIA = new ArrayList<>();
     private String palabraParaEncontrar;
+    private String categoriaString;
     private View child;
     private RelativeLayout background;
     private LinearLayout teclado;
     private TextView palabraParaValidar;
     private TextView textViewPuntaje;
     private TextView textViewVidas;
+    private TextView textViewCategoria;
     private EditText palabraDigitadaParaValidar;
     private Button arriesgar, pasarPalabra;
+    private ImageButton mBotonHablar;
+    private static final int REC_CODE_SPEECH_INPUT = 1000;
     private int cantidadPalabras;
     private int contador = 0;
     private int contadorAciertos = 0;
@@ -44,6 +53,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
 
         if (categoria == 1) {
             vidas = 4;
+            categoriaString = getString(R.string.category_facil_juego1);
             CATEGORIA.add("Facil");
             CATEGORIA.add("Facil");
             CATEGORIA.add("Facil");
@@ -51,6 +61,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("Facil");
         } else if (categoria == 2) {
             vidas = 3;
+            categoriaString = getString(R.string.category_medio_juego1);
             CATEGORIA.add("Medio");
             CATEGORIA.add("Medio");
             CATEGORIA.add("Medio");
@@ -58,6 +69,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("Medio");
         } else if (categoria == 3) {
             vidas = 2;
+            categoriaString = getString(R.string.category_dificil_juego1);
             CATEGORIA.add("Dificil");
             CATEGORIA.add("Dificil");
             CATEGORIA.add("Dificil");
@@ -65,6 +77,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("Dificil");
         } else if (categoria == 4) {
             vidas = 5;
+            categoriaString = getString(R.string.category_paises_juego1);
             CATEGORIA.add("ALEMANIA");
             CATEGORIA.add("ARGENTINA");
             CATEGORIA.add("AUSTRALIA");
@@ -72,6 +85,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("BOLIVIA");
         } else if (categoria == 5) {
             vidas = 5;
+            categoriaString = getString(R.string.category_animales_juego1);
             CATEGORIA.add("RATA");
             CATEGORIA.add("ABEJORRO");
             CATEGORIA.add("ARDILLA");
@@ -105,6 +119,9 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         // Encuentra el TextView que muestra las vidas restantes.
         textViewVidas = findViewById(R.id.vidas);
 
+        // Encuentra el TextView que muestra la categoria.
+        textViewCategoria = findViewById(R.id.categoria);
+
         // Encuentra el Botón que se utiliza para arriesgar una palabra.
         arriesgar = findViewById(R.id.arriesgar);
 
@@ -119,11 +136,51 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
 
         textViewVidas.setText("V " + vidas);
 
+        textViewCategoria.setText(categoriaString);
+
         textViewPuntaje.setText("P " + puntaje);
+
+        mBotonHablar = findViewById(R.id.botonHablar);
+
+        mBotonHablar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iniciarEntradaVoz();
+            }
+        });
 
         // Ejecuta el método para generar una nueva palabra.
         nuevaPalabra();
 
+    }
+
+    // (Entrada de voz)
+
+    private void iniciarEntradaVoz() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "¿Que palabra es?");
+        try {
+            startActivityForResult(intent, REC_CODE_SPEECH_INPUT);
+        } catch (ActivityNotFoundException e) {
+
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REC_CODE_SPEECH_INPUT: {
+                if (resultCode == RESULT_OK && null != data) {
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    palabraDigitadaParaValidar.setText(result.get(0));
+                }
+                break;
+            }
+        }
     }
 
     // (Teclado)
