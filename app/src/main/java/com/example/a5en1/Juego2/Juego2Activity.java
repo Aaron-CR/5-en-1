@@ -21,6 +21,11 @@ public class Juego2Activity extends AppCompatActivity {
 
     private static final int QUIZ_COUNT = 10;
     private static final long TIEMPO_RESTANTE= 10000;
+    public final int DEFAULT_TOTAL_SCORE = 100;
+    public final int DEFAULT_DESCUENTO_SCORE = 15;
+
+    private static final String categoria= "Logica";
+    public int SCORE_HISTORICO=0;
 
     private TextView quizScore;
     private TextView quizTime;
@@ -49,7 +54,16 @@ public class Juego2Activity extends AppCompatActivity {
             {"¿Qué pasó ayer en España de 5 a 6?", "Una hora", "Un atentado", "Un terremoto", "Nada"},
             {"Si un niño nace en Argentina, pero a los dos años se va a vivir a Uruguay, ¿dónde le crecen los dientes?", "En la boca", "En Argentina", "En Uruguay", "En el camino"},
             {"Estas corriendo una carreras y pasas a la persona que está en 3er lugar ¿en qué lugar estás?", "En 3er lugar", "En 2do lugar", "En el 4to lugar", "En el 1er lugar"},
-            {"Si un tren eléctrico se mueve hacia el norte a 100km/h y sopla el viento hacia el oeste a 10km/h, hacia donde irá el humo", "Hacia ningún lado", "Hacia el oeste", "Hacia el norte", "Hacia el norte y el oeste"}
+            {"Si un tren eléctrico se mueve hacia el norte a 100km/h y sopla el viento hacia el oeste a 10km/h, hacia donde irá el humo", "Hacia ningún lado", "Hacia el oeste", "Hacia el norte", "Hacia el norte y el oeste"},
+            {"¿Qué es lo que siempre viene pero nunca llega", "el mañana", "la muerte", "la felicidad"},
+            {"¿Qué vive si lo alimentas y muere si le das de beber", "Fuego", "Viento", "Una persona", "Un robot"},
+            {"¿Qué se puede romper pero nunca es sostenido?", "una promesa", "el silecio", "la dieta", "el miedo"},
+            {"Si una persona no tiene todos los dedos en una mano, ¿cuántos dedos tiene?", "Diez", "Cinco", "Cuatro", "Seis"},
+            {"¿Qué se puede agarrar pero no es tirado?", "Un resfrío", "Una pelota", "Un sueño", "Una maldición"},
+            {"Si tenés un bowl con seis manzanas y agarrás cuatro, ¿cuántas tenés?", "cuatro", "seis", "diez", "ninguna"},
+            {"Un chico tira una pelota a 20 metros, y la pelota vuelve sola a él. ¿Cómo hizo?", "Tiro para arriba", "Reboto en una pared", "Fue a buscarla", "Es un bumerang"},
+            {"¿Cuántos meses tienen 28 días?", "Todos", "Uno", "Seis", "Cinco"},
+            {"¿Qué va de arriba a abajo pero se queda siempre en el mismo lugar?", "Las escaleras", "El termómetro", "La temperatura", "Las nubes"}
     };
 
     @Override
@@ -148,6 +162,7 @@ public class Juego2Activity extends AppCompatActivity {
         }.start();
     }
 
+    //Metodo que actualiza el timer en el view
     private void updateTimerText(){
         int minutos = (int) ((tiempoRestante / 1000) / 60);
         int segundos = (int) ((tiempoRestante / 1000) % 60);
@@ -155,6 +170,17 @@ public class Juego2Activity extends AppCompatActivity {
         String formatoTiempo= String.format(Locale.getDefault(), "%02d:%02d", minutos, segundos);
 
         quizTime.setText(formatoTiempo);
+    }
+
+    //Metodos que actualizan el puntaje en el view
+    private void sumaScore(){
+        score += DEFAULT_TOTAL_SCORE;
+        quizScore.setText(score);
+    }
+
+    private void restaScore(){
+        score -= DEFAULT_DESCUENTO_SCORE;
+        quizScore.setText(score);
     }
 
     //Metodo que evalúa si la respuesta es correcta
@@ -173,10 +199,13 @@ public class Juego2Activity extends AppCompatActivity {
             // Esta correcto
             tituloAlerta= "¡Correcto!";
             respuestaCorrectaCount++;
+            sumaScore();
+
 
         } else {
             // Esta mal
             tituloAlerta= "Respuesta incorrecta :(";
+            restaScore();
 
         }
 
@@ -189,6 +218,8 @@ public class Juego2Activity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 if(quizCount == QUIZ_COUNT) {
                     //Mostrar pantalla de resultados
+                    SCORE_HISTORICO= score;
+
                 } else {
                     quizCount++;
                     showNextQuiz();
