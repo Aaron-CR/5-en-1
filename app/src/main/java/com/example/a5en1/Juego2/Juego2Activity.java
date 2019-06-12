@@ -1,6 +1,7 @@
 package com.example.a5en1.Juego2;
 
 import android.content.DialogInterface;
+import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,11 +14,16 @@ import com.example.a5en1.R;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Locale;
 import java.util.Random;
 
 public class Juego2Activity extends AppCompatActivity {
 
     private static final int QUIZ_COUNT = 10;
+    private static final long TIEMPO_RESTANTE= 10000;
+
+    private TextView quizScore;
+    private TextView quizTime;
     private TextView countLabel;
     private TextView preguntaLabel;
     private Button respuestaBtn1;
@@ -28,6 +34,11 @@ public class Juego2Activity extends AppCompatActivity {
     private String respuestaCorrecta;
     private int respuestaCorrectaCount =0;
     private int quizCount = 1;
+    private int score =0;
+    private int time =0;
+
+    private CountDownTimer countDown;
+    private long tiempoRestante;
 
     ArrayList<ArrayList<String>> arregloQuiz = new ArrayList<>();
 
@@ -47,6 +58,8 @@ public class Juego2Activity extends AppCompatActivity {
         // Establecer el contenido de la actividad para utilize el archivo activity_juego_2.xmll.
         setContentView(R.layout.activity_juego_2);
 
+        quizScore = findViewById(R.id.quizScore);
+        quizTime = findViewById(R.id.quizTime);
         countLabel = findViewById(R.id.countLabel);
         preguntaLabel = findViewById(R.id.preguntaLabel);
         respuestaBtn1 = findViewById(R.id.respuestaBtn1);
@@ -56,10 +69,12 @@ public class Juego2Activity extends AppCompatActivity {
 
         // Crear arregloQuiz desde datosQuiz
 
+        ArrayList<String> arregloAux; //Arreglo auxiliar para poner los datos del quiz
+
         for (int i =0; i < datosQuiz.length; i++){
 
             //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
-            ArrayList<String> arregloAux = new ArrayList<>();
+            arregloAux = new ArrayList<>();
             arregloAux.add(datosQuiz[i][0]); //Pregunta
             arregloAux.add(datosQuiz[i][1]); //Respuesta correcta
             arregloAux.add(datosQuiz[i][2]); //OtraRespuesta 1
@@ -77,11 +92,15 @@ public class Juego2Activity extends AppCompatActivity {
 
     }
 
-
+    //Metodo que muestra la siguiente pregunta en la lista
     public void showNextQuiz(){
 
         // Actualiza quizCountLabel
         countLabel.setText("Pregunta" + quizCount);
+
+        // Pasarle tiempo al timer
+        tiempoRestante=TIEMPO_RESTANTE;
+        startTimer();
 
         //Generar un número aleatorio entre 0 y el tamaño del arregloQuiz - 1
         Random random = new Random();
@@ -110,7 +129,39 @@ public class Juego2Activity extends AppCompatActivity {
 
     }
 
+    //Metodo que inicia el timer del juego
+
+    public void startTimer(){
+        countDown = new CountDownTimer(tiempoRestante, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tiempoRestante=millisUntilFinished;
+                updateTimerText();
+            }
+
+            @Override
+            public void onFinish() {
+                tiempoRestante=0;
+                updateTimerText();
+                showNextQuiz();
+            }
+        }.start();
+    }
+
+    private void updateTimerText(){
+        int minutos = (int) ((tiempoRestante / 1000) / 60);
+        int segundos = (int) ((tiempoRestante / 1000) % 60);
+
+        String formatoTiempo= String.format(Locale.getDefault(), "%02d:%02d", minutos, segundos);
+
+        quizTime.setText(formatoTiempo);
+    }
+
+    //Metodo que evalúa si la respuesta es correcta
+
     public void chequearRespuesta(View view){
+
+        countDown.cancel();
 
         // Obtener el botón que fue apretado
         Button respuestaBtn = findViewById(view.getId());
@@ -149,6 +200,14 @@ public class Juego2Activity extends AppCompatActivity {
         constructor.show();
 
 
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        if (countDown != null){
+            countDown.cancel();
+        }
     }
 
 

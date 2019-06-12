@@ -8,26 +8,56 @@
     android:orientation="vertical"
     tools:context=".Juego2.Juego2Activity">
 
-    <TextView
-        android:id="@+id/countLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:gravity="center"
-        android:text="Q1"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:overScrollMode="ifContentScrolls"/>
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/quizScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/J2Score"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/countLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/J2NumPreg"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:overScrollMode="ifContentScrolls"/>
+
+        <TextView
+            android:id="@+id/quizTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="@string/J2Time"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/preguntaLabel"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:layout_marginTop="50dp"
-        android:text="Pregunta"
+        android:layout_marginTop="20dp"
+        android:text="@string/J2Pregunta"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
@@ -42,31 +72,32 @@
             android:id="@+id/respuestaBtn1"
             style="@style/Boton"
             android:onClick="chequearRespuesta"
-            android:text="Respuesta 1"
+            android:text="@string/J2Respuesta1"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/respuestaBtn2"
             style="@style/Boton"
             android:onClick="chequearRespuesta"
-            android:text="Respuesta 2"
+            android:text="@string/J2Respuesta2"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/respuestaBtn3"
             style="@style/Boton"
             android:onClick="chequearRespuesta"
-            android:text="Respuesta 3"
+            android:text="@string/J2Respuesta3"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/respuestaBtn4"
             style="@style/Boton"
             android:onClick="chequearRespuesta"
-            android:text="Respuesta 4"
+            android:text="@string/J2Respuesta4"
             android:textColor="@android:color/black" />
 
     </LinearLayout>
 
 
 </LinearLayout>
+
