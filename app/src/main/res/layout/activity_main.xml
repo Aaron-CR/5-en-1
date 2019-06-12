@@ -27,6 +27,9 @@
             <Button
                 android:id="@+id/button_jugar"
                 style="@style/BotonMenu"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
                 android:text="@string/opcion_jugar" />
 
             <Button

@@ -1,52 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".JugarActivity">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center" />
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="60dp">
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/button_juego_1"
-            style="@style/BotonMenu"
-            android:text="@string/category_juego1"
-            android:textColor="@android:color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="18dp"
+            android:background="#00A5BB" />
 
-        <Button
-            android:id="@+id/button_juego_2"
-            style="@style/BotonMenu"
-            android:text="@string/category_juego2"
-            android:textColor="@android:color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button_juego_3"
-            style="@style/BotonMenu"
-            android:text="@string/category_juego3"
-            android:textColor="@android:color/black" />
+            <Button
+                android:id="@+id/button_juego_1"
+                style="@style/BotonMenu"
 
-        <Button
-            android:id="@+id/button_juego_4"
-            style="@style/BotonMenu"
-            android:text="@string/category_juego4"
-            android:textColor="@android:color/black" />
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_juego1" />
 
-        <Button
-            android:id="@+id/button_juego_5"
-            style="@style/BotonMenu"
-            android:text="@string/category_juego5"
-            android:textColor="@android:color/black" />
+            <Button
+                android:id="@+id/button_juego_2"
+                style="@style/BotonMenu"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_juego2" />
 
-    </LinearLayout>
-</LinearLayout>
+            <Button
+                android:id="@+id/button_juego_3"
+                style="@style/BotonMenu"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_juego3" />
+
+            <Button
+                android:id="@+id/button_juego_4"
+                style="@style/BotonMenu"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_juego4" />
+
+            <Button
+                android:id="@+id/button_juego_5"
+                style="@style/BotonMenu"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="33dp"
+                android:paddingEnd="13dp"
+                android:text="@string/category_juego5" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

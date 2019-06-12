@@ -17,11 +17,23 @@
         <item name="android:layout_marginStart">30dp</item>
         <item name="android:layout_marginEnd">30dp</item>
         <item name="android:background">@drawable/button_menu</item>
-        <item name="android:drawableEnd">@drawable/ic_play</item>
-        <item name="android:drawablePadding">16dp</item>
         <item name="android:focusable">true</item>
-        <item name="android:paddingStart">33dp</item>
-        <item name="android:paddingEnd">13dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#00BCD5</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Estilo para los botones-->
+    <style name="BotonCategoria">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:background">@drawable/button_menu</item>
+        <item name="android:focusable">true</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">#00BCD5</item>
         <item name="android:textAllCaps">true</item>
@@ -35,7 +47,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:onClick">onTapped</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:background">@drawable/button_keyboard</item>
+        <item name="android:textColor">#F0F0F0</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginStart">3dp</item>
         <item name="android:layout_marginEnd">3dp</item>
