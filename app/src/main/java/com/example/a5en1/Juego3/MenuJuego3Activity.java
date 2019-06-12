@@ -30,7 +30,8 @@ public class MenuJuego3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Establecer el contenido de la actividad para utilize el archivo activity_juego_3_menu.xml.
-        setContentView(R.layout.activity_juego_3_menu);
+        //setContentView(R.layout.activity_juego_3_menu);
+        setContentView(R.layout.activity_main_juego3);
 
         iv_11 = (ImageView) findViewById(R.id.iv_11);
         iv_12 = (ImageView) findViewById(R.id.iv_12);
