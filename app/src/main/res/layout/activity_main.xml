@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="220dp"
-        android:layout_height="68dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp" />
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="60dp">
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/button_jugar"
-            style="@style/Boton"
-            android:text="@string/opcion_jugar"
-            android:textColor="@android:color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="18dp"
+            android:background="#00A5BB" />
 
-        <Button
-            android:id="@+id/button_estadisticas"
-            style="@style/Boton"
-            android:text="@string/opcion_estadisticas"
-            android:textColor="@android:color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="180dp"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button_ajustes"
-            style="@style/Boton"
-            android:text="@string/opcion_ajustes"
-            android:textColor="@android:color/black" />
+            <Button
+                android:id="@+id/button_jugar"
+                style="@style/BotonMenu"
+                android:text="@string/opcion_jugar" />
 
-    </LinearLayout>
-</LinearLayout>
+            <Button
+                android:id="@+id/button_estadisticas"
+                style="@style/BotonMenu"
+                android:text="@string/opcion_estadisticas" />
+
+            <Button
+                android:id="@+id/button_ajustes"
+                style="@style/BotonMenu"
+                android:text="@string/opcion_ajustes" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

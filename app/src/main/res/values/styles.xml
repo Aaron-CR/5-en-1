@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -9,17 +9,24 @@
     </style>
 
     <!-- Estilo para los botones-->
-    <style name="Boton">
+    <style name="BotonMenu">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_height">70dp</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginBottom">20dp</item>
-        <item name="android:layout_marginStart">35dp</item>
-        <item name="android:layout_marginEnd">35dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:background">@drawable/button_menu</item>
+        <item name="android:drawableEnd">@drawable/ic_play</item>
+        <item name="android:drawablePadding">16dp</item>
         <item name="android:focusable">true</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:paddingStart">33dp</item>
+        <item name="android:paddingEnd">13dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#00BCD5</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Estilo para los botones del teclado -->

@@ -20,31 +20,31 @@
 
         <Button
             android:id="@+id/button_juego_1"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:text="@string/category_juego1"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/button_juego_2"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:text="@string/category_juego2"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/button_juego_3"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:text="@string/category_juego3"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/button_juego_4"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:text="@string/category_juego4"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/button_juego_5"
-            style="@style/Boton"
+            style="@style/BotonMenu"
             android:text="@string/category_juego5"
             android:textColor="@android:color/black" />
 

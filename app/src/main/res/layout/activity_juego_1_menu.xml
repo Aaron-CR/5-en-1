@@ -10,35 +10,35 @@
 
     <Button
         android:id="@+id/facil"
-        style="@style/Boton"
+        style="@style/BotonMenu"
         android:onClick="empezarCategoria"
         android:text="@string/category_facil_juego1"
         android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/medio"
-        style="@style/Boton"
+        style="@style/BotonMenu"
         android:onClick="empezarCategoria"
         android:text="@string/category_medio_juego1"
         android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/dificil"
-        style="@style/Boton"
+        style="@style/BotonMenu"
         android:onClick="empezarCategoria"
         android:text="@string/category_dificil_juego1"
         android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/paises"
-        style="@style/Boton"
+        style="@style/BotonMenu"
         android:onClick="empezarCategoria"
         android:text="@string/category_paises_juego1"
         android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/animales"
-        style="@style/Boton"
+        style="@style/BotonMenu"
         android:onClick="empezarCategoria"
         android:text="@string/category_animales_juego1"
         android:textColor="@android:color/black" />
