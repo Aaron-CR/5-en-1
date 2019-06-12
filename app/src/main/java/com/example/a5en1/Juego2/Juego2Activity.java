@@ -24,7 +24,7 @@ public class Juego2Activity extends AppCompatActivity {
     public final int DEFAULT_TOTAL_SCORE = 100;
     public final int DEFAULT_DESCUENTO_SCORE = 15;
 
-    private static final String categoria= "Logica";
+    private static final String categoria= "Lógica";
     public int SCORE_HISTORICO=0;
 
     private TextView quizScore;
