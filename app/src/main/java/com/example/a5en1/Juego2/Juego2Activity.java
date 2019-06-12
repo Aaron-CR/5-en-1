@@ -41,6 +41,8 @@ public class Juego2Activity extends AppCompatActivity {
     private int quizCount = 1;
     private int score =0;
     private int time =0;
+    private String formatoScoreResta;
+    private String formatoScoreSuma;
 
     private CountDownTimer countDown;
     private long tiempoRestante;
@@ -55,7 +57,7 @@ public class Juego2Activity extends AppCompatActivity {
             {"Si un niño nace en Argentina, pero a los dos años se va a vivir a Uruguay, ¿dónde le crecen los dientes?", "En la boca", "En Argentina", "En Uruguay", "En el camino"},
             {"Estas corriendo una carreras y pasas a la persona que está en 3er lugar ¿en qué lugar estás?", "En 3er lugar", "En 2do lugar", "En el 4to lugar", "En el 1er lugar"},
             {"Si un tren eléctrico se mueve hacia el norte a 100km/h y sopla el viento hacia el oeste a 10km/h, hacia donde irá el humo", "Hacia ningún lado", "Hacia el oeste", "Hacia el norte", "Hacia el norte y el oeste"},
-            {"¿Qué es lo que siempre viene pero nunca llega", "el mañana", "la muerte", "la felicidad"},
+            {"¿Qué es lo que siempre viene pero nunca llega?", "el mañana", "la muerte", "la felicidad", "la tarde"},
             {"¿Qué vive si lo alimentas y muere si le das de beber", "Fuego", "Viento", "Una persona", "Un robot"},
             {"¿Qué se puede romper pero nunca es sostenido?", "una promesa", "el silecio", "la dieta", "el miedo"},
             {"Si una persona no tiene todos los dedos en una mano, ¿cuántos dedos tiene?", "Diez", "Cinco", "Cuatro", "Seis"},
@@ -80,6 +82,8 @@ public class Juego2Activity extends AppCompatActivity {
         respuestaBtn2 = findViewById(R.id.respuestaBtn2);
         respuestaBtn3 = findViewById(R.id.respuestaBtn3);
         respuestaBtn4 = findViewById(R.id.respuestaBtn4);
+
+        quizScore.setText(String.format(Locale.getDefault(), "%d", score));
 
         // Crear arregloQuiz desde datosQuiz
 
@@ -110,7 +114,7 @@ public class Juego2Activity extends AppCompatActivity {
     public void showNextQuiz(){
 
         // Actualiza quizCountLabel
-        countLabel.setText("Pregunta" + quizCount);
+        countLabel.setText("Pregunta " + quizCount);
 
         // Pasarle tiempo al timer
         tiempoRestante=TIEMPO_RESTANTE;
@@ -157,6 +161,7 @@ public class Juego2Activity extends AppCompatActivity {
             public void onFinish() {
                 tiempoRestante=0;
                 updateTimerText();
+                restaScore();
                 showNextQuiz();
             }
         }.start();
@@ -167,20 +172,22 @@ public class Juego2Activity extends AppCompatActivity {
         int minutos = (int) ((tiempoRestante / 1000) / 60);
         int segundos = (int) ((tiempoRestante / 1000) % 60);
 
-        String formatoTiempo= String.format(Locale.getDefault(), "%02d:%02d", minutos, segundos);
+        String formatoTiempo= String.format(Locale.getDefault(), "%02d", segundos);
 
         quizTime.setText(formatoTiempo);
     }
 
     //Metodos que actualizan el puntaje en el view
-    private void sumaScore(){
-        score += DEFAULT_TOTAL_SCORE;
-        quizScore.setText(score);
+    public void sumaScore(){
+        score = score + DEFAULT_TOTAL_SCORE;
+        formatoScoreSuma= String.format(Locale.getDefault(), "%d", score);
+        quizScore.setText(formatoScoreSuma);
     }
 
-    private void restaScore(){
-        score -= DEFAULT_DESCUENTO_SCORE;
-        quizScore.setText(score);
+    public void restaScore(){
+        score = score - DEFAULT_DESCUENTO_SCORE;
+        formatoScoreResta= String.format(Locale.getDefault(), "%d", score);
+        quizScore.setText(formatoScoreResta);
     }
 
     //Metodo que evalúa si la respuesta es correcta
@@ -197,15 +204,16 @@ public class Juego2Activity extends AppCompatActivity {
 
         if (textoBtn.equals(respuestaCorrecta)){
             // Esta correcto
-            tituloAlerta= "¡Correcto!";
-            respuestaCorrectaCount++;
             sumaScore();
 
+            tituloAlerta= "¡Correcto!";
+            respuestaCorrectaCount++;
 
         } else {
             // Esta mal
-            tituloAlerta= "Respuesta incorrecta :(";
             restaScore();
+
+            tituloAlerta= "Respuesta incorrecta :(";
 
         }
 
@@ -218,8 +226,6 @@ public class Juego2Activity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 if(quizCount == QUIZ_COUNT) {
                     //Mostrar pantalla de resultados
-                    SCORE_HISTORICO= score;
-
                 } else {
                     quizCount++;
                     showNextQuiz();
@@ -230,6 +236,7 @@ public class Juego2Activity extends AppCompatActivity {
         constructor.setCancelable(false);
         constructor.show();
 
+        SCORE_HISTORICO= score;
 
     }
 
