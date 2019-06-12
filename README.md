@@ -36,11 +36,11 @@ Usamos [git](https://git-scm.com/) para el versionado.
 ## Autores
 
 _Integrantes del Grupo_
-* **Castro Aaron** - *Rol* - [Aaron-CR](https://github.com/Aaron-CR)
-* **Salcedo Florencia** - *Rol* - [Florsalcedowd](https://github.com/Florsalcedowd)
-* **Lara Sofía** - *Rol* - [kanra147](https://github.com/kanra147)
-* **Dohmen Sabrina** - *Rol* - [Medveditzah](https://github.com/Medveditzah)
-* **Caraccioli Agustin** - *Rol* - [AthosWolf](https://github.com/AthosWolf)
+* **Castro Aaron** - *Product Owner - Scrum Master - Desarrollador* - [Aaron-CR](https://github.com/Aaron-CR)
+* **Salcedo Florencia** - *Product Owner - Scrum Master - Desarrollador* - [Florsalcedowd](https://github.com/Florsalcedowd)
+* **Lara Sofía** - *Product Owner - Scrum Master - Desarrollador* - [kanra147](https://github.com/kanra147)
+* **Dohmen Sabrina** - *Product Owner - Scrum Master - Desarrollador* - [Medveditzah](https://github.com/Medveditzah)
+* **Caraccioli Agustin** - *Product Owner - Scrum Master - Desarrollador* - [AthosWolf](https://github.com/AthosWolf)
 
 
 
