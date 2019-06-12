@@ -42,6 +42,8 @@
     <string name="J2Score">Score</string>
     <string name="J2NumPreg">Q1</string>
     <string name="J2Time">Time</string>
+    <string name="J2Tiempo">Tiempo</string>
+    <string name="J2Puntaje">Puntaje</string>
     <string name="J2Pregunta">Pregunta</string>
     <string name="J2Respuesta1">Respuesta 1</string>
     <string name="J2Respuesta2">Respuesta 2</string>
