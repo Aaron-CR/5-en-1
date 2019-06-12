@@ -137,4 +137,8 @@
 
     <!-- Nombre de la categoria Juego 5 [CHAR LIMIT=20] -->
     <string name="category_juego5">Juego 5</string>
+
+    <!-- Strings juego 3 -->
+    <string name="images">Imagenes</string>
+    <string name="text">Busca las Parejas</string>
 </resources>
