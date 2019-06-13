@@ -19,8 +19,8 @@
 
             <ImageButton
                 android:id="@+id/image_categoria"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@color/colorPrimaryDark"
                 android:onClick="backButton"
                 android:src="@drawable/ic_back_button" />
@@ -85,7 +85,7 @@
                 android:id="@+id/text_puntaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
                 android:text="Puntaje"
                 android:textAllCaps="true"
                 android:textColor="#F0F0F0"

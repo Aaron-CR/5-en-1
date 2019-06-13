@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.a5en1.MainActivity;
@@ -25,10 +26,10 @@ public class ResultadosJuego1Activity extends AppCompatActivity {
         int cantidadPalabras = getIntent().getIntExtra("CANTIDAD_PALABRAS", 0);
         int puntajeTotal = getIntent().getIntExtra("PUNTAJE_TOTAL", 0);
         resultado.setText(aciertos + " / " + cantidadPalabras);
-        textPuntajeTotal.setText("Total Score: " + puntajeTotal);
+        textPuntajeTotal.setText("Puntaje Total: " + puntajeTotal);
 
         /** Intent para volver a jugar */
-        TextView repetir = findViewById(R.id.button_jugar_otra_vez);
+        ImageButton repetir = findViewById(R.id.button_repetir);
         // Establece un click listener en ese View.
         repetir.setOnClickListener(new View.OnClickListener() {
             // El código en este método se ejecutará cuando se haga clic en el boton "button_jugar_otra_vez".
@@ -44,7 +45,7 @@ public class ResultadosJuego1Activity extends AppCompatActivity {
         });
 
         /** Intent para abrir el Menu de las categorias */
-        TextView menuCategorias = findViewById(R.id.button_categorias);
+        ImageButton menuCategorias = findViewById(R.id.button_menu);
         // Establece un click listener en ese View.
         menuCategorias.setOnClickListener(new View.OnClickListener() {
             // El código en este método se ejecutará cuando se haga clic en el boton "button_categorias".
@@ -58,7 +59,7 @@ public class ResultadosJuego1Activity extends AppCompatActivity {
         });
 
         /** Intent para abrir el Menu principal */
-        TextView menuPrincipal = findViewById(R.id.button_menu);
+        ImageButton menuPrincipal = findViewById(R.id.button_home);
         // Establece un click listener en ese View.
         menuPrincipal.setOnClickListener(new View.OnClickListener() {
             // El código en este método se ejecutará cuando se haga clic en el boton MenuJuego1Activity.
