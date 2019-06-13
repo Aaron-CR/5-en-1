@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.a5en1.JugarActivity;
+import com.example.a5en1.MainActivity;
 import com.example.a5en1.R;
 
 public class MenuJuego1Activity extends AppCompatActivity {
@@ -38,5 +40,14 @@ public class MenuJuego1Activity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainJuego1Activity.class);
         intent.putExtra("CATEGORIA", categoria);
         startActivity(intent);
+    }
+
+    // Metodo del boton "back"
+    @Override
+    public void onBackPressed() {
+        // Crea un nuevo Intent para abrir {@link MenuJuego1Activity}
+        Intent menuCategoriasIntent = new Intent(MenuJuego1Activity.this, JugarActivity.class);
+        // Inicia la nueva Activity
+        startActivity(menuCategoriasIntent);
     }
 }

@@ -14,9 +14,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_gravity="center"
             android:layout_marginBottom="18dp"
-            android:background="#00A5BB" />
+            android:background="#00A5BB"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/colorPrimaryDark"
+                android:src="@drawable/ic_juego_1" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,18 +68,20 @@
                 android:id="@+id/paises"
                 style="@style/BotonCategoria"
                 android:layout_marginBottom="25dp"
+                android:drawableStart="@drawable/ic_juego_1_paises"
                 android:drawableEnd="@drawable/ic_play"
                 android:onClick="empezarCategoria"
-                android:paddingStart="33dp"
+                android:paddingStart="13dp"
                 android:paddingEnd="13dp"
                 android:text="@string/category_paises_juego1" />
 
             <Button
                 android:id="@+id/animales"
                 style="@style/BotonCategoria"
+                android:drawableStart="@drawable/ic_juego_1_animales"
                 android:drawableEnd="@drawable/ic_play"
                 android:onClick="empezarCategoria"
-                android:paddingStart="33dp"
+                android:paddingStart="13dp"
                 android:paddingEnd="13dp"
                 android:text="@string/category_animales_juego1" />
 

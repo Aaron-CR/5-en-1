@@ -90,5 +90,15 @@ public class JugarActivity extends AppCompatActivity {
                 startActivity(juego5Intent);
             }
         });
+
+    }
+
+    // Metodo del boton "back"
+    @Override
+    public void onBackPressed() {
+        // Crea un nuevo Intent para abrir {@link MenuJuego1Activity}
+        Intent menuCategoriasIntent = new Intent(JugarActivity.this, MainActivity.class);
+        // Inicia la nueva Activity
+        startActivity(menuCategoriasIntent);
     }
 }

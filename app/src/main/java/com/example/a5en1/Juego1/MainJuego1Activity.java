@@ -45,32 +45,6 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     private int categoria;
     private short vidas;
 
-    // (Entrada de voz)
-
-    public static String palabraAleatoria(ArrayList<String> CATEGORIA) {
-        int r = RANDOM.nextInt(CATEGORIA.size());
-
-        String p = String.valueOf(CATEGORIA.get(r));
-        if (CATEGORIA.size() != 1) {
-            CATEGORIA.remove(r);
-        }
-        return p;
-    }
-
-    public static String mezclarPalabra(String palabra) {
-        if (palabra != null && !"".equals(palabra)) {
-            char a[] = palabra.toCharArray();
-
-            for (int i = 0; i < a.length; i++) {
-                int j = RANDOM.nextInt(a.length);
-                char tmp = a[i];
-                a[i] = a[j];
-                a[j] = tmp;
-            }
-            return new String(a);
-        }
-        return palabra;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,6 +156,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
 
     }
 
+    // (Speech to Text)
     private void iniciarEntradaVoz() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -194,6 +169,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         }
     }
 
+    // (Speech to Text)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -261,6 +237,31 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         }
     }
 
+    public static String palabraAleatoria(ArrayList<String> CATEGORIA) {
+        int r = RANDOM.nextInt(CATEGORIA.size());
+
+        String p = String.valueOf(CATEGORIA.get(r));
+        if (CATEGORIA.size() != 1) {
+            CATEGORIA.remove(r);
+        }
+        return p;
+    }
+
+    public static String mezclarPalabra(String palabra) {
+        if (palabra != null && !"".equals(palabra)) {
+            char a[] = palabra.toCharArray();
+
+            for (int i = 0; i < a.length; i++) {
+                int j = RANDOM.nextInt(a.length);
+                char tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+            }
+            return new String(a);
+        }
+        return palabra;
+    }
+
     private void nuevaPalabra() {
         palabraParaEncontrar = palabraAleatoria(CATEGORIA);
         String palabraMezclada = mezclarPalabra(palabraParaEncontrar);
@@ -278,4 +279,17 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         // Inicia la Activity
         startActivity(resultadosIntent);
     }
+
+    // Metodo del boton "back"
+    @Override
+    public void onBackPressed() {
+    }
+
+    public void backButton(View view) {
+        // Crea un nuevo Intent para abrir {@link MenuJuego1Activity}
+        Intent menuCategoriasIntent = new Intent(MainJuego1Activity.this, MenuJuego1Activity.class);
+        // Inicia la nueva Activity
+        startActivity(menuCategoriasIntent);
+    }
+
 }
