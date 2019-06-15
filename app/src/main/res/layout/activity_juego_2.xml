@@ -109,31 +109,31 @@
 
         <Button
             android:id="@+id/respuestaBtn1"
-            style="@style/BotonMenu"
+            style="@style/BotonCatJuego2"
             android:onClick="chequearRespuesta"
             android:text="@string/J2Respuesta1"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/respuestaBtn2"
-            style="@style/BotonMenu"
+            style="@style/BotonCatJuego2"
             android:onClick="chequearRespuesta"
             android:text="@string/J2Respuesta2"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/respuestaBtn3"
-            style="@style/BotonMenu"
+            style="@style/BotonCatJuego2"
             android:onClick="chequearRespuesta"
             android:text="@string/J2Respuesta3"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/respuestaBtn4"
-            style="@style/BotonMenu"
+            style="@style/BotonCatJuego2"
             android:onClick="chequearRespuesta"
             android:text="@string/J2Respuesta4"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 
