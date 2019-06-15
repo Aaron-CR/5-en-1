@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.example.a5en1.R;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Locale;
 import java.util.Random;
@@ -24,7 +23,6 @@ public class Juego2Activity extends AppCompatActivity {
     public final int DEFAULT_TOTAL_SCORE = 100;
     public final int DEFAULT_DESCUENTO_SCORE = 15;
 
-    private static final String categoria= "Lógica";
     public int SCORE_HISTORICO=0;
 
     private TextView quizScore;
@@ -43,13 +41,15 @@ public class Juego2Activity extends AppCompatActivity {
     private int time =0;
     private String formatoScoreResta;
     private String formatoScoreSuma;
+    private int categoria;
+    private String nombreCategoria;
 
     private CountDownTimer countDown;
     private long tiempoRestante;
 
     ArrayList<ArrayList<String>> arregloQuiz = new ArrayList<>();
 
-    String[][] datosQuiz = {
+    String[][] datosQuizLogica = {
             // {"Pregunta", "Respuesta Correcta", "OtraRespuesta1", "OtraRespuesta2", "OtraRespuesta3"}
             {"De qué color son las 'cajas negras' de los aviones", "Naranjas", "Negras", "Rojas", "Blancas"},
             {"Si en una pecera hay 12 peces y 5 de ellos se ahogan, ¿cuántos peces quedan?", "12", "5", "17", "Ninguno"},
@@ -68,11 +68,89 @@ public class Juego2Activity extends AppCompatActivity {
             {"¿Qué va de arriba a abajo pero se queda siempre en el mismo lugar?", "Las escaleras", "El termómetro", "La temperatura", "Las nubes"}
     };
 
+    String[][] datosQuizCiencia = {
+            // {"Pregunta", "Respuesta Correcta", "OtraRespuesta1", "OtraRespuesta2", "OtraRespuesta3"}
+            {"¿Quién posee la fuerza de mordida más fuerte del reino animal?", "Cocodrilo", "Serpiente", "León", "Oso"},
+            {"¿Dónde están los meniscos?", "En las rodillas", "En el pie", "En los codos", "En el coxis"},
+            {"¿En qué parte del cuerpo se encuentra la piel más gruesa?", "Espalda", "Brazos", "Piernas", "Cabeza"},
+            {"¿A qué le teme una persona que sufre de turofobia?", "Al queso", "A la leche", "A la manteca", "Al yogurt"},
+            {"¿Cuánto tarda la luz en viajar desde el Sol hasta la superficie terrestre?", "8' 17''", "9' 16''", "8' 24''", "9' 36''"},
+            {"¿Cuál de las siguientes enfermedades ataca al higado?", "Hepatitis", "Diabetes", "Apendicitis", "Peritonitis"},
+            {"¿Qué cambio de estado ocurre en la sublimación?", "Sólido --> gaseoso", "sólido --> líquido", "gaseoso --> sólido", "líquido --> gaseoso"},
+            {"¿De dónde se extrae la sacarina?", "Del carbón", "Del azúcar", "Del azufre", "De la sal"},
+            {"¿Cuántas caras tiene un icosaedro?", "20", "16", "19", "24"},
+            {"¿Qué es el calostro?", "La primera leche materna", "Una hormona", "Una parte del intestino grueso", "Un hueso"},
+            {"¿Qué estudia la icitología?", "Los peces", "Los insectos", "Las erupciones cutáneas", "Las rocas"},
+            {"¿Cómo se llama el nivel más alto de la marea?", "Pleamar", "Bajamar", "Repunte", "Estacionario"},
+            {"¿Para qué sirve la prueba del carbono 14?", "Deducir la edad de un material", "Calcular los electrones de un átomo", "Calcular los quilates del oro", "Galvanizar un metal"},
+            {"¿Cuánto km2 tiene el desierto del Sahara?", "9065000km2", "9650000km2", "9560000km2", "9056000km2"},
+            {"¿Cuantas veces en promedio se reemplaza la piel humana a lo largo de la vida?", "900", "100", "750", "Ninguna"},
+    };
+
+    String[][] datosQuizEntretenimiento = {
+            // {"Pregunta", "Respuesta Correcta", "OtraRespuesta1", "OtraRespuesta2", "OtraRespuesta3"}
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+    };
+
+    String[][] datosQuizHistoria = {
+            // {"Pregunta", "Respuesta Correcta", "OtraRespuesta1", "OtraRespuesta2", "OtraRespuesta3"}
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+    };
+
+    String[][] datosQuizGeo = {
+            // {"Pregunta", "Respuesta Correcta", "OtraRespuesta1", "OtraRespuesta2", "OtraRespuesta3"}
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+            {"¿?", "", "", "", ""},
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Establecer el contenido de la actividad para utilize el archivo activity_juego_2.xmll.
         setContentView(R.layout.activity_juego_2);
+
+        categoria= getIntent().getIntExtra("Categoria", 0);
 
         quizScore = findViewById(R.id.quizScore);
         quizTime = findViewById(R.id.quizTime);
@@ -85,27 +163,147 @@ public class Juego2Activity extends AppCompatActivity {
 
         quizScore.setText(String.format(Locale.getDefault(), "%d", score));
 
-        // Crear arregloQuiz desde datosQuiz
+        // Crear arreglo auxiliar para cada pregunta desde datos locales
 
         ArrayList<String> arregloAux; //Arreglo auxiliar para poner los datos del quiz
 
-        for (int i =0; i < datosQuiz.length; i++){
+        //Se llena el arreglo auxiliar segun la categoría elegida
+        if (categoria==1){
 
-            //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
-            arregloAux = new ArrayList<>();
-            arregloAux.add(datosQuiz[i][0]); //Pregunta
-            arregloAux.add(datosQuiz[i][1]); //Respuesta correcta
-            arregloAux.add(datosQuiz[i][2]); //OtraRespuesta 1
-            arregloAux.add(datosQuiz[i][3]); //OtraRespuesta 2
-            arregloAux.add(datosQuiz[i][4]); //OtraRespuesta 3
+            for (String[] strings : datosQuizLogica) {
 
-            // Agrega arregloAux a arregloQuiz
+                //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
+                arregloAux = new ArrayList<>();
+                arregloAux.add(strings[0]); //Pregunta
+                arregloAux.add(strings[1]); //Respuesta correcta
+                arregloAux.add(strings[2]); //OtraRespuesta 1
+                arregloAux.add(strings[3]); //OtraRespuesta 2
+                arregloAux.add(strings[4]); //OtraRespuesta 3
 
-            arregloQuiz.add(arregloAux);
+                // Agrega arregloAux a arregloQuiz
+
+                arregloQuiz.add(arregloAux);
+
+            }
+
+            showNextQuiz();
+
+        } else if (categoria==2){
+
+            for (String[] strings : datosQuizCiencia) {
+
+                //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
+                arregloAux = new ArrayList<>();
+                arregloAux.add(strings[0]); //Pregunta
+                arregloAux.add(strings[1]); //Respuesta correcta
+                arregloAux.add(strings[2]); //OtraRespuesta 1
+                arregloAux.add(strings[3]); //OtraRespuesta 2
+                arregloAux.add(strings[4]); //OtraRespuesta 3
+
+                // Agrega arregloAux a arregloQuiz
+
+                arregloQuiz.add(arregloAux);
+
+            }
+
+            showNextQuiz();
+
+        } else if (categoria==3){
+
+            for (String[] strings : datosQuizEntretenimiento) {
+
+                //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
+                arregloAux = new ArrayList<>();
+                arregloAux.add(strings[0]); //Pregunta
+                arregloAux.add(strings[1]); //Respuesta correcta
+                arregloAux.add(strings[2]); //OtraRespuesta 1
+                arregloAux.add(strings[3]); //OtraRespuesta 2
+                arregloAux.add(strings[4]); //OtraRespuesta 3
+
+                // Agrega arregloAux a arregloQuiz
+
+                arregloQuiz.add(arregloAux);
+
+            }
+
+            showNextQuiz();
+
+        } else if (categoria==4){
+
+            for (String[] strings : datosQuizHistoria) {
+
+                //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
+                arregloAux = new ArrayList<>();
+                arregloAux.add(strings[0]); //Pregunta
+                arregloAux.add(strings[1]); //Respuesta correcta
+                arregloAux.add(strings[2]); //OtraRespuesta 1
+                arregloAux.add(strings[3]); //OtraRespuesta 2
+                arregloAux.add(strings[4]); //OtraRespuesta 3
+
+                // Agrega arregloAux a arregloQuiz
+
+                arregloQuiz.add(arregloAux);
+
+            }
+
+            showNextQuiz();
+
+        } else if (categoria==5){
+
+            for (String[] strings : datosQuizGeo) {
+
+                //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
+                arregloAux = new ArrayList<>();
+                arregloAux.add(strings[0]); //Pregunta
+                arregloAux.add(strings[1]); //Respuesta correcta
+                arregloAux.add(strings[2]); //OtraRespuesta 1
+                arregloAux.add(strings[3]); //OtraRespuesta 2
+                arregloAux.add(strings[4]); //OtraRespuesta 3
+
+                // Agrega arregloAux a arregloQuiz
+
+                arregloQuiz.add(arregloAux);
+
+            }
+
+            showNextQuiz();
+
+        } else if (categoria==6){
+            //Matriz auxiliar que añade los datos de todas las categorías
+            ArrayList<String[]> aleatorio = new ArrayList<>();
+
+            //Llena el arraylist con los datos de todas las categorías
+            for (int i= 0; i < datosQuizLogica.length; i++){
+                aleatorio.add(datosQuizLogica[i]);
+                aleatorio.add(datosQuizCiencia[i]);
+                aleatorio.add(datosQuizEntretenimiento[i]);
+                aleatorio.add(datosQuizHistoria[i]);
+                aleatorio.add(datosQuizCiencia[i]);
+            }
+
+
+            for (int i =0; i < datosQuizGeo.length; i++){
+
+                //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
+                arregloAux = new ArrayList<>();
+                arregloAux.add(aleatorio.get(i)[0]); //Pregunta
+                arregloAux.add(aleatorio.get(i)[1]); //Respuesta correcta
+                arregloAux.add(aleatorio.get(i)[2]); //OtraRespuesta 1
+                arregloAux.add(aleatorio.get(i)[3]); //OtraRespuesta 2
+                arregloAux.add(aleatorio.get(i)[4]); //OtraRespuesta 3
+
+                // Agrega arregloAux a arregloQuiz
+
+                arregloQuiz.add(arregloAux);
+
+            }
+
+            showNextQuiz();
+
+
 
         }
 
-        showNextQuiz();
 
 
     }
@@ -113,12 +311,12 @@ public class Juego2Activity extends AppCompatActivity {
     //Metodo que muestra la siguiente pregunta en la lista
     public void showNextQuiz(){
 
-        // Actualiza quizCountLabel
-        countLabel.setText("Pregunta " + quizCount);
-
-        // Pasarle tiempo al timer
+       // Pasarle tiempo al timer
         tiempoRestante=TIEMPO_RESTANTE;
         startTimer();
+
+        // Actualiza countLabel
+        countLabel.setText("Pregunta " + quizCount);
 
         //Generar un número aleatorio entre 0 y el tamaño del arregloQuiz - 1
         Random random = new Random();
@@ -240,6 +438,11 @@ public class Juego2Activity extends AppCompatActivity {
 
     }
 
+
+
+
+
+    //Metodo que destruye el cronómetro
     @Override
     protected void onDestroy(){
         super.onDestroy();
