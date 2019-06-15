@@ -49,6 +49,12 @@
     <string name="J2Respuesta2">Respuesta 2</string>
     <string name="J2Respuesta3">Respuesta 3</string>
     <string name="J2Respuesta4">Respuesta 4</string>
+    <string name="logica">Lógica</string>
+    <string name="ciencia">Ciencia</string>
+    <string name="entretenimiento">Entretenimiento</string>
+    <string name="historia">Historia</string>
+    <string name="geografia">Geografía</string>
+    <string name="aleatorio">Aleatorio</string>
 
     <!-- FIN STRINGS JUEGO 2 -->
 
