@@ -1,6 +1,8 @@
 package com.example.a5en1.Juego2;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.speech.RecognizerIntent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +45,7 @@ public class Juego2Activity extends AppCompatActivity {
     private String formatoScoreSuma;
     private int categoria;
     private String nombreCategoria;
+    private String mensajeResultado;
 
     private CountDownTimer countDown;
     private long tiempoRestante;
@@ -169,7 +172,7 @@ public class Juego2Activity extends AppCompatActivity {
 
         //Se llena el arreglo auxiliar segun la categoría elegida
         if (categoria==1){
-
+            nombreCategoria="Logica";
             for (String[] strings : datosQuizLogica) {
 
                 //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
@@ -190,6 +193,7 @@ public class Juego2Activity extends AppCompatActivity {
 
         } else if (categoria==2){
 
+            nombreCategoria="Ciencia";
             for (String[] strings : datosQuizCiencia) {
 
                 //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
@@ -210,6 +214,7 @@ public class Juego2Activity extends AppCompatActivity {
 
         } else if (categoria==3){
 
+            nombreCategoria="Entretenimiento";
             for (String[] strings : datosQuizEntretenimiento) {
 
                 //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
@@ -230,6 +235,7 @@ public class Juego2Activity extends AppCompatActivity {
 
         } else if (categoria==4){
 
+            nombreCategoria="Historia";
             for (String[] strings : datosQuizHistoria) {
 
                 //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
@@ -250,6 +256,7 @@ public class Juego2Activity extends AppCompatActivity {
 
         } else if (categoria==5){
 
+            nombreCategoria="Geografía";
             for (String[] strings : datosQuizGeo) {
 
                 //Se prepara el arreglo a través de un arreglo auxiliar donde se van cargando los datos de datosQuiz
@@ -269,6 +276,9 @@ public class Juego2Activity extends AppCompatActivity {
             showNextQuiz();
 
         } else if (categoria==6){
+
+            nombreCategoria="Aleatorio";
+
             //Matriz auxiliar que añade los datos de todas las categorías
             ArrayList<String[]> aleatorio = new ArrayList<>();
 
@@ -415,6 +425,7 @@ public class Juego2Activity extends AppCompatActivity {
 
         }
 
+
         // Crear ventana de diálogo
         AlertDialog.Builder constructor = new AlertDialog.Builder(this);
         constructor.setTitle(tituloAlerta);
@@ -423,7 +434,11 @@ public class Juego2Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if(quizCount == QUIZ_COUNT) {
-                    //Mostrar pantalla de resultados
+
+
+
+                    mostrarResult();
+
                 } else {
                     quizCount++;
                     showNextQuiz();
@@ -434,12 +449,20 @@ public class Juego2Activity extends AppCompatActivity {
         constructor.setCancelable(false);
         constructor.show();
 
-        SCORE_HISTORICO= score;
-
     }
 
 
-
+    private void mostrarResult(){
+        // Crea un Intent para abrir {@link ResultadosJuego1Activity}
+        Intent resultIntent = new Intent(Juego2Activity.this, ResultadosJuego2Activity.class);
+        resultIntent.putExtra("Respuestas correctas", respuestaCorrectaCount);
+        resultIntent.putExtra("Cantidad preguntas", QUIZ_COUNT);
+        resultIntent.putExtra("Puntaje total", score);
+        resultIntent.putExtra("Mensaje", mensajeResultado);
+        resultIntent.putExtra("Categoria", categoria);
+        // Inicia la Activity
+        startActivity(resultIntent);
+    }
 
 
     //Metodo que destruye el cronómetro
