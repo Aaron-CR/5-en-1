@@ -9,19 +9,27 @@
     tools:context=".Juego2.ResultadosJuego2Activity">
 
     <TextView
-        android:id="@+id/resultJuego"
+        android:id="@+id/mensajeResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Resultados de la categoria"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textPuntaje"
+        android:id="@+id/puntajeObtenido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="Puntaje"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/preguntasCorrectas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Puntaje"
+        android:textSize="24sp" />
 
     <TextView
     android:id="@+id/tiempoTotalUtilizado"
