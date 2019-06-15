@@ -20,7 +20,7 @@ public class JugarActivity extends AppCompatActivity {
         // Establecer el contenido de la actividad para utilize el archivo activity_jugar.xml.
         setContentView(R.layout.activity_jugar);
 
-        /** Encuentra el Button de la opción Juego 1. */
+        /* Encuentra el Button de la opción Juego 1. */
         Button juego1 = findViewById(R.id.button_juego_1);
         // Establece un click listener en ese View.
         juego1.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +35,7 @@ public class JugarActivity extends AppCompatActivity {
         });
 
 
-        /** Encuentra el Button de la opción Juego 2. */
+        /* Encuentra el Button de la opción Juego 2. */
         Button juego2 = findViewById(R.id.button_juego_2);
         // Establece un click listener en ese View.
         juego2.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +49,7 @@ public class JugarActivity extends AppCompatActivity {
             }
         });
 
-        /** Encuentra el Button de la opción Juego 3. */
+        /* Encuentra el Button de la opción Juego 3. */
         Button juego3 = findViewById(R.id.button_juego_3);
         // Establece un click listener en ese View.
         juego3.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +63,7 @@ public class JugarActivity extends AppCompatActivity {
             }
         });
 
-        /** Encuentra el Button de la opción Juego 4. */
+        /* Encuentra el Button de la opción Juego 4. */
         Button juego4 = findViewById(R.id.button_juego_4);
         // Establece un click listener en ese View.
         juego4.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +77,7 @@ public class JugarActivity extends AppCompatActivity {
             }
         });
 
-        /** Encuentra el Button de la opción Juego 5. */
+        /* Encuentra el Button de la opción Juego 5. */
         Button juego5 = findViewById(R.id.button_juego_5);
         // Establece un click listener en ese View.
         juego5.setOnClickListener(new View.OnClickListener() {
