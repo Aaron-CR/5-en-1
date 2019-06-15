@@ -42,6 +42,9 @@
             android:name=".Juego2.Juego2Activity"
             android:label="@string/category_juego2" />
         <activity
+            android:name=".Juego2.ResultadosJuego2Activity"
+            android:label="@string/category_juego2" />
+        <activity
             android:name=".Juego3.MenuJuego3Activity"
             android:label="@string/category_juego3" />
         <activity
