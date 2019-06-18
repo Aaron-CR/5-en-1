@@ -2,14 +2,19 @@ package com.example.a5en1.Juego2;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.speech.RecognizerIntent;
 import android.os.CountDownTimer;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a5en1.R;
 
@@ -21,11 +26,10 @@ import java.util.Random;
 public class Juego2Activity extends AppCompatActivity {
 
     private static final int QUIZ_COUNT = 10;
-    private static final long TIEMPO_RESTANTE= 10000;
+    private static final long TIEMPO_RESTANTE= 15000;
     public final int DEFAULT_TOTAL_SCORE = 100;
     public final int DEFAULT_DESCUENTO_SCORE = 15;
 
-    public int SCORE_HISTORICO=0;
 
     private TextView quizScore;
     private TextView quizTime;
@@ -35,17 +39,19 @@ public class Juego2Activity extends AppCompatActivity {
     private Button respuestaBtn2;
     private Button respuestaBtn3;
     private Button respuestaBtn4;
+    private Button btnPasarPregunta;
+    private Button btnPedirRespuesta;
 
     private String respuestaCorrecta;
     private int respuestaCorrectaCount =0;
     private int quizCount = 1;
     private int score =0;
-    private int time =0;
     private String formatoScoreResta;
     private String formatoScoreSuma;
     private int categoria;
     private String nombreCategoria;
-    private String mensajeResultado;
+    private int usoComodinPasar=0;
+    private int usoComodinPista=0;
 
     private CountDownTimer countDown;
     private long tiempoRestante;
@@ -163,6 +169,38 @@ public class Juego2Activity extends AppCompatActivity {
         respuestaBtn2 = findViewById(R.id.respuestaBtn2);
         respuestaBtn3 = findViewById(R.id.respuestaBtn3);
         respuestaBtn4 = findViewById(R.id.respuestaBtn4);
+        btnPasarPregunta = findViewById(R.id.comodinPasar);
+        btnPedirRespuesta = findViewById(R.id.comodinPista);
+
+
+        btnPasarPregunta.setOnClickListener(new View.OnClickListener() {
+            // El código en este método se ejecutará cuando se haga clic en el boton "btnJuegarDenuevo".
+            @Override
+            public void onClick(View view) {
+                if(usoComodinPasar == 3){
+                    btnPasarPregunta.setEnabled(false);
+                    btnPasarPregunta.setBackgroundColor(Color.rgb(180,180,180));
+                } else {
+                    pasarPregunta();
+                }
+
+            }
+        });
+
+        btnPedirRespuesta.setOnClickListener(new View.OnClickListener() {
+            // El código en este método se ejecutará cuando se haga clic en el boton "btnJuegarDenuevo".
+            @Override
+            public void onClick(View view) {
+                if(usoComodinPista == 3){
+                    btnPedirRespuesta.setEnabled(false);
+                    btnPedirRespuesta.setBackgroundColor(Color.rgb(180,180,180));
+                } else {
+                    mostrarRespuesta();
+                }
+
+            }
+        });
+
 
         quizScore.setText(String.format(Locale.getDefault(), "%d", score));
 
@@ -370,6 +408,7 @@ public class Juego2Activity extends AppCompatActivity {
                 tiempoRestante=0;
                 updateTimerText();
                 restaScore();
+                quizCount++;
                 showNextQuiz();
             }
         }.start();
@@ -377,7 +416,6 @@ public class Juego2Activity extends AppCompatActivity {
 
     //Metodo que actualiza el timer en el view
     private void updateTimerText(){
-        int minutos = (int) ((tiempoRestante / 1000) / 60);
         int segundos = (int) ((tiempoRestante / 1000) % 60);
 
         String formatoTiempo= String.format(Locale.getDefault(), "%02d", segundos);
@@ -435,8 +473,6 @@ public class Juego2Activity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 if(quizCount == QUIZ_COUNT) {
 
-
-
                     mostrarResult();
 
                 } else {
@@ -453,12 +489,12 @@ public class Juego2Activity extends AppCompatActivity {
 
 
     private void mostrarResult(){
+
         // Crea un Intent para abrir {@link ResultadosJuego1Activity}
         Intent resultIntent = new Intent(Juego2Activity.this, ResultadosJuego2Activity.class);
         resultIntent.putExtra("Respuestas correctas", respuestaCorrectaCount);
         resultIntent.putExtra("Cantidad preguntas", QUIZ_COUNT);
         resultIntent.putExtra("Puntaje total", score);
-        resultIntent.putExtra("Mensaje", mensajeResultado);
         resultIntent.putExtra("Categoria", categoria);
         // Inicia la Activity
         startActivity(resultIntent);
@@ -473,6 +509,22 @@ public class Juego2Activity extends AppCompatActivity {
             countDown.cancel();
         }
     }
+
+
+    // Metodos de los comodines
+    public void pasarPregunta(){
+        countDown.cancel();
+        usoComodinPasar++;
+        restaScore();
+        quizCount++;
+        showNextQuiz();
+    }
+
+    public void mostrarRespuesta(){
+        usoComodinPista++;
+        Toast.makeText(this, "Respuesta: " + respuestaCorrecta, Toast.LENGTH_SHORT).show();
+    }
+
 
 
 }

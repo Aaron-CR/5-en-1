@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -46,7 +47,7 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         preguntasCorrectas.setText(String.format(Locale.getDefault(), "%d/%d", respCorrect, cantPreguntas));
 
         /* Intent para volver a jugar */
-        Button repetir = findViewById(R.id.btnJugarDenuevo);
+        ImageButton repetir = findViewById(R.id.btnJugarDenuevo);
         // Establece un click listener en ese View.
         repetir.setOnClickListener(new View.OnClickListener() {
             // El código en este método se ejecutará cuando se haga clic en el boton "btnJuegarDenuevo".
@@ -62,7 +63,7 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         });
 
         /* Intent para volver al menu de categorias */
-        Button volverCat = findViewById(R.id.btnVolverCategorias);
+        ImageButton volverCat = findViewById(R.id.btnVolverCategorias);
         // Establece un click listener en ese View.
         volverCat.setOnClickListener(new View.OnClickListener() {
             // El código en este método se ejecutará cuando se haga clic en el boton "btnVolverCategorias".
@@ -76,7 +77,7 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         });
 
         /* Intent para volver al menu principal */
-        Button volverMenu = findViewById(R.id.btnVolverMainMenu);
+        ImageButton volverMenu = findViewById(R.id.btnVolverMainMenu);
         // Establece un click listener en ese View.
         volverMenu.setOnClickListener(new View.OnClickListener() {
             // El código en este método se ejecutará cuando se haga clic en el boton "btnVolverMainMenu".

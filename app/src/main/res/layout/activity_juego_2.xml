@@ -101,10 +101,6 @@
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/categoriaPregunta"
-        android:layout_width="100dp"
-        android:layout_height="40dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -143,5 +139,29 @@
     </LinearLayout>
 
 
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/comodinPasar"
+                style="@style/BotonComodinJuego2"
+                android:text="@string/pasarPregunta"
+                android:radius="9dp"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/comodinPista"
+                style="@style/BotonComodinJuego2"
+                android:text="@string/pedirPista"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+
 </LinearLayout>
+
+
 

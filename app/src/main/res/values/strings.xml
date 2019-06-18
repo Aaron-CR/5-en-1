@@ -55,6 +55,13 @@
     <string name="historia">Historia</string>
     <string name="geografia">Geografía</string>
     <string name="aleatorio">Aleatorio</string>
+    <string name="puntajeTotal">Puntaje total</string>
+    <string name="cantPreg">Preguntas correctas</string>
+
+    <!-- botones comodines -->
+
+    <string name="pasarPregunta">Pasar</string>
+    <string name="pedirPista">Pista</string>
 
     <!-- FIN STRINGS JUEGO 2 -->
 
