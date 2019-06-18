@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.a5en1.JugarActivity;
-import com.example.a5en1.MainActivity;
 import com.example.a5en1.R;
 
 public class MenuJuego1Activity extends AppCompatActivity {

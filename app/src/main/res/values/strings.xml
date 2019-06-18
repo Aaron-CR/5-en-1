@@ -16,6 +16,16 @@
 
     <!--INICIO STRINGS JUEGO 1-->
 
+    <string name="image_game_icon">Game icon</string>
+
+    <string name="image_menu_icon">Menu icon</string>
+
+    <string name="image_replay_icon">Replay icon</string>
+
+    <string name="image_home_icon">Home icon</string>
+
+    <string name="text_resultados">Resultados de la categoria</string>
+
     <!-- Nombre de la categoria Facil del Juego 1 [CHAR LIMIT=20] -->
     <string name="category_facil_juego1">Fácil</string>
 

@@ -6,6 +6,7 @@ import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,16 +29,11 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     private ArrayList<String> CATEGORIA = new ArrayList<>();
     private String palabraParaEncontrar;
     private String categoriaString;
-    private View child;
-    private RelativeLayout background;
-    private LinearLayout teclado;
     private TextView palabraParaValidar;
     private TextView textViewPuntaje;
     private TextView textViewVidas;
-    private TextView textViewCategoria;
     private EditText palabraDigitadaParaValidar;
     private Button arriesgar, pasarPalabra;
-    private ImageButton mBotonHablar;
     private int cantidadPalabras;
     private int contador = 0;
     private int contadorAciertos = 0;
@@ -98,16 +94,13 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         cantidadPalabras = CATEGORIA.size();
 
         // Encuentra el RelativeLayout del fondo.
-        background = findViewById(R.id.relative_background);
+        RelativeLayout background = findViewById(R.id.relative_background);
 
         // Instancia el archivo tecladoxml para poder añadirlo al ViewGroup.
-        child = getLayoutInflater().inflate(R.layout.activity_juego_1_teclado, null);
+        View child = getLayoutInflater().inflate(R.layout.activity_juego_1_teclado, null);
 
         // Añade el teclado al fondo.
         background.addView(child);
-
-        // Encuentra el Layout del teclado.
-        teclado = child.findViewById(R.id.teclado);
 
         // Encuentra el EditView que muestra la palabra ingresada por el usuario.
         palabraDigitadaParaValidar = child.findViewById(R.id.edit_palabra_digitada_para_validar);
@@ -122,7 +115,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         textViewVidas = findViewById(R.id.vidas);
 
         // Encuentra el TextView que muestra la categoria.
-        textViewCategoria = findViewById(R.id.categoria);
+        TextView textViewCategoria = findViewById(R.id.categoria);
 
         // Encuentra el Botón que se utiliza para arriesgar una palabra.
         arriesgar = findViewById(R.id.arriesgar);
@@ -142,7 +135,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
 
         textViewPuntaje.setText("" + puntaje);
 
-        mBotonHablar = findViewById(R.id.botonHablar);
+        ImageButton mBotonHablar = findViewById(R.id.botonHablar);
 
         mBotonHablar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,7 +146,6 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
 
         // Ejecuta el método para generar una nueva palabra.
         nuevaPalabra();
-
     }
 
     // (Speech to Text)
@@ -174,13 +166,10 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        switch (requestCode) {
-            case REC_CODE_SPEECH_INPUT: {
-                if (resultCode == RESULT_OK && null != data) {
-                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    palabraDigitadaParaValidar.setText(result.get(0));
-                }
-                break;
+        if (requestCode == REC_CODE_SPEECH_INPUT) {
+            if (resultCode == RESULT_OK && null != data) {
+                ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                palabraDigitadaParaValidar.setText(result.get(0));
             }
         }
     }
@@ -249,7 +238,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
 
     public static String mezclarPalabra(String palabra) {
         if (palabra != null && !"".equals(palabra)) {
-            char a[] = palabra.toCharArray();
+            char[] a = palabra.toCharArray();
 
             for (int i = 0; i < a.length; i++) {
                 int j = RANDOM.nextInt(a.length);

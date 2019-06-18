@@ -28,7 +28,7 @@ public class ResultadosJuego1Activity extends AppCompatActivity {
         resultado.setText(aciertos + " / " + cantidadPalabras);
         textPuntajeTotal.setText("Puntaje Total: " + puntajeTotal);
 
-        /** Intent para volver a jugar */
+        // Intent para volver a jugar
         ImageButton repetir = findViewById(R.id.button_repetir);
         // Establece un click listener en ese View.
         repetir.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +44,7 @@ public class ResultadosJuego1Activity extends AppCompatActivity {
             }
         });
 
-        /** Intent para abrir el Menu de las categorias */
+        // Intent para abrir el Menu de las categorias
         ImageButton menuCategorias = findViewById(R.id.button_menu);
         // Establece un click listener en ese View.
         menuCategorias.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +58,7 @@ public class ResultadosJuego1Activity extends AppCompatActivity {
             }
         });
 
-        /** Intent para abrir el Menu principal */
+        // Intent para abrir el Menu principal
         ImageButton menuPrincipal = findViewById(R.id.button_home);
         // Establece un click listener en ese View.
         menuPrincipal.setOnClickListener(new View.OnClickListener() {

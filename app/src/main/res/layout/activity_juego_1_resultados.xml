@@ -7,25 +7,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="55dp"
-        android:layout_height="wrap_content">
+        android:gravity="center">
 
         <ImageButton
             android:id="@+id/button_menu"
             android:layout_width="78dp"
             android:layout_height="78dp"
             android:background="@drawable/button_mic"
-            android:src="@drawable/ic_menu"/>
+            android:contentDescription="@string/image_menu_icon"
+            android:src="@drawable/ic_menu" />
 
         <ImageButton
             android:id="@+id/button_repetir"
             android:layout_width="78dp"
             android:layout_height="78dp"
-            android:layout_marginEnd="18dp"
             android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
             android:background="@drawable/button_mic"
+            android:contentDescription="@string/image_replay_icon"
             android:src="@drawable/ic_replay" />
 
         <ImageButton
@@ -33,10 +35,9 @@
             android:layout_width="78dp"
             android:layout_height="78dp"
             android:background="@drawable/button_mic"
+            android:contentDescription="@string/image_home_icon"
             android:src="@drawable/ic_home" />
     </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,23 +49,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resultados de la categoria"
-            android:textSize="20dp" />
+            android:text="@string/text_resultados"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/text_resultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="3 / 5"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/text_puntaje_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="Puntaje total: 0"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 </RelativeLayout>
