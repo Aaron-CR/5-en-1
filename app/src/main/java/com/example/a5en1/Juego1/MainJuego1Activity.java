@@ -24,6 +24,7 @@ import java.util.Random;
 
 public class MainJuego1Activity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "MainJuego1Activity";
     public static final Random RANDOM = new Random();
     private static final int REC_CODE_SPEECH_INPUT = 1000;
     private ArrayList<String> CATEGORIA = new ArrayList<>();
@@ -157,7 +158,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         try {
             startActivityForResult(intent, REC_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException e) {
-
+            Log.e(TAG, "No se encontró ninguna actividad");
         }
     }
 
