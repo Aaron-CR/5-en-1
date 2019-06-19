@@ -25,10 +25,10 @@ import java.util.Random;
 
 public class Juego2Activity extends AppCompatActivity {
 
-    private static final int QUIZ_COUNT = 10;
-    private static final long TIEMPO_RESTANTE= 15000;
-    public final int DEFAULT_TOTAL_SCORE = 100;
-    public final int DEFAULT_DESCUENTO_SCORE = 15;
+    private static final int QUIZ_COUNT = 10; //Cantidad de preguntas por partida
+    private static final long TIEMPO_RESTANTE= 15000; //Tiempo por pregunta en milisegundos
+    public final int DEFAULT_TOTAL_SCORE = 100; //Puntaje por pregunta correcta
+    public final int DEFAULT_DESCUENTO_SCORE = 15; //Puntaje que se descuenta por pregunta incorrecta
 
 
     private TextView quizScore;
@@ -230,7 +230,7 @@ public class Juego2Activity extends AppCompatActivity {
             }
 
             //Muetra la siguiente pregunta para esta categoria
-            showNextQuiz();
+            mostrarProxPreg();
 
         } else if (categoria==2){
 
@@ -252,7 +252,7 @@ public class Juego2Activity extends AppCompatActivity {
             }
 
             //Muetra la siguiente pregunta para esta categoria
-            showNextQuiz();
+            mostrarProxPreg();
 
         } else if (categoria==3){
 
@@ -274,7 +274,7 @@ public class Juego2Activity extends AppCompatActivity {
             }
 
             //Muetra la siguiente pregunta para esta categoria
-            showNextQuiz();
+            mostrarProxPreg();
 
         } else if (categoria==4){
 
@@ -296,7 +296,7 @@ public class Juego2Activity extends AppCompatActivity {
             }
 
             //Muetra la siguiente pregunta para esta categoria
-            showNextQuiz();
+            mostrarProxPreg();
 
         } else if (categoria==5){
 
@@ -318,7 +318,7 @@ public class Juego2Activity extends AppCompatActivity {
             }
 
             //Muetra la siguiente pregunta para esta categoria
-            showNextQuiz();
+            mostrarProxPreg();
 
         } else if (categoria==6){
 
@@ -354,7 +354,7 @@ public class Juego2Activity extends AppCompatActivity {
             }
 
             //Muetra la siguiente pregunta para esta categoría
-            showNextQuiz();
+            mostrarProxPreg();
 
 
 
@@ -365,10 +365,10 @@ public class Juego2Activity extends AppCompatActivity {
     }
 
     //Metodo que muestra la siguiente pregunta en la lista
-    public void showNextQuiz(){
+    public void mostrarProxPreg(){
 
        // Pasarle tiempo al timer
-        tiempoRestante=TIEMPO_RESTANTE; // Se le pasa a tiempo restante la cantidad de milisegundos del timer
+        tiempoRestante=TIEMPO_RESTANTE; // Se le pasa el tiempo por pregunta al tiempo restante de cada pregunta
         startTimer();
 
         // Actualiza countLabel
@@ -406,34 +406,34 @@ public class Juego2Activity extends AppCompatActivity {
     /*CountDownTimer es una clase importada de android.os.CountDownTimer
     * Tiene dos métodos por defecto
     * onTick: lleva la porcion de codigo que se corre mientra el timer está descontando tiempo
-    * onFinish: lleva la porcion de codigo que se realiza al terminarse el tiempo del timer
-    * Al crearse un CountDownTimer se debe pasar como parámetro en su constructor el tiempo restante y
+    * onFinish: lleva la porcion de codigo que se corre al terminarse el tiempo del timer
+    * Al crearse un CountDownTimer se debe pasar como parámetro en su constructor el tiempo del timer y
     * la razón de descuento de tiempo en milisegundos
-    * millisUntilFinished: es la variable auxiliar a la cual se le descuenta el tiempo
-    * El metodo updateTimerText() actualiza el número de segundos en la interfaz
+    * msRestantes: es la variable auxiliar a la cual se le descuenta el tiempo
+    * El metodo actualizarTimer() actualiza el número de segundos en la interfaz
     * */
 
     public void startTimer(){
         countDown = new CountDownTimer(tiempoRestante, 1000) { //Crea un nuevo CountDownTimer
             @Override
-            public void onTick(long millisUntilFinished) { //Mientras corre
-                tiempoRestante=millisUntilFinished;
-                updateTimerText();
+            public void onTick(long msRestantes) { //Mientras corre
+                tiempoRestante=msRestantes;
+                actualizarTimer();
             }
 
             @Override
             public void onFinish() { //Cuando termina
                 tiempoRestante=0;
-                updateTimerText();
+                actualizarTimer();
                 restaScore();
                 quizCount++;
-                showNextQuiz();
+                mostrarProxPreg();
             }
         }.start();
     }
 
     //Metodo que actualiza el timer en el view
-    private void updateTimerText(){
+    private void actualizarTimer(){
         int segundos = (int) ((tiempoRestante / 1000) % 60); //Pasa el tiempo de milisegundos a segundos
 
         String formatoTiempo= String.format(Locale.getDefault(), "%02d", segundos);
@@ -464,8 +464,10 @@ public class Juego2Activity extends AppCompatActivity {
 
         // Obtener el botón que fue apretado
         Button respuestaBtn = findViewById(view.getId());
+        // Obtener el texto del boton
         String textoBtn = respuestaBtn.getText().toString();
 
+        //String para guardar si la respuesta es correcta o incorrecta
         String tituloAlerta;
 
         if (textoBtn.equals(respuestaCorrecta)){
@@ -488,7 +490,7 @@ public class Juego2Activity extends AppCompatActivity {
         AlertDialog.Builder constructor = new AlertDialog.Builder(this);
         constructor.setTitle(tituloAlerta);
         constructor.setMessage("La respuesta correcta es: " + respuestaCorrecta);
-        constructor.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        constructor.setPositiveButton("OK", new DialogInterface.OnClickListener() { //Al apretarse ok
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if(quizCount == QUIZ_COUNT) { //Si la cantidad de preguntas respondida es igual a la cantidad de preguntas por ronda
@@ -497,13 +499,13 @@ public class Juego2Activity extends AppCompatActivity {
 
                 } else { //Sino
                     quizCount++; //Suma uno a la cantidad de preguntas respondidas
-                    showNextQuiz(); //Muestra la siguiente pregunta
+                    mostrarProxPreg(); //Muestra la siguiente pregunta
                 }
             }
         });
 
-        constructor.setCancelable(false);
-        constructor.show();
+        constructor.setCancelable(false); //No se permite cancelar o cerrar la ventana
+        constructor.show(); //Muestra la ventana emergente
 
     }
 
@@ -540,7 +542,7 @@ public class Juego2Activity extends AppCompatActivity {
         usoComodinPasar++; //Se suma uno a la cantidad de comodin Pista usados
         restaScore(); //Se resta puntaje
         quizCount++; //Se suma la cantidad de preguntas "respondidas"
-        showNextQuiz(); //Se muestra la siguiente pregunta
+        mostrarProxPreg(); //Se muestra la siguiente pregunta
     }
     //Comodin PISTA
     public void mostrarRespuesta(){
