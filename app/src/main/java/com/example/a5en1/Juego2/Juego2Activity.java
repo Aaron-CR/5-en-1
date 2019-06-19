@@ -98,59 +98,59 @@ public class Juego2Activity extends AppCompatActivity {
 
     String[][] datosQuizEntretenimiento = {
             // {"Pregunta", "Respuesta Correcta", "OtraRespuesta1", "OtraRespuesta2", "OtraRespuesta3"}
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
+            {"¿Cuántos dedos tienen Los Simpsons?", "Cuatro", "Tres", "Cinco", "Seis"},
+            {"¿En qué año se lanzó Age Of Empieres 1?", "1997", "1998", "1996", "1999"},
+            {"¿Con qué compuesto cocina metanfetamina Walter White en Breaking Bad?", "Metilamina", "Etilamina", "Dietilamina", "Trimetilamina"},
+            {"¿En qué país nació la Bauhaus?", "Alemania", "Inglaterra", "Rusia", "Holanda"},
+            {"¿Cómo se llama el lobo huargo de Jon Snow?", "Ghost", "Nymeria", "Summer", "Grey Wind"},
+            {"¿Cómo se dice 'gracias!' en Dothraki?", "San athchomari yeraan!", "Ki aleta yeni!", "Aena shekhikhi!", "Graddakh!"},
+            {"¿A qué hace referencia la 'Milla verde'?", "Al camino a la muerte", "Al camino a la cárcel", "A una jugada de fútbol americano", "A un proverbio cristiano"},
+            {"¿Cuál es el nombre de Tini Stoessel?", "Martina", "Agustina", "Justina", "Cristina"},
+            {"¿Con qué apodo se llama al presidente Mauricio Macri?", "Gato", "Pato", "Perro", "Puerco"},
+            {"¿Cuántos colores tiene un cubo rubik clásico?", "6", "8", "4", "12"},
+            {"¿Qué actor ha hecho más películas como James Bonds?", "Roger Moore", "Daniel Craig", "Pierce Brosnan", "Sean Connery"},
+            {"¿Cómo se llama el pájaro símbolo de 'Los juegos del hambre'?", "Sinsajo", "Charlajo", "Sinchajo", "Astajo"},
+            {"¿Quién es el profesor del colegio Hogwarts que se convierte en hombre lobo?", "Remus Lupin", "Romulus Lupin", "James Potter", "Subill Trelawney"},
+            {"¿De qué color era Clifford, el perro gigante?", "Rojo", "Azul", "Marrón", "Blanco"},
+            {"¿Dónde nació John Lennon?", "Liverpool", "Dublin", "Londres", "Hamburgo"},
     };
 
     String[][] datosQuizHistoria = {
             // {"Pregunta", "Respuesta Correcta", "OtraRespuesta1", "OtraRespuesta2", "OtraRespuesta3"}
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
+            {"¿Cuál es la rama mayoritaria del Islam?", "Sunismo", "Chiísmo", "Jariyismo", "Sufismo"},
+            {"¿En qué año tuvo lugar el ataque de Pearl Harbor?", "1941", "1940", "1939", "1942"},
+            {"¿Las revueltas de dónde se llaman Intifadas?", "Palestina", "Kosovo", "Montenegro", "Chechenia"},
+            {"¿Cuántas bajas tuvo el ejército argentino durante la guerra de Malvinas?", "1731", "1082", "629", "1258"},
+            {"El renacimiento marcó el inicio de la edad...", "Moderna", "Media", "Contemporánea", "Clásica"},
+            {"¿Dónde surgió la filosofía?", "Grecia", "Roma", "Egipto", "Japón"},
+            {"¿Los cuatro evangelistas de la Biblia son Mateo, Marcos, Lucas y...?", "Juan", "Pedro", "Pablo", "José"},
+            {"¿En qué año fue patentada la máquina Enigma?", "1918", "1944", "1923", "1932"},
+            {"¿Cuántos días duró el mandato como vicepresidente de Héctor José Cámpora?", "49", "40", "50", "45"},
+            {"¿En qué país nació el protestantismo?", "Alemania", "Italia", "Francia", "Polonia"},
+            {"¿Qué sobrenombre tenía Guillermo I de Inglaterra?", "El Conquistador", "El valiente", "El loco", "El Tirano"},
+            {"¿En qué provincia nació el Cid Campeador?", "Burgos", "Salamanca", "Cantabria", "León"},
+            {"¿Cuántos mandamientos hay en el cristianismo?", "10", "12", "5", "20"},
+            {"¿Cuál era el nombre de pila de Lenin?", "Vladímir", "Aléksey", "Iósif", "Aleksandr"},
+            {"¿En qué año empezó la Guerra del Golfo Pérsico?", "1990", "1985", "1995", "1999"},
     };
 
     String[][] datosQuizGeo = {
             // {"Pregunta", "Respuesta Correcta", "OtraRespuesta1", "OtraRespuesta2", "OtraRespuesta3"}
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
-            {"¿?", "", "", "", ""},
+            {"¿En dónde se encuentra Silicon Valley?", "California", "Nueva York", "Miami", "Nuevo Mexico"},
+            {"¿Cuál es la capital de Suiza?", "Berna", "Zurich", "Ginebra", "Basilea"},
+            {"¿Qué separa las franjas de Gaza y Cisjordania?", "Un muro", "Nada", "Un río", "Israel"},
+            {"¿Cuál de estos países africanos no tiene costa?", "Todos tienen costa", "Mauritania", "Senegal", "Gambia"},
+            {"¿Cuál es la capital de Baréin?", "Manama", "Beréin", "Ammán", "Raid"},
+            {"¿Entre qué dos paises está el lago Titicaca?", "Bolivia y Perú", "Bolivia y Paraguay", "Bolivia y Argentina", "Ninguna de las anteriores"},
+            {"¿Qué accidente geográfico se define como un conjunto de islas, islotes y diminutas masas de tierra?", "Aechipiélago", "Península", "Islotes", "Meandro"},
+            {"¿Cómo se le llama a una pendiente vertical abrupta?", "Acantilado", "Barranco", "Puente", "Montaña"},
+            {"¿Dónde se encuentra el cerro Uritorco?", "Capilla del Monte, Córdoba", "La Falda, Córdoba", "Uspallata, Mendoza", "Jachal, San Juan"},
+            {"¿Cuál es el mayor golfo de África?", "Guinea", "Gabés", "Sirte", "Ninguna es correcta"},
+            {"¿Dónde está la ciudad de Mostar?", "Bosnia y Herzegovina", "Croacia", "Montenegro", "Serbia"},
+            {"¿En cuántas franjas se divide la bandera de Grecia?", "9", "6", "7", "8"},
+            {"¿Dónde están las torres Petronas?", "Malasia", "Singapur", "Indonesia", "Tailandia"},
+            {"¿Qué país no se encuentra en Asia?", "Comores", "Brunei", "Sri Lanka", "Indonesia"},
+            {"¿A qué país se debe ir para visitar el pueblo turístico Sidi Bou Said?", "Túnez", "Libia", "Marruecos", "Egipto"},
     };
 
     @Override
@@ -159,6 +159,7 @@ public class Juego2Activity extends AppCompatActivity {
         // Establecer el contenido de la actividad para utilize el archivo activity_juego_2.xmll.
         setContentView(R.layout.activity_juego_2);
 
+        //Trae la categoria seleccionada en la actividad MenuJuego2Activity
         categoria= getIntent().getIntExtra("Categoria", 0);
 
         quizScore = findViewById(R.id.quizScore);
@@ -172,30 +173,31 @@ public class Juego2Activity extends AppCompatActivity {
         btnPasarPregunta = findViewById(R.id.comodinPasar);
         btnPedirRespuesta = findViewById(R.id.comodinPista);
 
-
+        //Accion del comodin Pasar
         btnPasarPregunta.setOnClickListener(new View.OnClickListener() {
             // El código en este método se ejecutará cuando se haga clic en el boton "btnJuegarDenuevo".
             @Override
             public void onClick(View view) {
-                if(usoComodinPasar == 3){
+                if(usoComodinPasar == 3){ //Una vez que se use tres veces el boton se inhabilita
                     btnPasarPregunta.setEnabled(false);
                     btnPasarPregunta.setBackgroundColor(Color.rgb(180,180,180));
                 } else {
-                    pasarPregunta();
+                    pasarPregunta(); //Sino muestra pasa la pregunta
                 }
 
             }
         });
 
+        //Accion del comodin Pista
         btnPedirRespuesta.setOnClickListener(new View.OnClickListener() {
             // El código en este método se ejecutará cuando se haga clic en el boton "btnJuegarDenuevo".
             @Override
             public void onClick(View view) {
-                if(usoComodinPista == 3){
+                if(usoComodinPista == 3){ //Una vez que se use tres veces el boton se inhabilita
                     btnPedirRespuesta.setEnabled(false);
                     btnPedirRespuesta.setBackgroundColor(Color.rgb(180,180,180));
                 } else {
-                    mostrarRespuesta();
+                    mostrarRespuesta(); //Sino muestra la respuesta de la pregunta
                 }
 
             }
@@ -227,6 +229,7 @@ public class Juego2Activity extends AppCompatActivity {
 
             }
 
+            //Muetra la siguiente pregunta para esta categoria
             showNextQuiz();
 
         } else if (categoria==2){
@@ -248,6 +251,7 @@ public class Juego2Activity extends AppCompatActivity {
 
             }
 
+            //Muetra la siguiente pregunta para esta categoria
             showNextQuiz();
 
         } else if (categoria==3){
@@ -269,6 +273,7 @@ public class Juego2Activity extends AppCompatActivity {
 
             }
 
+            //Muetra la siguiente pregunta para esta categoria
             showNextQuiz();
 
         } else if (categoria==4){
@@ -290,6 +295,7 @@ public class Juego2Activity extends AppCompatActivity {
 
             }
 
+            //Muetra la siguiente pregunta para esta categoria
             showNextQuiz();
 
         } else if (categoria==5){
@@ -311,6 +317,7 @@ public class Juego2Activity extends AppCompatActivity {
 
             }
 
+            //Muetra la siguiente pregunta para esta categoria
             showNextQuiz();
 
         } else if (categoria==6){
@@ -346,6 +353,7 @@ public class Juego2Activity extends AppCompatActivity {
 
             }
 
+            //Muetra la siguiente pregunta para esta categoría
             showNextQuiz();
 
 
@@ -360,7 +368,7 @@ public class Juego2Activity extends AppCompatActivity {
     public void showNextQuiz(){
 
        // Pasarle tiempo al timer
-        tiempoRestante=TIEMPO_RESTANTE;
+        tiempoRestante=TIEMPO_RESTANTE; // Se le pasa a tiempo restante la cantidad de milisegundos del timer
         startTimer();
 
         // Actualiza countLabel
@@ -395,16 +403,26 @@ public class Juego2Activity extends AppCompatActivity {
 
     //Metodo que inicia el timer del juego
 
+    /*CountDownTimer es una clase importada de android.os.CountDownTimer
+    * Tiene dos métodos por defecto
+    * onTick: lleva la porcion de codigo que se corre mientra el timer está descontando tiempo
+    * onFinish: lleva la porcion de codigo que se realiza al terminarse el tiempo del timer
+    * Al crearse un CountDownTimer se debe pasar como parámetro en su constructor el tiempo restante y
+    * la razón de descuento de tiempo en milisegundos
+    * millisUntilFinished: es la variable auxiliar a la cual se le descuenta el tiempo
+    * El metodo updateTimerText() actualiza el número de segundos en la interfaz
+    * */
+
     public void startTimer(){
-        countDown = new CountDownTimer(tiempoRestante, 1000) {
+        countDown = new CountDownTimer(tiempoRestante, 1000) { //Crea un nuevo CountDownTimer
             @Override
-            public void onTick(long millisUntilFinished) {
+            public void onTick(long millisUntilFinished) { //Mientras corre
                 tiempoRestante=millisUntilFinished;
                 updateTimerText();
             }
 
             @Override
-            public void onFinish() {
+            public void onFinish() { //Cuando termina
                 tiempoRestante=0;
                 updateTimerText();
                 restaScore();
@@ -416,20 +434,22 @@ public class Juego2Activity extends AppCompatActivity {
 
     //Metodo que actualiza el timer en el view
     private void updateTimerText(){
-        int segundos = (int) ((tiempoRestante / 1000) % 60);
+        int segundos = (int) ((tiempoRestante / 1000) % 60); //Pasa el tiempo de milisegundos a segundos
 
         String formatoTiempo= String.format(Locale.getDefault(), "%02d", segundos);
 
-        quizTime.setText(formatoTiempo);
+        quizTime.setText(formatoTiempo); // Actualiza el timer que se muestra en la interfaz
     }
 
     //Metodos que actualizan el puntaje en el view
+    //Metodo que suma puntaje
     public void sumaScore(){
         score = score + DEFAULT_TOTAL_SCORE;
         formatoScoreSuma= String.format(Locale.getDefault(), "%d", score);
         quizScore.setText(formatoScoreSuma);
     }
 
+    //Metodo que resta puntaje
     public void restaScore(){
         score = score - DEFAULT_DESCUENTO_SCORE;
         formatoScoreResta= String.format(Locale.getDefault(), "%d", score);
@@ -440,7 +460,7 @@ public class Juego2Activity extends AppCompatActivity {
 
     public void chequearRespuesta(View view){
 
-        countDown.cancel();
+        countDown.cancel(); //Se termina el timer
 
         // Obtener el botón que fue apretado
         Button respuestaBtn = findViewById(view.getId());
@@ -450,14 +470,14 @@ public class Juego2Activity extends AppCompatActivity {
 
         if (textoBtn.equals(respuestaCorrecta)){
             // Esta correcto
-            sumaScore();
+            sumaScore(); //Suma puntaje
 
             tituloAlerta= "¡Correcto!";
             respuestaCorrectaCount++;
 
         } else {
             // Esta mal
-            restaScore();
+            restaScore(); //Resta puntaje
 
             tituloAlerta= "Respuesta incorrecta :(";
 
@@ -471,13 +491,13 @@ public class Juego2Activity extends AppCompatActivity {
         constructor.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if(quizCount == QUIZ_COUNT) {
+                if(quizCount == QUIZ_COUNT) { //Si la cantidad de preguntas respondida es igual a la cantidad de preguntas por ronda
 
-                    mostrarResult();
+                    mostrarResult(); //Termina el juego y muestra la pantalla de resultado
 
-                } else {
-                    quizCount++;
-                    showNextQuiz();
+                } else { //Sino
+                    quizCount++; //Suma uno a la cantidad de preguntas respondidas
+                    showNextQuiz(); //Muestra la siguiente pregunta
                 }
             }
         });
@@ -487,11 +507,12 @@ public class Juego2Activity extends AppCompatActivity {
 
     }
 
-
+    //Método que abre la actividad ResultadosJuego2Activity
     private void mostrarResult(){
 
         // Crea un Intent para abrir {@link ResultadosJuego1Activity}
         Intent resultIntent = new Intent(Juego2Activity.this, ResultadosJuego2Activity.class);
+        //Se pasan los parámetros necesarios para la actividad de resultado
         resultIntent.putExtra("Respuestas correctas", respuestaCorrectaCount);
         resultIntent.putExtra("Cantidad preguntas", QUIZ_COUNT);
         resultIntent.putExtra("Puntaje total", score);
@@ -512,17 +533,19 @@ public class Juego2Activity extends AppCompatActivity {
 
 
     // Metodos de los comodines
-    public void pasarPregunta(){
-        countDown.cancel();
-        usoComodinPasar++;
-        restaScore();
-        quizCount++;
-        showNextQuiz();
-    }
 
+    //Comodin PASAR
+    public void pasarPregunta(){
+        countDown.cancel(); //Se termina el timer
+        usoComodinPasar++; //Se suma uno a la cantidad de comodin Pista usados
+        restaScore(); //Se resta puntaje
+        quizCount++; //Se suma la cantidad de preguntas "respondidas"
+        showNextQuiz(); //Se muestra la siguiente pregunta
+    }
+    //Comodin PISTA
     public void mostrarRespuesta(){
-        usoComodinPista++;
-        Toast.makeText(this, "Respuesta: " + respuestaCorrecta, Toast.LENGTH_SHORT).show();
+        usoComodinPista++; //Se suma uno a la cantidad de comodin Pista usado
+        Toast.makeText(this, "Respuesta: " + respuestaCorrecta, Toast.LENGTH_SHORT).show(); //Se muestra la respuesta
     }
 
 
