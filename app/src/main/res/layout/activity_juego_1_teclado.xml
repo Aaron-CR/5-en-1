@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0F0F0">
@@ -19,7 +20,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/image_categoria"
+                android:id="@+id/image_back"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@color/colorPrimaryDark"
@@ -68,10 +69,10 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/image_categoria"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/colorPrimaryDark" />
+                android:layout_marginTop="15dp"/>
 
         </LinearLayout>
 
@@ -179,7 +180,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="25dp"
         android:gravity="bottom"
         android:orientation="vertical">
 

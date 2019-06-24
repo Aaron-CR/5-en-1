@@ -38,9 +38,10 @@
                 android:id="@+id/facil"
                 style="@style/BotonCategoria"
                 android:layout_marginBottom="25dp"
+                android:drawableStart="@drawable/ic_juego_1_facil"
                 android:drawableEnd="@drawable/ic_play"
                 android:onClick="empezarCategoria"
-                android:paddingStart="33dp"
+                android:paddingStart="13dp"
                 android:paddingEnd="13dp"
                 android:text="@string/category_facil_juego1" />
 
@@ -48,9 +49,10 @@
                 android:id="@+id/medio"
                 style="@style/BotonCategoria"
                 android:layout_marginBottom="25dp"
+                android:drawableStart="@drawable/ic_juego_1_medio"
                 android:drawableEnd="@drawable/ic_play"
                 android:onClick="empezarCategoria"
-                android:paddingStart="33dp"
+                android:paddingStart="13dp"
                 android:paddingEnd="13dp"
                 android:text="@string/category_medio_juego1" />
 
@@ -58,9 +60,10 @@
                 android:id="@+id/dificil"
                 style="@style/BotonCategoria"
                 android:layout_marginBottom="25dp"
+                android:drawableStart="@drawable/ic_juego_1_dificil"
                 android:drawableEnd="@drawable/ic_play"
                 android:onClick="empezarCategoria"
-                android:paddingStart="33dp"
+                android:paddingStart="13dp"
                 android:paddingEnd="13dp"
                 android:text="@string/category_dificil_juego1" />
 

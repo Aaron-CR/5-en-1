@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,16 +41,27 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     private int puntaje = 0;
     private int categoria;
     private short vidas;
-
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego_1_main);
 
+        // Encuentra el RelativeLayout del fondo.
+        RelativeLayout background = findViewById(R.id.relative_background);
+
+        // Instancia el archivo tecladoxml para poder añadirlo al ViewGroup.
+        View child = getLayoutInflater().inflate(R.layout.activity_juego_1_teclado, null);
+
+        // Añade el teclado al fondo.
+        background.addView(child);
+
+        imageView = child.findViewById(R.id.image_categoria);
         categoria = getIntent().getIntExtra("CATEGORIA", 0);
 
         if (categoria == 1) {
+            imageView.setImageResource(R.drawable.ic_juego_1_facil);
             vidas = 4;
             categoriaString = getString(R.string.category_facil_juego1);
             CATEGORIA.add("FACIL");
@@ -59,6 +70,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("FACIL");
             CATEGORIA.add("FACIL");
         } else if (categoria == 2) {
+            imageView.setImageResource(R.drawable.ic_juego_1_medio);
             vidas = 3;
             categoriaString = getString(R.string.category_medio_juego1);
             CATEGORIA.add("MEDIO");
@@ -67,6 +79,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("MEDIO");
             CATEGORIA.add("MEDIO");
         } else if (categoria == 3) {
+            imageView.setImageResource(R.drawable.ic_juego_1_dificil);
             vidas = 2;
             categoriaString = getString(R.string.category_dificil_juego1);
             CATEGORIA.add("DIFICIL");
@@ -75,6 +88,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("DIFICIL");
             CATEGORIA.add("DIFICIL");
         } else if (categoria == 4) {
+            imageView.setImageResource(R.drawable.ic_juego_1_paises);
             vidas = 5;
             categoriaString = getString(R.string.category_paises_juego1);
             CATEGORIA.add("ALEMANIA");
@@ -83,6 +97,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("BÉLGICA");
             CATEGORIA.add("BOLIVIA");
         } else if (categoria == 5) {
+            imageView.setImageResource(R.drawable.ic_juego_1_animales);
             vidas = 5;
             categoriaString = getString(R.string.category_animales_juego1);
             CATEGORIA.add("RATA");
@@ -93,15 +108,6 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         }
 
         cantidadPalabras = CATEGORIA.size();
-
-        // Encuentra el RelativeLayout del fondo.
-        RelativeLayout background = findViewById(R.id.relative_background);
-
-        // Instancia el archivo tecladoxml para poder añadirlo al ViewGroup.
-        View child = getLayoutInflater().inflate(R.layout.activity_juego_1_teclado, null);
-
-        // Añade el teclado al fondo.
-        background.addView(child);
 
         // Encuentra el EditView que muestra la palabra ingresada por el usuario.
         palabraDigitadaParaValidar = child.findViewById(R.id.edit_palabra_digitada_para_validar);
