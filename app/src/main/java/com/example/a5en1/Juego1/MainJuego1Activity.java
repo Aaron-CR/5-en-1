@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -282,24 +283,31 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     private void verificar() {
         String p = palabraDigitadaParaValidar.getText().toString().toUpperCase().trim();
         if (palabraParaEncontrar.equals(p)) {
-            Toast.makeText(this, "Correcto! Adivinaste la palabra: " + palabraParaEncontrar, Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this, "Correcto! Adivinaste la palabra: " + palabraParaEncontrar, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, -450);
+            toast.show();
             puntaje += 300;
             contadorAciertos++;
             textViewPuntaje.setText("" + puntaje);
             nuevaPalabra();
         } else {
             if (categoria == 3) {
-                Toast.makeText(this, "Incorrecto! Palabra equivocada", Toast.LENGTH_SHORT).show();
-            } else
-                Toast.makeText(this, "Incorrecto! la palabra era " + palabraParaEncontrar, Toast.LENGTH_SHORT).show();
-            puntaje -= 200;
-            vidas--;
-            if (vidas == 0) {
-                abrirReultados();
+                Toast toast = Toast.makeText(this, "Incorrecto! Palabra equivocada", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, -450);
+                toast.show();
+            } else {
+                Toast toast = Toast.makeText(this, "Incorrecto! la palabra era " + palabraParaEncontrar, Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, -450);
+                toast.show();
+                puntaje -= 200;
+                vidas--;
+                if (vidas == 0) {
+                    abrirReultados();
+                }
+                textViewPuntaje.setText("" + puntaje);
+                textViewVidas.setText("" + vidas);
+                nuevaPalabra();
             }
-            textViewPuntaje.setText("" + puntaje);
-            textViewVidas.setText("" + vidas);
-            nuevaPalabra();
         }
     }
 
