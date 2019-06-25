@@ -1,91 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorPrimary"
     tools:context=".Juego2.MenuJuego2Activity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginBottom="60dp"
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="60dp"
             android:background="@color/colorPrimaryDark"
-            android:contentDescription="@string/image_game_icon"
-            android:src="@drawable/ic_juego_2" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/colorPrimaryDark"
+                android:contentDescription="@string/image_game_icon"
+                android:src="@drawable/ic_juego_2" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn1Logica"
-            style="@style/BotonCategoria"
-            android:layout_height="60dp"
-            android:drawableEnd="@drawable/ic_play"
-            android:layout_marginBottom="10dp"
-            android:paddingStart="13dp"
-            android:paddingEnd="13dp"
-            android:text="@string/logica" />
-        <Button
-            android:id="@+id/btn2Ciencia"
-            style="@style/BotonCategoria"
-            android:layout_height="60dp"
-            android:drawableEnd="@drawable/ic_play"
-            android:layout_marginBottom="10dp"
-            android:paddingStart="13dp"
-            android:paddingEnd="13dp"
-            android:text="@string/ciencia"/>
-        <Button
-            android:id="@+id/btn3Entretenimiento"
-            style="@style/BotonCategoria"
-            android:layout_height="60dp"
-            android:drawableEnd="@drawable/ic_play"
-            android:layout_marginBottom="10dp"
-            android:paddingStart="13dp"
-            android:paddingEnd="13dp"
-            android:text="@string/entretenimiento"/>
-        <Button
-            android:id="@+id/btn4Historia"
-            style="@style/BotonCategoria"
-            android:layout_height="60dp"
-            android:drawableEnd="@drawable/ic_play"
-            android:layout_marginBottom="10dp"
-            android:paddingStart="13dp"
-            android:paddingEnd="13dp"
-            android:text="@string/historia" />
-        <Button
-            android:id="@+id/btn5Geografia"
-            style="@style/BotonCategoria"
-            android:layout_height="60dp"
-            android:drawableEnd="@drawable/ic_play"
-            android:layout_marginBottom="10dp"
-            android:paddingStart="13dp"
-            android:paddingEnd="13dp"
-            android:text="@string/geografia"/>
-        <Button
-            android:id="@+id/btn6Aleatorio"
-            style="@style/BotonCategoria"
-            android:layout_height="60dp"
-            android:drawableEnd="@drawable/ic_play"
-            android:layout_marginBottom="10dp"
-            android:paddingStart="13dp"
-            android:paddingEnd="13dp"
-            android:text="@string/aleatorio" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="105dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <Button
+                android:id="@+id/btn1Logica"
+                style="@style/BotonCategoria"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/ic_juego_3"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="13dp"
+                android:paddingEnd="13dp"
+                android:text="@string/logica" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn2Ciencia"
+                style="@style/BotonCategoria"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/ic_juego_2_ciencia"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="13dp"
+                android:paddingEnd="13dp"
+                android:text="@string/ciencia" />
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/btn3Entretenimiento"
+                style="@style/BotonCategoria"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/ic_juego_2_entretenimiento"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="13dp"
+                android:paddingEnd="13dp"
+                android:text="@string/entretenimiento" />
+
+            <Button
+                android:id="@+id/btn4Historia"
+                style="@style/BotonCategoria"
+                android:layout_height="60dp"
+
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/ic_juego_2_historia"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="13dp"
+                android:paddingEnd="13dp"
+                android:text="@string/historia" />
+
+            <Button
+                android:id="@+id/btn5Geografia"
+                style="@style/BotonCategoria"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/ic_juego_2_geografia"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="13dp"
+                android:paddingEnd="13dp"
+                android:text="@string/geografia" />
+
+            <Button
+                android:id="@+id/btn6Aleatorio"
+                style="@style/BotonCategoria"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/ic_juego_2_aleatorio"
+                android:drawableEnd="@drawable/ic_play"
+                android:paddingStart="13dp"
+                android:paddingEnd="13dp"
+                android:text="@string/aleatorio" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
