@@ -19,8 +19,7 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
 
     private String mensaje;
     private int categoria;
-    private int comboCorrectas;
-    private int comboIncorrectas;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +31,16 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         int respCorrect= getIntent().getIntExtra("Respuestas correctas", 0);
         int cantPreguntas= getIntent().getIntExtra("Cantidad preguntas", 0);
         categoria= getIntent().getIntExtra("Categoria", 0);
-        comboCorrectas= getIntent().getIntExtra("Combo correctas", 0);
-        comboIncorrectas= getIntent().getIntExtra("Combo incorrectas", 0);
+        int comboCorrectas = getIntent().getIntExtra("Combo correctas", 0);
+        int comboIncorrectas = getIntent().getIntExtra("Combo incorrectas", 0);
+        int promTiempo = getIntent().getIntExtra("Promedio tiempo", 0);
 
         if (respCorrect==10){
             mensaje="¡Excelente!";
         } else if (respCorrect<10 && respCorrect > 5 ) {
             mensaje= "¡Bien hecho!";
         } else if (respCorrect<5){
-            mensaje= "¡Que no decaiga, la práctica hace al maestro!";
+            mensaje= "¡Que no decaiga!\nLa práctica hace al maestro";
         }
 
         TextView mensajeResultado = findViewById(R.id.mensajeResult);
@@ -48,12 +48,14 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         TextView preguntasCorrectas = findViewById(R.id.preguntasCorrectas);
         TextView muestraComboCorrectas= findViewById(R.id.comboCorrectas);
         TextView muestraComboIncorrectas= findViewById(R.id.comboIncorrectas);
+        TextView muestraPromTiempo= findViewById(R.id.promedioTiempo);
 
         mensajeResultado.setText(mensaje);
         puntajeObtenido.setText(String.format(Locale.getDefault(), "%d", puntajeTotal));
         preguntasCorrectas.setText(String.format(Locale.getDefault(), "%d/%d", respCorrect, cantPreguntas));
         muestraComboCorrectas.setText(String.format(Locale.getDefault(), "%d", comboCorrectas));
         muestraComboIncorrectas.setText(String.format(Locale.getDefault(), "%d", comboIncorrectas));
+        muestraPromTiempo.setText(String.format(Locale.getDefault(), "%d", promTiempo) + "''");
 
         /* Intent para volver a jugar */
         ImageButton repetir = findViewById(R.id.btnJugarDenuevo);
