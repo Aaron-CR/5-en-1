@@ -73,6 +73,21 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("FACIL");
             CATEGORIA.add("FACIL");
             CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
+            CATEGORIA.add("FACIL");
         } else if (categoria == 2) {
             imageView = child.findViewById(R.id.image_categoria_medium);
             imageView.setVisibility(View.VISIBLE);
@@ -84,11 +99,66 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("MEDIO");
             CATEGORIA.add("MEDIO");
             CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
+            CATEGORIA.add("MEDIO");
         } else if (categoria == 3) {
             imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_dificil);
             vidas = 2;
             categoriaString = getString(R.string.category_dificil_juego1);
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
+            CATEGORIA.add("DIFICIL");
             CATEGORIA.add("DIFICIL");
             CATEGORIA.add("DIFICIL");
             CATEGORIA.add("DIFICIL");
@@ -255,7 +325,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         if (requestCode == REC_CODE_SPEECH_INPUT) {
             if (resultCode == RESULT_OK && null != data) {
                 ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                String resultWord = sacarAcentos(result.get(0)).toUpperCase();
+                String resultWord = result.get(0).toUpperCase();
                 palabraDigitadaParaValidar.setText(resultWord);
             }
         }
@@ -296,8 +366,9 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     }
 
     private void verificar() {
-        String p = palabraDigitadaParaValidar.getText().toString().toUpperCase().trim();
-        if (palabraParaEncontrar.equals(p)) {
+        String p = sacarAcentos(palabraDigitadaParaValidar.getText().toString().toUpperCase().trim());
+        String q = sacarAcentos(palabraParaEncontrar);
+        if (q.equals(p)) {
             Toast toast = Toast.makeText(this, "Correcto! Adivinaste la palabra: " + palabraParaEncontrar, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, -450);
             toast.show();
