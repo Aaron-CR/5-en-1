@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 
 import com.example.a5en1.JugarActivity;
+import com.example.a5en1.MainActivity;
 import com.example.a5en1.R;
 
 import java.util.Locale;
@@ -18,6 +19,8 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
 
     private String mensaje;
     private int categoria;
+    private int comboCorrectas;
+    private int comboIncorrectas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,8 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         int respCorrect= getIntent().getIntExtra("Respuestas correctas", 0);
         int cantPreguntas= getIntent().getIntExtra("Cantidad preguntas", 0);
         categoria= getIntent().getIntExtra("Categoria", 0);
+        comboCorrectas= getIntent().getIntExtra("Combo correctas", 0);
+        comboIncorrectas= getIntent().getIntExtra("Combo incorrectas", 0);
 
         if (respCorrect==10){
             mensaje="¡Excelente!";
@@ -41,10 +46,14 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         TextView mensajeResultado = findViewById(R.id.mensajeResult);
         TextView puntajeObtenido = findViewById(R.id.puntajeObtenido);
         TextView preguntasCorrectas = findViewById(R.id.preguntasCorrectas);
+        TextView muestraComboCorrectas= findViewById(R.id.comboCorrectas);
+        TextView muestraComboIncorrectas= findViewById(R.id.comboIncorrectas);
 
         mensajeResultado.setText(mensaje);
         puntajeObtenido.setText(String.format(Locale.getDefault(), "%d", puntajeTotal));
         preguntasCorrectas.setText(String.format(Locale.getDefault(), "%d/%d", respCorrect, cantPreguntas));
+        muestraComboCorrectas.setText(String.format(Locale.getDefault(), "%d", comboCorrectas));
+        muestraComboIncorrectas.setText(String.format(Locale.getDefault(), "%d", comboIncorrectas));
 
         /* Intent para volver a jugar */
         ImageButton repetir = findViewById(R.id.btnJugarDenuevo);
@@ -69,7 +78,7 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
             // El código en este método se ejecutará cuando se haga clic en el boton "btnVolverCategorias".
             @Override
             public void onClick(View view) {
-                // Crea un nuevo Intent para abrir {@link Juego2Activity}
+                // Crea un nuevo Intent para abrir {@link MenuJuego2Activity}
                 Intent volverCatIntent = new Intent(ResultadosJuego2Activity.this, MenuJuego2Activity.class);
                 // Inicia la nueva Activity
                 startActivity(volverCatIntent);
@@ -83,8 +92,8 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
             // El código en este método se ejecutará cuando se haga clic en el boton "btnVolverMainMenu".
             @Override
             public void onClick(View view) {
-                // Crea un nuevo Intent para abrir {@link Juego2Activity}
-                Intent volverMenuIntent = new Intent(ResultadosJuego2Activity.this, JugarActivity.class);
+                // Crea un nuevo Intent para abrir {@link MainActivity}
+                Intent volverMenuIntent = new Intent(ResultadosJuego2Activity.this, MainActivity.class);
                 // Inicia la nueva Activity
                 startActivity(volverMenuIntent);
             }
