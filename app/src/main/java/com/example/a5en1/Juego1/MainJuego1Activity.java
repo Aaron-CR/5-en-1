@@ -22,6 +22,7 @@ import com.example.a5en1.R;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
+import java.text.Normalizer;
 
 public class MainJuego1Activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -247,9 +248,16 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         if (requestCode == REC_CODE_SPEECH_INPUT) {
             if (resultCode == RESULT_OK && null != data) {
                 ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                palabraDigitadaParaValidar.setText(result.get(0));
+                String resultWord = sacarAcentos(result.get(0));
+                palabraDigitadaParaValidar.setText(resultWord);
             }
         }
+    }
+
+    public String sacarAcentos(String string) {
+        string = Normalizer.normalize(string, Normalizer.Form.NFD);
+        string = string.replaceAll("[\\p{InCOMBINING_DIACRITICAL_MARKS}]", "");
+        return string;
     }
 
     // (Teclado)
