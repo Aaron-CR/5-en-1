@@ -372,6 +372,10 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     // Metodo del boton "back"
     @Override
     public void onBackPressed() {
+        // Crea un nuevo Intent para abrir {@link MenuJuego1Activity}
+        Intent menuCategoriasIntent = new Intent(MainJuego1Activity.this, MenuJuego1Activity.class);
+        // Inicia la nueva Activity
+        startActivity(menuCategoriasIntent);
     }
 
     public void backButton(View view) {
