@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".Juego2.MenuJuego2Activity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/image_game_icon"
+            android:src="@drawable/ic_juego_2" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,36 +32,60 @@
 
         <Button
             android:id="@+id/btn1Logica"
-            style="@style/BotonMenu"
-            android:text="@string/logica"
-            android:textColor="@android:color/black" />
+            style="@style/BotonCategoria"
+            android:layout_height="60dp"
+            android:drawableEnd="@drawable/ic_play"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            android:text="@string/logica" />
         <Button
             android:id="@+id/btn2Ciencia"
-            style="@style/BotonMenu"
-            android:text="@string/ciencia"
-            android:textColor="@android:color/black" />
+            style="@style/BotonCategoria"
+            android:layout_height="60dp"
+            android:drawableEnd="@drawable/ic_play"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            android:text="@string/ciencia"/>
         <Button
             android:id="@+id/btn3Entretenimiento"
-            style="@style/BotonMenu"
-            android:text="@string/entretenimiento"
-            android:textColor="@android:color/black" />
+            style="@style/BotonCategoria"
+            android:layout_height="60dp"
+            android:drawableEnd="@drawable/ic_play"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            android:text="@string/entretenimiento"/>
         <Button
             android:id="@+id/btn4Historia"
-            style="@style/BotonMenu"
-            android:text="@string/historia"
-            android:textColor="@android:color/black" />
+            style="@style/BotonCategoria"
+            android:layout_height="60dp"
+            android:drawableEnd="@drawable/ic_play"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            android:text="@string/historia" />
         <Button
             android:id="@+id/btn5Geografia"
-            style="@style/BotonMenu"
-            android:text="@string/geografia"
-            android:textColor="@android:color/black" />
+            style="@style/BotonCategoria"
+            android:layout_height="60dp"
+            android:drawableEnd="@drawable/ic_play"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            android:text="@string/geografia"/>
         <Button
             android:id="@+id/btn6Aleatorio"
-            style="@style/BotonMenu"
-            android:text="@string/aleatorio"
-            android:textColor="@android:color/black" />
+            style="@style/BotonCategoria"
+            android:layout_height="60dp"
+            android:drawableEnd="@drawable/ic_play"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            android:text="@string/aleatorio" />
 
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
