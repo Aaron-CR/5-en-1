@@ -47,7 +47,7 @@
             android:layout_marginTop="30dp"
 
             android:text="@string/puntajeTotal"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:textAllCaps="true"/>
 
         <TextView
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/cantPreg"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:textAllCaps="true"/>
 
         <TextView
@@ -74,21 +74,57 @@
             android:textSize="36sp"
             android:textStyle="bold"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/J2PromTiempo"
-            android:textSize="12sp"
-            android:textAllCaps="true"/>
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
 
-        <TextView
-            android:id="@+id/promedioTiempo"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/J2PromTiempo"
+                android:textSize="15sp"
+                android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/promedioTiempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/J2Prom"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/J2Prom"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/J2TotalTiempo"
+                android:textSize="15sp"
+                android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/totalTiempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/J2Prom"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:text="Combo\nCorrectas"
                     android:textAlignment="center"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:textAllCaps="true"/>
 
                 <TextView
@@ -138,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:text="Combo\nIncorrectas"
                     android:textAlignment="center"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:textAllCaps="true"/>
 
                 <TextView

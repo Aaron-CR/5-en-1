@@ -54,7 +54,8 @@
     <string name="J2Time">Time</string>
     <string name="J2Tiempo">Tiempo</string>
     <string name="J2Puntaje">Puntaje</string>
-    <string name="J2PromTiempo">Tiempo de respuesta promedio</string>
+    <string name="J2PromTiempo">Tiempo de respuesta promedio: </string>
+    <string name="J2TotalTiempo">Tiempo total: </string>
     <string name="J2Prom">5</string>
     <string name="J2Pregunta">Pregunta</string>
     <string name="J2Respuesta1">Respuesta 1</string>
