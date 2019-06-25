@@ -23,10 +23,12 @@ import java.util.Collections;
 import java.util.Locale;
 import java.util.Random;
 
+import static android.widget.Toast.*;
+
 public class Juego2Activity extends AppCompatActivity {
 
     private static final int QUIZ_COUNT = 10; //Cantidad de preguntas por partida
-    private static final long TIEMPO_RESTANTE= 15000; //Tiempo por pregunta en milisegundos
+    private static final long TIEMPO_RESTANTE= 16000; //Tiempo por pregunta en milisegundos
     public final int DEFAULT_TOTAL_SCORE = 100; //Puntaje por pregunta correcta
     public final int DEFAULT_DESCUENTO_SCORE = 15; //Puntaje que se descuenta por pregunta incorrecta
 
@@ -54,6 +56,9 @@ public class Juego2Activity extends AppCompatActivity {
     private int usoComodinPista=0;
     private static int correctasSeguidas=0;
     private static int incorrectasSeguidas=0;
+    private static int promedioTime=0;
+    private int acumTime=0;
+    private int acumAllTime=0;
     private int mayorCorrectas=0;
     private int mayorIncorrectas=0;
 
@@ -432,14 +437,24 @@ public class Juego2Activity extends AppCompatActivity {
                 correctasSeguidas=0;
                 restaScore();
                 incorrectasSeguidas++;
-                quizCount++;
-                mostrarProxPreg();
+                if(quizCount == QUIZ_COUNT) { //Si la cantidad de preguntas respondida es igual a la cantidad de preguntas por ronda
+                    sacarPromedioTiempo();
+                    mostrarResult(); //Termina el juego y muestra la pantalla de resultado
+
+                } else { //Sino
+                    quizCount++; //Suma uno a la cantidad de preguntas respondidas
+                    mostrarProxPreg(); //Muestra la siguiente pregunta
+                }
+
             }
         }.start();
+
     }
 
     //Metodo que actualiza el timer en el view
     private void actualizarTimer(){
+        acumTime++;
+
         int segundos = (int) ((tiempoRestante / 1000) % 60); //Pasa el tiempo de milisegundos a segundos
 
         String formatoTiempo= String.format(Locale.getDefault(), "%02d", segundos);
@@ -463,6 +478,9 @@ public class Juego2Activity extends AppCompatActivity {
     //Metodo que resta puntaje
     public void restaScore(){
         score = score - DEFAULT_DESCUENTO_SCORE - (15*incorrectasSeguidas); //Se resta el descuento por defecto + 15 puntos por cada incorrecta seguida
+        if (score<0){
+            score=0;
+        }
         formatoScoreResta= String.format(Locale.getDefault(), "%d", score);
 
         if(incorrectasSeguidas>mayorIncorrectas){
@@ -477,6 +495,8 @@ public class Juego2Activity extends AppCompatActivity {
     public void chequearRespuesta(View view){
 
         countDown.cancel(); //Se termina el timer
+        acumAllTime+=acumTime;
+        acumTime=0;
 
         // Obtener el botón que fue apretado
         Button respuestaBtn = findViewById(view.getId());
@@ -497,8 +517,8 @@ public class Juego2Activity extends AppCompatActivity {
         } else {
             // Esta mal
             correctasSeguidas=0;
-            restaScore(); //Resta puntaje
             incorrectasSeguidas++;
+            restaScore(); //Resta puntaje
             tituloAlerta= "Respuesta incorrecta :(";
 
         }
@@ -512,7 +532,7 @@ public class Juego2Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if(quizCount == QUIZ_COUNT) { //Si la cantidad de preguntas respondida es igual a la cantidad de preguntas por ronda
-
+                    sacarPromedioTiempo();
                     mostrarResult(); //Termina el juego y muestra la pantalla de resultado
 
                 } else { //Sino
@@ -539,7 +559,10 @@ public class Juego2Activity extends AppCompatActivity {
         resultIntent.putExtra("Categoria", categoria);
         resultIntent.putExtra("Combo correctas", mayorCorrectas);
         resultIntent.putExtra("Combo incorrectas", mayorIncorrectas);
+        resultIntent.putExtra("Promedio tiempo", promedioTime);
         // Inicia la Activity
+        mayorCorrectas=0;
+        mayorIncorrectas=0;
         startActivity(resultIntent);
     }
 
@@ -550,6 +573,8 @@ public class Juego2Activity extends AppCompatActivity {
         super.onDestroy();
         if (countDown != null){
             countDown.cancel();
+            acumAllTime+=acumTime;
+            acumTime=0;
         }
     }
 
@@ -559,18 +584,31 @@ public class Juego2Activity extends AppCompatActivity {
     //Comodin PASAR
     public void pasarPregunta(){
         countDown.cancel(); //Se termina el timer
+        acumAllTime+=acumTime;
+        acumTime=0;
         usoComodinPasar++; //Se suma uno a la cantidad de comodin Pista usados
         incorrectasSeguidas=0;
         correctasSeguidas=0;
-        quizCount++; //Se suma la cantidad de preguntas "respondidas"
-        mostrarProxPreg(); //Se muestra la siguiente pregunta
+        if(quizCount == QUIZ_COUNT) { //Si la cantidad de preguntas respondida es igual a la cantidad de preguntas por ronda
+            sacarPromedioTiempo();
+            mostrarResult(); //Termina el juego y muestra la pantalla de resultado
+
+        } else { //Sino
+            quizCount++; //Suma uno a la cantidad de preguntas respondidas
+            mostrarProxPreg(); //Muestra la siguiente pregunta
+        }
     }
     //Comodin PISTA
     public void mostrarRespuesta(){
         usoComodinPista++; //Se suma uno a la cantidad de comodin Pista usado
-        Toast.makeText(this, "Respuesta: " + respuestaCorrecta, Toast.LENGTH_SHORT).show(); //Se muestra la respuesta
+        makeText(this, "Respuesta: " + respuestaCorrecta, LENGTH_SHORT).show(); //Se muestra la respuesta
     }
 
+
+    //Metodo para sacar el promedio de tiempo de respuesta
+    public void sacarPromedioTiempo(){
+        promedioTime= acumAllTime/10;
+    }
 
 
 }
