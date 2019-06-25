@@ -34,6 +34,7 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         int comboCorrectas = getIntent().getIntExtra("Combo correctas", 0);
         int comboIncorrectas = getIntent().getIntExtra("Combo incorrectas", 0);
         int promTiempo = getIntent().getIntExtra("Promedio tiempo", 0);
+        int totalTiempo = getIntent().getIntExtra("Total tiempo", 0);
 
         if (respCorrect==10){
             mensaje="¡Excelente!";
@@ -49,6 +50,7 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         TextView muestraComboCorrectas= findViewById(R.id.comboCorrectas);
         TextView muestraComboIncorrectas= findViewById(R.id.comboIncorrectas);
         TextView muestraPromTiempo= findViewById(R.id.promedioTiempo);
+        TextView muestraTotalTiempo= findViewById(R.id.totalTiempo);
 
         mensajeResultado.setText(mensaje);
         puntajeObtenido.setText(String.format(Locale.getDefault(), "%d", puntajeTotal));
@@ -56,6 +58,7 @@ public class ResultadosJuego2Activity extends AppCompatActivity {
         muestraComboCorrectas.setText(String.format(Locale.getDefault(), "%d", comboCorrectas));
         muestraComboIncorrectas.setText(String.format(Locale.getDefault(), "%d", comboIncorrectas));
         muestraPromTiempo.setText(String.format(Locale.getDefault(), "%d", promTiempo) + "''");
+        muestraTotalTiempo.setText(String.format(Locale.getDefault(), "%d", totalTiempo) + "''");
 
         /* Intent para volver a jugar */
         ImageButton repetir = findViewById(R.id.btnJugarDenuevo);

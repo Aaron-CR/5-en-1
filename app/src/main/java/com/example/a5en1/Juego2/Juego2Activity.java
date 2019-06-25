@@ -59,6 +59,7 @@ public class Juego2Activity extends AppCompatActivity {
     private static int promedioTime=0;
     private int acumTime=0;
     private int acumAllTime=0;
+    private static int totalTimeUsed=0;
     private int mayorCorrectas=0;
     private int mayorIncorrectas=0;
 
@@ -560,6 +561,7 @@ public class Juego2Activity extends AppCompatActivity {
         resultIntent.putExtra("Combo correctas", mayorCorrectas);
         resultIntent.putExtra("Combo incorrectas", mayorIncorrectas);
         resultIntent.putExtra("Promedio tiempo", promedioTime);
+        resultIntent.putExtra("Total tiempo", totalTimeUsed);
         // Inicia la Activity
         mayorCorrectas=0;
         mayorIncorrectas=0;
@@ -607,6 +609,7 @@ public class Juego2Activity extends AppCompatActivity {
 
     //Metodo para sacar el promedio de tiempo de respuesta
     public void sacarPromedioTiempo(){
+        totalTimeUsed=acumAllTime;
         promedioTime= acumAllTime/10;
     }
 
