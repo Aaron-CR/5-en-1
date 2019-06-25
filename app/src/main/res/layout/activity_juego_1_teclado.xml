@@ -8,9 +8,9 @@
     <LinearLayout
         android:id="@+id/linear_background"
         android:layout_width="match_parent"
-        android:baselineAligned="false"
         android:layout_height="115dp"
-        android:background="#00A5BB">
+        android:background="#00A5BB"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:id="@+id/linear1_background"
@@ -69,10 +69,25 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/image_categoria"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"/>
+                android:id="@+id/image_categoria_small"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/image_categoria_medium"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/image_categoria_normal"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -125,6 +140,7 @@
             android:focusableInTouchMode="false"
             android:inputType="textCapCharacters"
             android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDarker"
             android:textSize="32sp"
             android:textStyle="bold" />
 
@@ -162,14 +178,19 @@
             android:id="@+id/saltar_palabra"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="Saltar" />
+            android:background="@drawable/button_comodin_juego2"
+
+            android:text="Saltar"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/arriesgar"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
-            android:text="Arriesgar" />
+            android:background="@drawable/button_comodin_juego2"
+            android:text="Arriesgar"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 
@@ -180,7 +201,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="25dp"
         android:gravity="bottom"
         android:orientation="vertical">
 
@@ -283,7 +303,8 @@
         <LinearLayout
             android:id="@+id/teclado_fila_3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp">
 
             <Button
                 style="@style/ButtonKeyboardStyle"

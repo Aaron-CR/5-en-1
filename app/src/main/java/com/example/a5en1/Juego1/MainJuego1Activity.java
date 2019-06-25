@@ -22,6 +22,7 @@ import com.example.a5en1.R;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
+import java.text.Normalizer;
 
 public class MainJuego1Activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -58,10 +59,12 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         // Añade el teclado al fondo.
         background.addView(child);
 
-        imageView = child.findViewById(R.id.image_categoria);
+        imageView = child.findViewById(R.id.image_categoria_normal);
         categoria = getIntent().getIntExtra("CATEGORIA", 0);
 
         if (categoria == 1) {
+            imageView = child.findViewById(R.id.image_categoria_small);
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_facil);
             vidas = 4;
             categoriaString = getString(R.string.category_facil_juego1);
@@ -71,6 +74,8 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("FACIL");
             CATEGORIA.add("FACIL");
         } else if (categoria == 2) {
+            imageView = child.findViewById(R.id.image_categoria_medium);
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_medio);
             vidas = 3;
             categoriaString = getString(R.string.category_medio_juego1);
@@ -80,6 +85,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("MEDIO");
             CATEGORIA.add("MEDIO");
         } else if (categoria == 3) {
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_dificil);
             vidas = 2;
             categoriaString = getString(R.string.category_dificil_juego1);
@@ -89,6 +95,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("DIFICIL");
             CATEGORIA.add("DIFICIL");
         } else if (categoria == 4) {
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_paises);
             vidas = 5;
             categoriaString = getString(R.string.category_paises_juego1);
@@ -133,6 +140,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("URUGUAY");
             CATEGORIA.add("VENEZUELA");
         } else if (categoria == 5) {
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_animales);
             vidas = 5;
             categoriaString = getString(R.string.category_animales_juego1);
@@ -247,9 +255,16 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         if (requestCode == REC_CODE_SPEECH_INPUT) {
             if (resultCode == RESULT_OK && null != data) {
                 ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                palabraDigitadaParaValidar.setText(result.get(0));
+                String resultWord = sacarAcentos(result.get(0)).toUpperCase();
+                palabraDigitadaParaValidar.setText(resultWord);
             }
         }
+    }
+
+    public String sacarAcentos(String string) {
+        string = Normalizer.normalize(string, Normalizer.Form.NFD);
+        string = string.replaceAll("[\\p{InCOMBINING_DIACRITICAL_MARKS}]", "");
+        return string;
     }
 
     // (Teclado)
@@ -357,6 +372,10 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
     // Metodo del boton "back"
     @Override
     public void onBackPressed() {
+        // Crea un nuevo Intent para abrir {@link MenuJuego1Activity}
+        Intent menuCategoriasIntent = new Intent(MainJuego1Activity.this, MenuJuego1Activity.class);
+        // Inicia la nueva Activity
+        startActivity(menuCategoriasIntent);
     }
 
     public void backButton(View view) {
