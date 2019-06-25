@@ -44,15 +44,19 @@
             android:label="Resultados Juego 1" />
         <activity
             android:name=".Juego2.MenuJuego2Activity"
+            android:screenOrientation="portrait"
             android:label="@string/category_juego2" />
         <activity
             android:name=".Juego2.Juego2Activity"
+            android:screenOrientation="portrait"
             android:label="@string/category_juego2" />
         <activity
             android:name=".Juego2.ResultadosJuego2Activity"
+            android:screenOrientation="portrait"
             android:label="@string/category_juego2" />
         <activity
             android:name=".Juego3.MenuJuego3Activity"
+            android:screenOrientation="portrait"
             android:label="@string/category_juego3" />
         <activity
             android:name=".Juego4.MenuJuego4Activity"
