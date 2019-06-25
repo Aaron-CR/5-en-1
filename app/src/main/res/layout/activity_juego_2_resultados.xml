@@ -35,7 +35,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Resultados de la categoria"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"/>
 
 
 
@@ -45,33 +47,47 @@
             android:layout_marginTop="30dp"
 
             android:text="@string/puntajeTotal"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:textAllCaps="true"/>
 
         <TextView
             android:id="@+id/puntajeObtenido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="48sp"
+            android:textSize="36sp"
             android:textStyle="bold"
             android:text="Puntaje"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="@string/cantPreg"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:textAllCaps="true"/>
 
         <TextView
             android:id="@+id/preguntasCorrectas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:text="Puntaje"
             android:textSize="36sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/J2PromTiempo"
+            android:textSize="12sp"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:id="@+id/promedioTiempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/J2Prom"
+            android:textSize="25sp"
             android:textStyle="bold"/>
 
         <LinearLayout
@@ -80,7 +96,7 @@
             android:layout_centerInParent="true"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp">
 
             <LinearLayout
@@ -146,7 +162,7 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="40dp"
         android:layout_height="wrap_content">
 
         <ImageButton
