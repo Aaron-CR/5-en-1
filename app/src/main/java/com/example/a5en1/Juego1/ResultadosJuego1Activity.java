@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.example.a5en1.MainActivity;
 import com.example.a5en1.R;
 
+import java.util.Locale;
+
 public class ResultadosJuego1Activity extends AppCompatActivity {
 
     @Override
@@ -18,15 +20,16 @@ public class ResultadosJuego1Activity extends AppCompatActivity {
         // Establecer el contenido de la actividad para utilize el archivo activity_juego_1_resultados.xml.
         setContentView(R.layout.activity_juego_1_resultados);
 
-
         final int categoria = getIntent().getIntExtra("CATEGORIA", 0);
-        TextView resultado = findViewById(R.id.text_resultado);
-        TextView textPuntajeTotal = findViewById(R.id.text_puntaje_total);
         int aciertos = getIntent().getIntExtra("CONTADOR_RESPUESTA_CORRECTA", 0);
         int cantidadPalabras = getIntent().getIntExtra("CANTIDAD_PALABRAS", 0);
         int puntajeTotal = getIntent().getIntExtra("PUNTAJE_TOTAL", 0);
-        resultado.setText(aciertos + " / " + cantidadPalabras);
-        textPuntajeTotal.setText("Puntaje Total: " + puntajeTotal);
+
+        TextView textPuntajeTotal = findViewById(R.id.text_puntaje_total);
+        TextView resultado = findViewById(R.id.text_resultado);
+
+        textPuntajeTotal.setText(String.format(Locale.getDefault(), "%d", puntajeTotal));
+        resultado.setText(String.format(Locale.getDefault(), "%d/%d", aciertos, cantidadPalabras));
 
         // Intent para volver a jugar
         ImageButton repetir = findViewById(R.id.button_repetir);

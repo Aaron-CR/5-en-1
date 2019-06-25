@@ -7,37 +7,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="55dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/colorPrimaryDark"
         android:gravity="center">
 
-        <ImageButton
-            android:id="@+id/button_menu"
-            android:layout_width="78dp"
-            android:layout_height="78dp"
-            android:background="@drawable/button_mic"
-            android:contentDescription="@string/image_menu_icon"
-            android:src="@drawable/ic_menu" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/image_game_icon"
+            android:src="@drawable/ic_estadisticas" />
 
-        <ImageButton
-            android:id="@+id/button_repetir"
-            android:layout_width="78dp"
-            android:layout_height="78dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:background="@drawable/button_mic"
-            android:contentDescription="@string/image_replay_icon"
-            android:src="@drawable/ic_replay" />
-
-        <ImageButton
-            android:id="@+id/button_home"
-            android:layout_width="78dp"
-            android:layout_height="78dp"
-            android:background="@drawable/button_mic"
-            android:contentDescription="@string/image_home_icon"
-            android:src="@drawable/ic_home" />
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,23 +30,91 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/mensajeResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_resultados"
+            android:layout_marginTop="20dp"
+            android:text="Resultados de la categoria"
+            android:textAlignment="center"
             android:textSize="20sp" />
 
+
         <TextView
-            android:id="@+id/text_resultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:textSize="30sp" />
+            android:layout_marginTop="30dp"
+            android:text="@string/puntajeTotal"
+            android:textAllCaps="true"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/text_puntaje_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:textSize="20sp" />
+            android:text="Puntaje"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/cantidad_palabras"
+            android:textAllCaps="true"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/text_resultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puntaje"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/button_repetir"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:background="@drawable/button_mic"
+            android:src="@drawable/ic_replay" />
+
+        <ImageButton
+            android:id="@+id/button_menu"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/button_mic"
+            android:src="@drawable/ic_menu" />
+
+        <ImageButton
+            android:id="@+id/button_home"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:background="@drawable/button_mic"
+            android:src="@drawable/ic_home" />
+
+    </LinearLayout>
+
 </RelativeLayout>

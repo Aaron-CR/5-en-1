@@ -41,6 +41,7 @@
     <!-- Nombre de la categoria Animales del Juego 1 [CHAR LIMIT=20] -->
     <string name="category_animales_juego1">Animales</string>
 
+    <string name="cantidad_palabras">Respuestas correctas</string>
 
     <!-- FIN STRINGS JUEGO1-->
 
