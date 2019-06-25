@@ -52,6 +52,10 @@ public class Juego2Activity extends AppCompatActivity {
     private String nombreCategoria;
     private int usoComodinPasar=0;
     private int usoComodinPista=0;
+    private static int correctasSeguidas=0;
+    private static int incorrectasSeguidas=0;
+    private int mayorCorrectas=0;
+    private int mayorIncorrectas=0;
 
     private CountDownTimer countDown;
     private long tiempoRestante;
@@ -372,7 +376,7 @@ public class Juego2Activity extends AppCompatActivity {
         startTimer();
 
         // Actualiza countLabel
-        countLabel.setText("Pregunta " + quizCount);
+        countLabel.setText(String.format(Locale.getDefault(), "%d", quizCount));
 
         //Generar un número aleatorio entre 0 y el tamaño del arregloQuiz - 1
         Random random = new Random();
@@ -425,7 +429,9 @@ public class Juego2Activity extends AppCompatActivity {
             public void onFinish() { //Cuando termina
                 tiempoRestante=0;
                 actualizarTimer();
+                correctasSeguidas=0;
                 restaScore();
+                incorrectasSeguidas++;
                 quizCount++;
                 mostrarProxPreg();
             }
@@ -444,15 +450,25 @@ public class Juego2Activity extends AppCompatActivity {
     //Metodos que actualizan el puntaje en el view
     //Metodo que suma puntaje
     public void sumaScore(){
-        score = score + DEFAULT_TOTAL_SCORE;
+        score = score + DEFAULT_TOTAL_SCORE+ (15*correctasSeguidas); //Se suma el puntaje por defecto más 15 puntos por respuesta correcta seguida
         formatoScoreSuma= String.format(Locale.getDefault(), "%d", score);
+
+        if(correctasSeguidas>mayorCorrectas){
+            mayorCorrectas = correctasSeguidas;
+        }
+
         quizScore.setText(formatoScoreSuma);
     }
 
     //Metodo que resta puntaje
     public void restaScore(){
-        score = score - DEFAULT_DESCUENTO_SCORE;
+        score = score - DEFAULT_DESCUENTO_SCORE - (15*incorrectasSeguidas); //Se resta el descuento por defecto + 15 puntos por cada incorrecta seguida
         formatoScoreResta= String.format(Locale.getDefault(), "%d", score);
+
+        if(incorrectasSeguidas>mayorIncorrectas){
+            mayorIncorrectas = incorrectasSeguidas;
+        }
+
         quizScore.setText(formatoScoreResta);
     }
 
@@ -472,15 +488,17 @@ public class Juego2Activity extends AppCompatActivity {
 
         if (textoBtn.equals(respuestaCorrecta)){
             // Esta correcto
+            incorrectasSeguidas=0;
             sumaScore(); //Suma puntaje
-
+            correctasSeguidas++;
             tituloAlerta= "¡Correcto!";
             respuestaCorrectaCount++;
 
         } else {
             // Esta mal
+            correctasSeguidas=0;
             restaScore(); //Resta puntaje
-
+            incorrectasSeguidas++;
             tituloAlerta= "Respuesta incorrecta :(";
 
         }
@@ -519,6 +537,8 @@ public class Juego2Activity extends AppCompatActivity {
         resultIntent.putExtra("Cantidad preguntas", QUIZ_COUNT);
         resultIntent.putExtra("Puntaje total", score);
         resultIntent.putExtra("Categoria", categoria);
+        resultIntent.putExtra("Combo correctas", mayorCorrectas);
+        resultIntent.putExtra("Combo incorrectas", mayorIncorrectas);
         // Inicia la Activity
         startActivity(resultIntent);
     }
@@ -540,7 +560,8 @@ public class Juego2Activity extends AppCompatActivity {
     public void pasarPregunta(){
         countDown.cancel(); //Se termina el timer
         usoComodinPasar++; //Se suma uno a la cantidad de comodin Pista usados
-        restaScore(); //Se resta puntaje
+        incorrectasSeguidas=0;
+        correctasSeguidas=0;
         quizCount++; //Se suma la cantidad de preguntas "respondidas"
         mostrarProxPreg(); //Se muestra la siguiente pregunta
     }
