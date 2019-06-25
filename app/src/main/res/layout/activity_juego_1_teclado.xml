@@ -8,9 +8,9 @@
     <LinearLayout
         android:id="@+id/linear_background"
         android:layout_width="match_parent"
-        android:baselineAligned="false"
         android:layout_height="115dp"
-        android:background="#00A5BB">
+        android:background="#00A5BB"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:id="@+id/linear1_background"
@@ -69,10 +69,25 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/image_categoria"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"/>
+                android:id="@+id/image_categoria_small"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/image_categoria_medium"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/image_categoria_normal"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone" />
 
         </LinearLayout>
 

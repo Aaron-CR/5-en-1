@@ -59,10 +59,12 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
         // Añade el teclado al fondo.
         background.addView(child);
 
-        imageView = child.findViewById(R.id.image_categoria);
+        imageView = child.findViewById(R.id.image_categoria_normal);
         categoria = getIntent().getIntExtra("CATEGORIA", 0);
 
         if (categoria == 1) {
+            imageView = child.findViewById(R.id.image_categoria_small);
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_facil);
             vidas = 4;
             categoriaString = getString(R.string.category_facil_juego1);
@@ -72,6 +74,8 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("FACIL");
             CATEGORIA.add("FACIL");
         } else if (categoria == 2) {
+            imageView = child.findViewById(R.id.image_categoria_medium);
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_medio);
             vidas = 3;
             categoriaString = getString(R.string.category_medio_juego1);
@@ -81,6 +85,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("MEDIO");
             CATEGORIA.add("MEDIO");
         } else if (categoria == 3) {
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_dificil);
             vidas = 2;
             categoriaString = getString(R.string.category_dificil_juego1);
@@ -90,6 +95,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("DIFICIL");
             CATEGORIA.add("DIFICIL");
         } else if (categoria == 4) {
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_paises);
             vidas = 5;
             categoriaString = getString(R.string.category_paises_juego1);
@@ -134,6 +140,7 @@ public class MainJuego1Activity extends AppCompatActivity implements View.OnClic
             CATEGORIA.add("URUGUAY");
             CATEGORIA.add("VENEZUELA");
         } else if (categoria == 5) {
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(R.drawable.ic_juego_1_animales);
             vidas = 5;
             categoriaString = getString(R.string.category_animales_juego1);
