@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.a5en1.Juego1.MenuJuego1Activity;
 import com.example.a5en1.Juego2.MenuJuego2Activity;
@@ -77,7 +78,7 @@ public class JugarActivity extends AppCompatActivity {
             }
         });
 
-        /* Encuentra el Button de la opción Juego 5. */
+        /* Encuentra el Button de la opción Juego 5.
         Button juego5 = findViewById(R.id.button_juego_5);
         // Establece un click listener en ese View.
         juego5.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +91,7 @@ public class JugarActivity extends AppCompatActivity {
                 startActivity(juego5Intent);
             }
         });
-
+        */
     }
 
     // Metodo del boton "back"
@@ -100,5 +101,9 @@ public class JugarActivity extends AppCompatActivity {
         Intent menuCategoriasIntent = new Intent(JugarActivity.this, MainActivity.class);
         // Inicia la nueva Activity
         startActivity(menuCategoriasIntent);
+    }
+
+    public void proximamente(View view) {
+        Toast.makeText(this, "Próximamente!", Toast.LENGTH_SHORT).show();
     }
 }

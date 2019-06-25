@@ -57,6 +57,7 @@
                 android:id="@+id/button_estadisticas"
                 style="@style/BotonMenu"
                 android:drawableEnd="@drawable/ic_estadisticas"
+                android:onClick="proximamente"
                 android:paddingStart="33dp"
                 android:paddingEnd="13dp"
                 android:text="@string/opcion_estadisticas" />
@@ -65,6 +66,7 @@
                 android:id="@+id/button_ajustes"
                 style="@style/BotonMenu"
                 android:drawableEnd="@drawable/ic_ajustes"
+                android:onClick="proximamente"
                 android:paddingStart="33dp"
                 android:paddingEnd="13dp"
                 android:text="@string/opcion_ajustes" />

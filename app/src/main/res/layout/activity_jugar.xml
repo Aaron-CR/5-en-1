@@ -88,6 +88,7 @@
                 style="@style/BotonMenu"
                 android:drawableStart="@drawable/ic_juego_5"
                 android:drawableEnd="@drawable/ic_play"
+                android:onClick="proximamente"
                 android:paddingStart="13dp"
                 android:paddingEnd="13dp"
                 android:text="@string/category_juego5" />
