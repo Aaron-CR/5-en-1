@@ -436,13 +436,13 @@ public class Juego2Activity extends AppCompatActivity {
                 tiempoRestante=0;
                 actualizarTimer();
                 correctasSeguidas=0;
-                restaScore();
-                incorrectasSeguidas++;
                 if(quizCount == QUIZ_COUNT) { //Si la cantidad de preguntas respondida es igual a la cantidad de preguntas por ronda
                     sacarPromedioTiempo();
                     mostrarResult(); //Termina el juego y muestra la pantalla de resultado
 
                 } else { //Sino
+                    incorrectasSeguidas++;
+                    restaScore();
                     quizCount++; //Suma uno a la cantidad de preguntas respondidas
                     mostrarProxPreg(); //Muestra la siguiente pregunta
                 }
@@ -518,8 +518,8 @@ public class Juego2Activity extends AppCompatActivity {
         } else {
             // Esta mal
             correctasSeguidas=0;
-            incorrectasSeguidas++;
             restaScore(); //Resta puntaje
+            incorrectasSeguidas++;
             tituloAlerta= "Respuesta incorrecta :(";
 
         }
