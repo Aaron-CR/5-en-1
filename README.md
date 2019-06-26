@@ -29,9 +29,12 @@ _Herramientas utilizadas para crear el proyecto_
 * [Android Studio](https://developer.android.com/studio) - Entorno de desarrollo integrado
 * [git](https://git-scm.com/) - Control de versiones
 
-## Versionado
+## Capturas de pantalla
 
-Usamos [git](https://git-scm.com/) para el versionado.
+<img src="https://i.gyazo.com/1a4bec2470560dae44885597cdb32167.jpg" width="215"/> 
+<img src="https://i.gyazo.com/31bcc4b5c87bf8bdc356431fe9ab9e17.jpg" width="215"/>
+<img src="https://i.gyazo.com/5052289d9a3f11e8d88bafe487dea353.jpg" width="215"/>
+<img src="https://i.gyazo.com/dce22d0a1bfee05d1f10ab833e6b5aed.jpg" width="215"/>
 
 ## Autores
 
