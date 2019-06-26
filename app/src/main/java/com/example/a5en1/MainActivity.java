@@ -10,13 +10,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Establecer el contenido de la actividad para utilize el archivo activity_main.xml.
         setContentView(R.layout.activity_main);
 
-        /** Encuentra el Button de la opción Jugar. */
+        /* Encuentra el Button de la opción Jugar. */
         Button jugar = findViewById(R.id.button_jugar);
         // Establece un click listener en ese View.
         jugar.setOnClickListener(new View.OnClickListener() {
@@ -66,4 +67,6 @@ public class MainActivity extends AppCompatActivity {
     public void proximamente(View view) {
         Toast.makeText(this, "Próximamente!", Toast.LENGTH_SHORT).show();
     }
+
+
 }

@@ -78,7 +78,7 @@ public class JugarActivity extends AppCompatActivity {
             }
         });
 
-        /* Encuentra el Button de la opción Juego 5.
+        /* Encuentra el Button de la opción Juego 5. */
         Button juego5 = findViewById(R.id.button_juego_5);
         // Establece un click listener en ese View.
         juego5.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +91,7 @@ public class JugarActivity extends AppCompatActivity {
                 startActivity(juego5Intent);
             }
         });
-        */
+
     }
 
     // Metodo del boton "back"
@@ -103,7 +103,5 @@ public class JugarActivity extends AppCompatActivity {
         startActivity(menuCategoriasIntent);
     }
 
-    public void proximamente(View view) {
-        Toast.makeText(this, "Próximamente!", Toast.LENGTH_SHORT).show();
-    }
+
 }
