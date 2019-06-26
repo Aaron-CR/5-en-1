@@ -25,7 +25,7 @@ public class Juego4Activity14 extends AppCompatActivity {
         int sueño = getIntent().getIntExtra("sueño", 5);
         int salud = getIntent().getIntExtra("salud", 5);
         int tiempo = getIntent().getIntExtra("tiempo", 5);
-        contadores = (TextView) findViewById(R.id.txt_cont13);
+        contadores = (TextView) findViewById(R.id.txt_cont14);
         contadores.setText("Plata: " + plata + "\nHambre: " + hambre + "\nDiversión: " + diversion + "\nSocial: " + social + "\nFacultad: " + facultad + "\nSueño: " + sueño + "\nSalud: " + salud + "\nTiempo: " + tiempo);
 
     }
