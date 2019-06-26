@@ -61,7 +61,7 @@
         <activity
             android:name=".Juego4.MenuJuego4Activity"
             android:label="@string/category_juego4" />
-        <activity android:name=".Juego4.Juego4Activity12_1_1_1_2"></activity>
+        <activity android:name=".Juego4.Juego4Activity12_1_1_1_2" />
         <activity android:name=".Juego4.Juego4Activity13" />
         <activity android:name=".Juego4.Juego4Activity11_1_1_1_2_3" />
         <activity android:name=".Juego4.Juego4Activity11_1_1_1_2_2" />
@@ -91,6 +91,10 @@
         <activity android:name=".Juego4.Juego4Activity3_1" />
         <activity android:name=".Juego4.Juego4Activity2" />
         <activity android:name=".Juego4.Juego4Activity1" />
+        <activity android:name=".Juego4.Juego4Activity14"></activity>
+        <activity android:name=".Juego4.Juego4Activity8_3_2" />
+        <activity android:name=".Juego4.Juego4Activity8_3_1" />
+        <activity android:name=".Juego4.Juego4Activity15" />
         <activity
             android:name=".Juego5.MenuJuego5Activity"
             android:label="@string/category_juego5" />

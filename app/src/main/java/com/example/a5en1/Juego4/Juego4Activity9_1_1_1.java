@@ -48,16 +48,32 @@ public class Juego4Activity9_1_1_1 extends AppCompatActivity {
         if (rb1.isChecked() == true) {
             hambre--; diversion--; social++; tiempo-=2;
             Toast.makeText(this, "-hambre, -diversión,\n+social, --tiempo", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(this, Juego4Activity10_1_1_1_1.class);
-            i.putExtra("plata", plata);
-            i.putExtra("hambre", hambre);
-            i.putExtra("diversion", diversion);
-            i.putExtra("social", social);
-            i.putExtra("facultad", facultad);
-            i.putExtra("sueño", sueño);
-            i.putExtra("salud", salud);
-            i.putExtra("tiempo", tiempo);
-            startActivity(i);
+
+            if(tiempo<=0){
+                Intent i = new Intent(this, Juego4Activity14.class);
+                i.putExtra("plata", plata);
+                i.putExtra("hambre", hambre);
+                i.putExtra("diversion", diversion);
+                i.putExtra("social", social);
+                i.putExtra("facultad", facultad);
+                i.putExtra("sueño", sueño);
+                i.putExtra("salud", salud);
+                i.putExtra("tiempo", tiempo);
+                startActivity(i);
+            }
+            else {
+                Intent i = new Intent(this, Juego4Activity10_1_1_1_1.class);
+                i.putExtra("plata", plata);
+                i.putExtra("hambre", hambre);
+                i.putExtra("diversion", diversion);
+                i.putExtra("social", social);
+                i.putExtra("facultad", facultad);
+                i.putExtra("sueño", sueño);
+                i.putExtra("salud", salud);
+                i.putExtra("tiempo", tiempo);
+                startActivity(i);
+            }
+
         } else if (rb2.isChecked() == true) {
             diversion--; tiempo--;
             Toast.makeText(this, "-diversión, -tiempo", Toast.LENGTH_SHORT).show();

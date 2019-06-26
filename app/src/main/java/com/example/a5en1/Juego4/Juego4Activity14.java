@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import com.example.a5en1.R;
 
-public class Juego4Activity13 extends AppCompatActivity {
+public class Juego4Activity14 extends AppCompatActivity {
 
     private TextView contadores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_juego_4_13);
+        setContentView(R.layout.activity_juego_4_14);
 
         int plata = getIntent().getIntExtra("plata", 5);
         int hambre = getIntent().getIntExtra("hambre", 5);
@@ -30,7 +30,7 @@ public class Juego4Activity13 extends AppCompatActivity {
 
     }
 
-    public void siguiente(View view) {
+    public void muerta(View view) {
         int plata = getIntent().getIntExtra("plata", 5);
         int hambre = getIntent().getIntExtra("hambre", 5);
         int diversion = getIntent().getIntExtra("diversion", 5);

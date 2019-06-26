@@ -178,11 +178,40 @@
 
     <string name="act_9_1_2_1">Flasheaste...\nNo era esa pero al menos lo intentaste.</string>
 
-    <string name="act_9_1_2_2">Qué buena memoria!\nLo encontraron rápidamente.</string>
+    <string name="act_9_1_2_2">¡Qué buena memoria!\nLo encontraron rápidamente.</string>
 
     <string name="act_9_1_2_3">Ni un poquito de esfuerzo...\nPero está bien, no es tu culpa ser Dory.</string>
 
     <string name="act_10_1_2">Luego te enterás de que una chica resultó\ngravemente herida en ese accidente y\nse encuentra en terapia intensiva.</string>
+
+    <string name="act_8_1_3">Voy con los auriculares a todo volumen.\nUna cuadra antes de llegar a mi casa veo un\ncamión de la municipalidad mientras voy
+                            \ncantando -I Just Wanna Live- animadamente,\nlo que me impide escuchar el grito de\nlos trabajadores y el ruido de una rama
+                            \nrompiéndose encima mío.\n\nCon tal suerte que la inmensa rama golpea\nfuertemente mi cabeza y muero al instante.</string>
+    <string name="boton_muerta">¿¿Estoy muerta??</string>
+
+    <string name="act_7_2">Decidís doblar a la izquierda y luego de\ncaminar unas cuadras un auto pasa\nel semáforo en rojo, ocasionando\nun terrible accidente:</string>
+    <!-- LAS OPCIONES SON LAS MISMAS QUE EN EL STRING "act_7_2"  -->
+    <!-- LAS ACTIVITYS SIGUIENTES SON LAS MISMAS QUE SIGUEN DESPUÉS DE ESA -->
+
+    <string name="act_7_3">Decido seguir recto y al pasar por\nel frente de una casa, de repente\nescucho mi nombre:</string>
+    <string name="act_7_3a">Me doy vuelta.</string>
+    <string name="act_7_3b">Tengo el nombre más usado de mi época,\nseguro que no me llaman a mí.</string>
+
+    <string name="act_8_3_1">Al darme vuelta no veo que hay un pozo\nabierto sin señalizar, en el cual caigo.\nEl pozo era increíblemente largo,
+                            \nmientras escribo esto sigo cayendo.\n\nOjalá no hubiera terminado de una\nforma tan ridícula.</string>
+
+    <string name="act_8_3_2">Sigo mi camino pensando que no me\nllamaban a mí y cruzo la calle sin\nver que venía un auto muy rápido...
+                            \nSu patente se quedó grabada en\nmi mente: DLA 678.\n\nNunca sabré que no fui su única\nvíctima ese día.</string>
+
+    <string name="act_13">¡Llegué a casa! Muy contenta me dejo\ncaer sobre la cama mientras abro el juego\nque me acabo de descargar en el celu.
+                        \n\nParece interesante, se llama:\nElige tu propia aventura mediocre...</string>
+
+    <string name="act_14">¡Oh no! Se me acabó el tiempo...\nDe repente empiezo a desaparecer como si\nfuera el personaje de algún juego random.
+                        \n\n¡No me quiero ir señor Stark!</string>
+
+    <string name="act_15">FIN DEL JUEGO</string>
+    <string name="act_15cont">CONTADORES</string>
+    <string name="boton_inicio">Volver al inicio</string>
 
     <!-- FIN STRINGS JUEGO 4 -->
 
